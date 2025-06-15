@@ -1,0 +1,128 @@
+/* ========= 박스 모델 초기화 ========= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========= 문서 기본 스타일 초기화 ========= */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: system-ui, sans-serif;
+}
+
+/* ========= 텍스트 요소 초기화 ========= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+figure,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========= 리스트 초기화 ========= */
+ul,
+ol {
+  list-style: none;
+}
+
+/* ========= 테이블 초기화 ========= */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ========= 폼 요소 초기화 ========= */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* ========= 버튼 초기화 ========= */
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* ========= 이미지, 미디어 요소 초기화 ========= */
+img,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========= 기본 요소 display 설정 ========= */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/* ========= blockquote & q 초기화 ========= */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+}
+
+/* ========= 스크롤, 애니메이션 초기화 (접근성 고려) ========= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
