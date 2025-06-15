@@ -1,8 +1,10 @@
+import { router } from "@app";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <>하이</>
+    <RouterProvider router={router} />
   </StrictMode>
 );
