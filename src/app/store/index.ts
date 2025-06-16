@@ -1,7 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+import { displaySlice as display } from "@entities";
+
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    display,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
