@@ -1,9 +1,14 @@
+import { Icon } from "@shared";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <></>,
+    element: (
+      <>
+        <Icon onClick={() => {}} />
+      </>
+    ),
   },
 ]);
 
