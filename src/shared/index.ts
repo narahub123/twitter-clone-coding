@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector, useLanguageContent } from "./lib";
 import { languages } from "./data";
 import { joinClassNames } from "./utils";
-import { Icon } from "./ui";
+import { Icon, icons } from "./ui";
 
 export {
   // libs
@@ -17,4 +17,5 @@ export {
 
   // ui
   Icon,
+  icons,
 };
