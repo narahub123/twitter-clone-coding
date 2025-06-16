@@ -1,3 +1,3 @@
-import { useAppDispatch, useAppSelector } from "./hooks";
+import { useAppDispatch, useAppSelector, useLanguageContent } from "./hooks";
 
-export {useAppDispatch, useAppSelector}
+export { useAppDispatch, useAppSelector, useLanguageContent };

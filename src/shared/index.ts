@@ -1,3 +1,12 @@
-import { useAppDispatch, useAppSelector } from "./lib";
+import { useAppDispatch, useAppSelector, useLanguageContent } from "./lib";
+import { languages } from "./data";
 
-export { useAppDispatch, useAppSelector };
+export {
+  // libs
+  useAppDispatch,
+  useAppSelector,
+  useLanguageContent,
+
+  // data
+  languages,
+};
