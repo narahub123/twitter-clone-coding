@@ -1,3 +1,4 @@
 import IconStyleGuide from "./IconStyleGuide";
+import ButtonStyleGuide from "./ButtonStyleGuide";
 
-export { IconStyleGuide };
+export { IconStyleGuide, ButtonStyleGuide };

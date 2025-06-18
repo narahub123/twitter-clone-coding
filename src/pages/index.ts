@@ -1,3 +1,3 @@
-import { IconStyleGuide } from "./style-guides";
+import { IconStyleGuide, ButtonStyleGuide } from "./style-guides";
 
-export { IconStyleGuide };
+export { IconStyleGuide, ButtonStyleGuide };
