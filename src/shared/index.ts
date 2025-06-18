@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector, useLanguageContent } from "./lib";
 import { languages, colors, roundeds, sizes, variants } from "./data";
-import { joinClassNames } from "./utils";
-import { Icon, icons, Button, SVG } from "./ui";
+import { joinClassNames, convertToPx } from "./utils";
+import { Icon, icons, Button, SVG, Spinner } from "./ui";
 
 import type {
   ColorSchemeType,
@@ -25,12 +25,14 @@ export {
 
   // utils
   joinClassNames,
+  convertToPx,
 
   // ui
   Icon,
   icons,
   Button,
   SVG,
+  Spinner,
 };
 
 export type { ColorSchemeType, RoundedType, SizeType, VariantType };
