@@ -29,17 +29,24 @@ const Button = ({
   color = "gray",
   variant = "solid",
   children,
+  ...rest
 }: ButtonProps) => {
   const classNames = joinClassNames([
     styles["button"],
     tokens[`button-size-${size}`],
     tokens[`rounded-${rounded}`],
     tokens[`${color}-${variant}`],
+    disabled ? tokens["disabled"] : "",
     className,
   ]);
 
   return (
-    <button className={classNames} disabled={disabled} aria-disabled={disabled}>
+    <button
+      className={classNames}
+      disabled={disabled}
+      aria-disabled={disabled}
+      {...rest}
+    >
       {children}
     </button>
   );
