@@ -63,7 +63,7 @@ const ButtonStyleGuide = ({}: ButtonStyleGuideProps) => {
                 <td className={styles["td"]} key={size}>
                   <div className={styles["wrapper"]}>
                     <Button size={size} color="green">
-                      버튼
+                      {`버튼 (${size})`}
                     </Button>
                   </div>
                 </td>
@@ -91,8 +91,8 @@ const ButtonStyleGuide = ({}: ButtonStyleGuideProps) => {
               return (
                 <td className={styles["td"]} key={rounded}>
                   <div className={styles["wrapper"]}>
-                    <Button rounded={rounded} color="blue" size="xl">
-                      버튼
+                    <Button rounded={rounded} color="blue" size="md">
+                      {`버튼 (${rounded})`}
                     </Button>
                   </div>
                 </td>
