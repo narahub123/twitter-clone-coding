@@ -1,10 +1,21 @@
-import type { ButtonHTMLAttributes, HTMLAttributes } from "react";
 import styles from "./Icon.module.css";
+import tokens from "../../styles/design-system.module.css";
+import type { ButtonHTMLAttributes, HTMLAttributes } from "react";
 import { icons, joinClassNames } from "@shared";
+import type {
+  ColorSchemeType,
+  RoundedType,
+  SizeType,
+  VariantType,
+} from "@shared";
 
 interface BaseProps {
   className?: string;
   iconName: keyof typeof icons;
+  size?: SizeType;
+  rounded?: RoundedType;
+  variant?: VariantType;
+  color?: ColorSchemeType;
 }
 
 type ButtonIconProps = BaseProps &
@@ -18,10 +29,25 @@ type SpanIconProps = BaseProps &
     onClick?: undefined;
   };
 
-type IconProps = ButtonIconProps | SpanIconProps;
+type IconProps = SpanIconProps | ButtonIconProps;
 
-const Icon = ({ className, onClick, iconName, ...rest }: IconProps) => {
-  const classNames = joinClassNames([styles["icon"], className]);
+const Icon = ({
+  className,
+  onClick,
+  iconName,
+  size = "md",
+  rounded = "full",
+  variant = "solid",
+  color = "gray",
+  ...rest
+}: IconProps) => {
+  const classNames = joinClassNames([
+    styles["icon"],
+    tokens[`size-${size}`],
+    tokens[`rounded-${rounded}`],
+    tokens[`${color}-${variant}`],
+    className,
+  ]);
 
   const Inner = icons[iconName];
 
