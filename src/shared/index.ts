@@ -3,6 +3,13 @@ import { languages } from "./data";
 import { joinClassNames } from "./utils";
 import { Icon, icons } from "./ui";
 
+import type {
+  ColorSchemeType,
+  RoundedType,
+  SizeType,
+  VariantType,
+} from "./types";
+
 export {
   // libs
   useAppDispatch,
@@ -19,3 +26,5 @@ export {
   Icon,
   icons,
 };
+
+export type { ColorSchemeType, RoundedType, SizeType, VariantType };
