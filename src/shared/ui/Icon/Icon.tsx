@@ -83,6 +83,7 @@ const Icon = forwardRef<HTMLButtonElement | HTMLSpanElement, IconProps>(
         <span
           className={classNames}
           ref={ref as Ref<HTMLSpanElement>}
+          aria-hidden="true"
           {...buttonProps}
         >
           <Inner />
