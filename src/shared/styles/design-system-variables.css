@@ -1,10 +1,24 @@
 :root {
   /* height */
-  --size-xs: 1.5rem;
-  --size-sm: 1.75rem;
-  --size-md: 2rem;
-  --size-lg: 2.5rem;
-  --size-xl: 3rem;
+  --icon-height-xs: 1.5rem;
+  --icon-height-sm: 1.75rem;
+  --icon-height-md: 2rem;
+  --icon-height-lg: 2.5rem;
+  --icon-height-xl: 3rem;
+
+  /* height */
+  --button-height-xs: 1.875rem;
+  --button-height-sm: 2.25rem;
+  --button-height-md: 2.5rem;
+  --button-height-lg: 2.75rem;
+  --button-height-xl: 3rem;
+
+  /* padding */
+  --button-padding-xs: 0.625rem;
+  --button-padding-sm: 0.875rem;
+  --button-padding-md: 1rem;
+  --button-padding-lg: 1.25rem;
+  --button-padding-xl: 1.25rem;
 
   /* font size */
   --font-xs: 0.75rem;
@@ -28,8 +42,8 @@
   --gray-100: #e9e9e9;
   --gray-200: #ddd;
   --gray-300: #718096;
-  --gray-400: #000;
-  --gray-500: #333333;
+  --gray-400: #333333;
+  --gray-500: #000;
 
   /* red */
   --red-100: #fed7d7; /* 100 */
