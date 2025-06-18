@@ -19,6 +19,7 @@ const ButtonStyleGuide = ({}: ButtonStyleGuideProps) => {
               );
             })}
             <th className={styles["td"]}>disabled</th>
+            <th className={styles["td"]}>loading</th>
           </tr>
         </thead>
         <tbody>
@@ -42,6 +43,18 @@ const ButtonStyleGuide = ({}: ButtonStyleGuideProps) => {
                 <td className={styles["td"]} style={{ color }}>
                   <div className={styles["wrapper"]}>
                     <Button color={color} variant="solid" disabled>
+                      버튼
+                    </Button>
+                  </div>
+                </td>
+                <td className={styles["td"]} style={{ color }}>
+                  <div className={styles["wrapper"]}>
+                    <Button
+                      color={color}
+                      variant="solid"
+                      loading
+                      loadingText="로딩"
+                    >
                       버튼
                     </Button>
                   </div>

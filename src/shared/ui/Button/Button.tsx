@@ -3,6 +3,7 @@ import styles from "./Button.module.css";
 import tokens from "@shared/styles/design-system.module.css";
 import {
   joinClassNames,
+  Spinner,
   type ColorSchemeType,
   type RoundedType,
   type SizeType,
@@ -17,6 +18,8 @@ interface BaseProps {
   rounded?: RoundedType;
   color?: ColorSchemeType;
   variant?: VariantType;
+  loading?: boolean;
+  loadingText?: string;
 }
 
 type ButtonProps = BaseProps & HTMLAttributes<HTMLButtonElement>;
@@ -29,6 +32,8 @@ const Button = ({
   color = "gray",
   variant = "solid",
   children,
+  loading = false,
+  loadingText,
   ...rest
 }: ButtonProps) => {
   const classNames = joinClassNames([
@@ -36,7 +41,7 @@ const Button = ({
     tokens[`button-size-${size}`],
     tokens[`rounded-${rounded}`],
     tokens[`${color}-${variant}`],
-    disabled ? tokens["disabled"] : "",
+    loading || disabled ? tokens["disabled"] : "",
     className,
   ]);
 
@@ -47,7 +52,14 @@ const Button = ({
       aria-disabled={disabled}
       {...rest}
     >
-      {children}
+      {loading ? (
+        <div className={styles["loading__wrapper"]}>
+          <Spinner loadingText={loadingText} />
+          <span>{loadingText}</span>
+        </div>
+      ) : (
+        children
+      )}
     </button>
   );
 };
