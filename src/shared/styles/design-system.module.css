@@ -1,0 +1,556 @@
+.size-xs {
+  font-size: var(--font-xs);
+  width: var(--size-xs);
+  height: var(--size-xs);
+}
+
+.size-sm {
+  font-size: var(--font-sm);
+  width: var(--size-sm);
+  height: var(--size-sm);
+}
+
+.size-md {
+  font-size: var(--font-md);
+  width: var(--size-md);
+  height: var(--size-md);
+}
+
+.size-lg {
+  font-size: var(--font-lg);
+  width: var(--size-lg);
+  height: var(--size-lg);
+}
+
+.size-xl {
+  font-size: var(--font-xl);
+  width: var(--size-xl);
+  height: var(--size-xl);
+}
+
+.rounded-none {
+  border-radius: var(--rounded-none);
+}
+
+.rounded-xs {
+  border-radius: var(--rounded-xs);
+}
+
+.rounded-sm {
+  border-radius: var(--rounded-sm);
+}
+
+.rounded-md {
+  border-radius: var(--rounded-md);
+}
+
+.rounded-lg {
+  border-radius: var(--rounded-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--rounded-xl);
+}
+
+.rounded-full {
+  border-radius: var(--rounded-full);
+}
+
+.gray-solid {
+  color: var(--white-000);
+  background-color: var(--gray-500);
+}
+
+.gray-solid:not(span):hover {
+  background-color: var(--gray-400);
+}
+
+.gray-subtle {
+  color: var(--gray-500);
+  background-color: var(--gray-100);
+}
+
+.gray-subtle:not(span):hover {
+  background-color: var(--gray-200);
+}
+
+.gray-surface {
+  color: var(--gray-500);
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-300);
+}
+
+.gray-surface:not(span):hover {
+  background-color: var(--gray-200);
+}
+
+.gray-outline {
+  color: var(--gray-500);
+  border: 1px solid var(--gray-300);
+}
+
+.gray-outline:not(span):hover {
+  background-color: var(--gray-100);
+}
+
+.gray-ghost {
+  color: var(--gray-500);
+}
+
+.gray-ghost:not(span):hover {
+  background-color: var(--gray-100);
+}
+
+.gray-plain {
+  color: var(--gray-500);
+}
+
+/* red */
+.red-solid {
+  color: var(--white-000);
+  background-color: var(--red-500);
+}
+
+.red-solid:not(span):hover {
+  background-color: var(--red-400);
+}
+
+.red-subtle {
+  color: var(--red-500);
+  background-color: var(--red-100);
+}
+
+.red-subtle:not(span):hover {
+  background-color: var(--red-200);
+}
+
+.red-surface {
+  color: var(--red-500);
+  background-color: var(--red-100);
+  border: 1px solid var(--red-300);
+}
+
+.red-surface:not(span):hover {
+  background-color: var(--red-200);
+}
+
+.red-outline {
+  color: var(--red-500);
+  border: 1px solid var(--red-300);
+}
+
+.red-outline:not(span):hover {
+  background-color: var(--red-100);
+}
+
+.red-ghost {
+  color: var(--red-500);
+}
+
+.red-ghost:not(span):hover {
+  background-color: var(--red-100);
+}
+
+.red-plain {
+  color: var(--red-500);
+}
+
+/* green */
+.green-solid {
+  color: var(--white-000);
+  background-color: var(--green-500);
+}
+
+.green-solid:not(span):hover {
+  background-color: var(--green-400);
+}
+
+.green-subtle {
+  color: var(--green-500);
+  background-color: var(--green-100);
+}
+
+.green-subtle:not(span):hover {
+  background-color: var(--green-200);
+}
+
+.green-surface {
+  color: var(--green-500);
+  background-color: var(--green-100);
+  border: 1px solid var(--green-300);
+}
+
+.green-surface:not(span):hover {
+  background-color: var(--green-200);
+}
+
+.green-outline {
+  color: var(--green-500);
+  border: 1px solid var(--green-300);
+}
+
+.green-outline:not(span):hover {
+  background-color: var(--green-100);
+}
+
+.green-ghost {
+  color: var(--green-500);
+}
+
+.green-ghost:not(span):hover {
+  background-color: var(--green-100);
+}
+
+.green-plain {
+  color: var(--green-500);
+}
+
+/* blue */
+.blue-solid {
+  color: var(--white-000);
+  background-color: var(--blue-500);
+}
+
+.blue-solid:not(span):hover {
+  background-color: var(--blue-400);
+}
+
+.blue-subtle {
+  color: var(--blue-500);
+  background-color: var(--blue-100);
+}
+
+.blue-subtle:not(span):hover {
+  background-color: var(--blue-200);
+}
+
+.blue-surface {
+  color: var(--blue-500);
+  background-color: var(--blue-100);
+  border: 1px solid var(--blue-300);
+}
+
+.blue-surface:not(span):hover {
+  background-color: var(--blue-200);
+}
+
+.blue-outline {
+  color: var(--blue-500);
+  border: 1px solid var(--blue-300);
+}
+
+.blue-outline:not(span):hover {
+  background-color: var(--blue-100);
+}
+
+.blue-ghost {
+  color: var(--blue-500);
+}
+
+.blue-ghost:not(span):hover {
+  background-color: var(--blue-100);
+}
+
+.blue-plain {
+  color: var(--blue-500);
+}
+
+/* teal */
+.teal-solid {
+  color: var(--white-000);
+  background-color: var(--teal-500);
+}
+
+.teal-solid:not(span):hover {
+  background-color: var(--teal-400);
+}
+
+.teal-subtle {
+  color: var(--teal-500);
+  background-color: var(--teal-100);
+}
+
+.teal-subtle:not(span):hover {
+  background-color: var(--teal-200);
+}
+
+.teal-surface {
+  color: var(--teal-500);
+  background-color: var(--teal-100);
+  border: 1px solid var(--teal-300);
+}
+
+.teal-surface:not(span):hover {
+  background-color: var(--teal-200);
+}
+
+.teal-outline {
+  color: var(--teal-500);
+  border: 1px solid var(--teal-300);
+}
+
+.teal-outline:not(span):hover {
+  background-color: var(--teal-100);
+}
+
+.teal-ghost {
+  color: var(--teal-500);
+}
+
+.teal-ghost:not(span):hover {
+  background-color: var(--teal-100);
+}
+
+.teal-plain {
+  color: var(--teal-500);
+}
+
+/* pink */
+.pink-solid {
+  color: var(--white-000);
+  background-color: var(--pink-500);
+}
+
+.pink-solid:not(span):hover {
+  background-color: var(--pink-400);
+}
+
+.pink-subtle {
+  color: var(--pink-500);
+  background-color: var(--pink-100);
+}
+
+.pink-subtle:not(span):hover {
+  background-color: var(--pink-200);
+}
+
+.pink-surface {
+  color: var(--pink-500);
+  background-color: var(--pink-100);
+  border: 1px solid var(--pink-300);
+}
+
+.pink-surface:not(span):hover {
+  background-color: var(--pink-200);
+}
+
+.pink-outline {
+  color: var(--pink-500);
+  border: 1px solid var(--pink-300);
+}
+
+.pink-outline:not(span):hover {
+  background-color: var(--pink-100);
+}
+
+.pink-ghost {
+  color: var(--pink-500);
+}
+
+.pink-ghost:not(span):hover {
+  background-color: var(--pink-100);
+}
+
+.pink-plain {
+  color: var(--pink-500);
+}
+
+/* purple */
+.purple-solid {
+  color: var(--white-000);
+  background-color: var(--purple-500);
+}
+
+.purple-solid:not(span):hover {
+  background-color: var(--purple-400);
+}
+
+.purple-subtle {
+  color: var(--purple-500);
+  background-color: var(--purple-100);
+}
+
+.purple-subtle:not(span):hover {
+  background-color: var(--purple-200);
+}
+
+.purple-surface {
+  color: var(--purple-500);
+  background-color: var(--purple-100);
+  border: 1px solid var(--purple-300);
+}
+
+.purple-surface:not(span):hover {
+  background-color: var(--purple-200);
+}
+
+.purple-outline {
+  color: var(--purple-500);
+  border: 1px solid var(--purple-300);
+}
+
+.purple-outline:not(span):hover {
+  background-color: var(--purple-100);
+}
+
+.purple-ghost {
+  color: var(--purple-500);
+}
+
+.purple-ghost:not(span):hover {
+  background-color: var(--purple-100);
+}
+
+.purple-plain {
+  color: var(--purple-500);
+}
+
+/* cyan */
+.cyan-solid {
+  color: var(--white-000);
+  background-color: var(--cyan-500);
+}
+
+.cyan-solid:not(span):hover {
+  background-color: var(--cyan-400);
+}
+
+.cyan-subtle {
+  color: var(--cyan-500);
+  background-color: var(--cyan-100);
+}
+
+.cyan-subtle:not(span):hover {
+  background-color: var(--cyan-200);
+}
+
+.cyan-surface {
+  color: var(--cyan-500);
+  background-color: var(--cyan-100);
+  border: 1px solid var(--cyan-300);
+}
+
+.cyan-surface:not(span):hover {
+  background-color: var(--cyan-200);
+}
+
+.cyan-outline {
+  color: var(--cyan-500);
+  border: 1px solid var(--cyan-300);
+}
+
+.cyan-outline:not(span):hover {
+  background-color: var(--cyan-100);
+}
+
+.cyan-ghost {
+  color: var(--cyan-500);
+}
+
+.cyan-ghost:not(span):hover {
+  background-color: var(--cyan-100);
+}
+
+.cyan-plain {
+  color: var(--cyan-500);
+}
+
+/* orange */
+.orange-solid {
+  color: var(--white-000);
+  background-color: var(--orange-500);
+}
+
+.orange-solid:not(span):hover {
+  background-color: var(--orange-400);
+}
+
+.orange-subtle {
+  color: var(--orange-500);
+  background-color: var(--orange-100);
+}
+
+.orange-subtle:not(span):hover {
+  background-color: var(--orange-200);
+}
+
+.orange-surface {
+  color: var(--orange-500);
+  background-color: var(--orange-100);
+  border: 1px solid var(--orange-300);
+}
+
+.orange-surface:not(span):hover {
+  background-color: var(--orange-200);
+}
+
+.orange-outline {
+  color: var(--orange-500);
+  border: 1px solid var(--orange-300);
+}
+
+.orange-outline:not(span):hover {
+  background-color: var(--orange-100);
+}
+
+.orange-ghost {
+  color: var(--orange-500);
+}
+
+.orange-ghost:not(span):hover {
+  background-color: var(--orange-100);
+}
+
+.orange-plain {
+  color: var(--orange-500);
+}
+
+/* yellow */
+.yellow-solid {
+  color: var(--white-000);
+  background-color: var(--yellow-500);
+}
+
+.yellow-solid:not(span):hover {
+  background-color: var(--yellow-400);
+}
+
+.yellow-subtle {
+  color: var(--yellow-500);
+  background-color: var(--yellow-100);
+}
+
+.yellow-subtle:not(span):hover {
+  background-color: var(--yellow-200);
+}
+
+.yellow-surface {
+  color: var(--yellow-500);
+  background-color: var(--yellow-100);
+  border: 1px solid var(--yellow-300);
+}
+
+.yellow-surface:not(span):hover {
+  background-color: var(--yellow-200);
+}
+
+.yellow-outline {
+  color: var(--yellow-500);
+  border: 1px solid var(--yellow-300);
+}
+
+.yellow-outline:not(span):hover {
+  background-color: var(--yellow-100);
+}
+
+.yellow-ghost {
+  color: var(--yellow-500);
+}
+
+.yellow-ghost:not(span):hover {
+  background-color: var(--yellow-100);
+}
+
+.yellow-plain {
+  color: var(--yellow-500);
+}
