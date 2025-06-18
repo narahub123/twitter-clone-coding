@@ -4,6 +4,8 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 
 import "@shared/styles/reset.css";
+import "@shared/styles/design-system-variables.css";
+
 import { Provider } from "react-redux";
 
 createRoot(document.getElementById("root")!).render(
