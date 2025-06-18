@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 import styles from "./Button.module.css";
 import tokens from "@shared/styles/design-system.module.css";
 import {
@@ -9,7 +9,7 @@ import {
   type VariantType,
 } from "@shared";
 
-interface ButtonProps {
+interface BaseProps {
   className?: string;
   disabled?: boolean;
   children: ReactNode;
@@ -18,6 +18,8 @@ interface ButtonProps {
   color?: ColorSchemeType;
   variant?: VariantType;
 }
+
+type ButtonProps = BaseProps & HTMLAttributes<HTMLButtonElement>;
 
 const Button = ({
   className,
