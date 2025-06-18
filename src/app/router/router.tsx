@@ -1,4 +1,4 @@
-import { IconStyleGuide } from "@pages";
+import { Button } from "@shared";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -6,7 +6,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <IconStyleGuide />
+        <Button>버튼</Button>
       </>
     ),
   },
