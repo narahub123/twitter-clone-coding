@@ -1,28 +1,28 @@
-.size-xs {
+.icon-size-xs {
   font-size: var(--font-xs);
   width: var(--size-xs);
   height: var(--size-xs);
 }
 
-.size-sm {
+.icon-size-sm {
   font-size: var(--font-sm);
   width: var(--size-sm);
   height: var(--size-sm);
 }
 
-.size-md {
+.icon-size-md {
   font-size: var(--font-md);
   width: var(--size-md);
   height: var(--size-md);
 }
 
-.size-lg {
+.icon-size-lg {
   font-size: var(--font-lg);
   width: var(--size-lg);
   height: var(--size-lg);
 }
 
-.size-xl {
+.icon-size-xl {
   font-size: var(--font-xl);
   width: var(--size-xl);
   height: var(--size-xl);

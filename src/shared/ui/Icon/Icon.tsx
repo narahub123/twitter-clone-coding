@@ -53,7 +53,7 @@ const Icon = forwardRef<HTMLButtonElement | HTMLSpanElement, IconProps>(
   ) => {
     const classNames = joinClassNames([
       styles["icon"],
-      tokens[`size-${size}`],
+      tokens[`icon-size-${size}`],
       tokens[`rounded-${rounded}`],
       tokens[`${color}-${variant}`],
       className,
