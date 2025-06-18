@@ -2,4 +2,6 @@ import { Icon, icons } from "./Icon";
 
 import Button from "./Button";
 
-export { Icon, icons, Button };
+import SVG from "./SVG";
+
+export { Icon, icons, Button, SVG };
