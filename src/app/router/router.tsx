@@ -1,4 +1,4 @@
-import IconStyleGuide from "@pages/style-guides/IconStyleGuide/IconStyleGuide";
+import { IconStyleGuide } from "@pages";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
