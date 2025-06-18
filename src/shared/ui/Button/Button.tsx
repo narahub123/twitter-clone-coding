@@ -41,7 +41,7 @@ const Button = ({
     tokens[`button-size-${size}`],
     tokens[`rounded-${rounded}`],
     tokens[`${color}-${variant}`],
-    loading || disabled ? tokens["disabled"] : "",
+    loading || disabled ? tokens[`${color}-disabled`] : "",
     className,
   ]);
 
