@@ -1,4 +1,4 @@
-type SizeType = "xs" | "sm" | "md" | "lg" | "lx";
+type SizeType = "xs" | "sm" | "md" | "lg" | "xl";
 
 type VariantType =
   | "solid"
