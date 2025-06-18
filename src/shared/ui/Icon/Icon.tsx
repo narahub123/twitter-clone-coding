@@ -27,6 +27,7 @@ type ButtonIconProps = BaseProps &
   ButtonHTMLAttributes<HTMLButtonElement> & {
     onClick?: (...args: any[]) => any;
     disabled?: boolean;
+    title: string;
   };
 
 type SpanIconProps = BaseProps &
@@ -64,6 +65,7 @@ const Icon = forwardRef<HTMLButtonElement | HTMLSpanElement, IconProps>(
       const {
         disabled = false,
         onClick,
+        title,
         ...buttonProps
       } = rest as ButtonHTMLAttributes<HTMLButtonElement>;
       return (
@@ -72,6 +74,7 @@ const Icon = forwardRef<HTMLButtonElement | HTMLSpanElement, IconProps>(
           disabled={disabled}
           onClick={onClick}
           ref={ref as Ref<HTMLButtonElement>}
+          data-title={variant === "plain" ? undefined : title}
           {...buttonProps}
         >
           <Inner />

@@ -1,5 +1,57 @@
 .icon {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.icon[data-title]::after,
+.icon[data-title]::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-duration-normal) ease,
+    visibility var(--transition-duration-normal) ease;
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* 툴팁 텍스트 */
+.icon[data-title]::after {
+  content: attr(data-title);
+  top: 120%;
+  line-height: 1;
+  padding: 5px;
+  color: white;
+  background: black;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 화살표 */
+.icon[data-title]::before {
+  content: "";
+  top: 100%;
+  margin-top: -2px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+  z-index: 99;
+}
+
+/* 호버/포커스 시 툴팁 표시 */
+.icon[data-title]:hover::after,
+.icon[data-title]:hover::before,
+.icon[data-title]:focus::after,
+.icon[data-title]:focus::before {
+  opacity: 1;
+  visibility: visible;
+  z-index: 100;
 }

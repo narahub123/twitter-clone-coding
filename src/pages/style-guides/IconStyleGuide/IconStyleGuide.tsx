@@ -36,6 +36,7 @@ const IconStyleGuide = ({}: IconStyleGuideProps) => {
                           color={color}
                           variant={variant}
                           onClick={() => {}}
+                          title="닫기"
                         />
                       </div>
                     </td>
