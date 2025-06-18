@@ -635,7 +635,52 @@
   color: var(--yellow-500);
 }
 
-.disabled {
+.gray-disabled {
   background-color: var(--gray-150);
+  cursor: not-allowed;
+}
+
+.red-disabled {
+  background-color: var(--red-150);
+  cursor: not-allowed;
+}
+
+.green-disabled {
+  background-color: var(--green-150);
+  cursor: not-allowed;
+}
+
+.blue-disabled {
+  background-color: var(--blue-150);
+  cursor: not-allowed;
+}
+
+.teal-disabled {
+  background-color: var(--teal-150);
+  cursor: not-allowed;
+}
+
+.pink-disabled {
+  background-color: var(--pink-150);
+  cursor: not-allowed;
+}
+
+.purple-disabled {
+  background-color: var(--purple-150);
+  cursor: not-allowed;
+}
+
+.cyan-disabled {
+  background-color: var(--cyan-150);
+  cursor: not-allowed;
+}
+
+.orange-disabled {
+  background-color: var(--orange-150);
+  cursor: not-allowed;
+}
+
+.yellow-disabled {
+  background-color: var(--yellow-150);
   cursor: not-allowed;
 }

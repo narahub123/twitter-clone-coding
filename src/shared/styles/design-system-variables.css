@@ -37,7 +37,18 @@
   --rounded-full: 50%;
 
   --white-000: #ffffff;
-  --gray-150: #eee;
+
+  /* disabled */
+  --gray-150: #eeeeee;
+  --red-150: #fecaca;
+  --green-150: #bbf7d0;
+  --blue-150: #bfdbfe;
+  --teal-150: #99f6e4;
+  --pink-150: #fbcfe8;
+  --purple-150: #ddd6fe;
+  --cyan-150: #a5f3fc;
+  --orange-150: #fed7aa;
+  --yellow-150: #fef9c3;
 
   /* gray */
   --gray-100: #e9e9e9;
