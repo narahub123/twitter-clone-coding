@@ -1,4 +1,4 @@
-import { ButtonStyleGuide } from "@pages";
+import { Text } from "@shared";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -6,7 +6,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <ButtonStyleGuide />
+        <Text>연습</Text>
       </>
     ),
   },
