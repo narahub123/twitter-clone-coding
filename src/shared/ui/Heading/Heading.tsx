@@ -1,16 +1,18 @@
-import type { ReactNode } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 import styles from "./Heading.module.css";
 import { joinClassNames } from "@shared";
 
-interface HeadingProps {
+interface BaseProps {
   className?: string;
   children: ReactNode;
 }
 
+type HeadingProps = BaseProps & HTMLAttributes<HTMLHeadingElement>;
+
 const Heading = ({ className, children }: HeadingProps) => {
   const classNames = joinClassNames([styles["heading"], className]);
 
-  return <div className={classNames}>{children}</div>;
+  return <h1 className={classNames}>{children}</h1>;
 };
 
 export default Heading;
