@@ -33,7 +33,7 @@ const ButtonStyleGuide = ({}: ButtonStyleGuideProps) => {
                   return (
                     <td className={styles["td"]} key={`${color}-${variant}`}>
                       <div className={styles["wrapper"]}>
-                        <Button color={color} variant={variant}>
+                        <Button color={color} variant={variant} title="저장">
                           버튼
                         </Button>
                       </div>
@@ -42,7 +42,7 @@ const ButtonStyleGuide = ({}: ButtonStyleGuideProps) => {
                 })}
                 <td className={styles["td"]} style={{ color }}>
                   <div className={styles["wrapper"]}>
-                    <Button color={color} variant="solid" disabled>
+                    <Button color={color} variant="solid" disabled title="제출">
                       버튼
                     </Button>
                   </div>
@@ -54,6 +54,7 @@ const ButtonStyleGuide = ({}: ButtonStyleGuideProps) => {
                       variant="solid"
                       loading
                       loadingText="로딩"
+                      title="그냥"
                     >
                       버튼
                     </Button>
@@ -83,7 +84,7 @@ const ButtonStyleGuide = ({}: ButtonStyleGuideProps) => {
               return (
                 <td className={styles["td"]} key={size}>
                   <div className={styles["wrapper"]}>
-                    <Button size={size} color="green">
+                    <Button size={size} color="green" title="저장">
                       {`버튼 (${size})`}
                     </Button>
                   </div>
@@ -112,7 +113,7 @@ const ButtonStyleGuide = ({}: ButtonStyleGuideProps) => {
               return (
                 <td className={styles["td"]} key={rounded}>
                   <div className={styles["wrapper"]}>
-                    <Button rounded={rounded} color="blue" size="md">
+                    <Button rounded={rounded} color="blue" size="md" title="">
                       {`버튼 (${rounded})`}
                     </Button>
                   </div>

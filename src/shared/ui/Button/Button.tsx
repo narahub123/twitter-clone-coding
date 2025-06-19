@@ -20,6 +20,7 @@ interface BaseProps {
   variant?: VariantType;
   loading?: boolean;
   loadingText?: string;
+  title: string;
 }
 
 type ButtonProps = BaseProps & HTMLAttributes<HTMLButtonElement>;
@@ -36,6 +37,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       loading = false,
       loadingText,
+      title,
       ...rest
     },
     ref
@@ -55,6 +57,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled}
         aria-disabled={disabled}
         ref={ref}
+        // loading 중이거나 disabled 인 경우에는 사용 안됨
+        data-title={loading || disabled ? undefined : title}
+        aria-label={loading || disabled ? undefined : title}
         {...rest}
       >
         {loading ? (
