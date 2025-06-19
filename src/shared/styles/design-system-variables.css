@@ -43,6 +43,14 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
+  /* heading size */
+  --heading-h1: 2rem; /* 32px */
+  --heading-h2: 1.75rem; /* 28px */
+  --heading-h3: 1.5rem;
+  --heading-h4: 1.25rem;
+  --heading-h5: 1rem;
+  --heading-h6: 0.875rem;
+
   --white-000: #ffffff;
 
   /* disabled */

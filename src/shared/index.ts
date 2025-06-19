@@ -9,6 +9,7 @@ import type {
   SizeType,
   VariantType,
   WeightType,
+  HeadingLevel,
 } from "./types";
 
 export {
@@ -39,4 +40,11 @@ export {
   Heading,
 };
 
-export type { ColorSchemeType, RoundedType, SizeType, VariantType, WeightType };
+export type {
+  ColorSchemeType,
+  RoundedType,
+  SizeType,
+  VariantType,
+  WeightType,
+  HeadingLevel,
+};

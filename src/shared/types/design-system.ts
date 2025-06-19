@@ -24,4 +24,13 @@ type RoundedType = SizeType | "none" | "full";
 
 type WeightType = "light" | "normal" | "medium" | "semibold" | "bold";
 
-export type { SizeType, VariantType, ColorSchemeType, RoundedType, WeightType };
+type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+export type {
+  SizeType,
+  VariantType,
+  ColorSchemeType,
+  RoundedType,
+  WeightType,
+  HeadingLevel,
+};

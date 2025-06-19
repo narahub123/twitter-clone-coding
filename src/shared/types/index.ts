@@ -4,6 +4,14 @@ import type {
   VariantType,
   RoundedType,
   WeightType,
+  HeadingLevel,
 } from "./design-system";
 
-export type { ColorSchemeType, SizeType, VariantType, RoundedType, WeightType };
+export type {
+  ColorSchemeType,
+  SizeType,
+  VariantType,
+  RoundedType,
+  WeightType,
+  HeadingLevel,
+};
