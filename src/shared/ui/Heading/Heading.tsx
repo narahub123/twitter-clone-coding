@@ -14,6 +14,7 @@ interface BaseProps {
   as?: HeadingLevel;
   weight?: WeightType;
   color?: ColorSchemeType;
+  truncate?: boolean;
 }
 
 type HeadingProps = BaseProps & HTMLAttributes<HTMLHeadingElement>;
@@ -24,6 +25,7 @@ const Heading = ({
   as = "h1",
   weight = "bold",
   color = "gray",
+  truncate = false,
   ...rest
 }: HeadingProps) => {
   const classNames = joinClassNames([
@@ -31,6 +33,7 @@ const Heading = ({
     tokens[`heading-${as}`],
     tokens[`font-weight-${weight}`],
     tokens[`text-${color}`],
+    truncate ? styles["truncate"] : "",
     className,
   ]);
 

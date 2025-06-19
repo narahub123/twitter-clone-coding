@@ -1,1 +1,11 @@
-.heading {}
+.heading {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
