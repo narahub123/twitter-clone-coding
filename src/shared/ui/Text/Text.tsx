@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import styles from "./Text.module.css";
 import tokens from "@shared/styles/design-system.module.css";
 import {
@@ -19,31 +19,36 @@ interface BaseProps {
 
 type TextProps = BaseProps & HTMLAttributes<HTMLParagraphElement>;
 
-const Text = ({
-  className,
-  children,
-  fontSize = "md",
-  fontWeight = "normal",
-  color = "gray",
-  truncate = false,
-  ...rest
-}: TextProps) => {
-  const classNames = joinClassNames([
-    styles["text"],
-    tokens[`text-font-size-${fontSize}`],
-    tokens[`font-weight-${fontWeight}`],
-    tokens[`text-${color}`],
-    truncate ? styles["truncate"] : "",
-    className,
-  ]);
+const Text = forwardRef<HTMLParagraphElement, TextProps>(
+  (
+    {
+      className,
+      children,
+      fontSize = "md",
+      fontWeight = "normal",
+      color = "gray",
+      truncate = false,
+      ...rest
+    },
+    ref
+  ) => {
+    const classNames = joinClassNames([
+      styles["text"],
+      tokens[`text-font-size-${fontSize}`],
+      tokens[`font-weight-${fontWeight}`],
+      tokens[`text-${color}`],
+      truncate ? styles["truncate"] : "",
+      className,
+    ]);
 
-  const { style, ...textRest } = rest;
+    const { style, ...textRest } = rest;
 
-  return (
-    <p className={classNames} style={style} {...textRest}>
-      {children}
-    </p>
-  );
-};
+    return (
+      <p className={classNames} ref={ref} style={style} {...textRest}>
+        {children}
+      </p>
+    );
+  }
+);
 
 export default Text;
