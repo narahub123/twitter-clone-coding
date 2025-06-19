@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import styles from "./Button.module.css";
 import tokens from "@shared/styles/design-system.module.css";
 import {
@@ -24,44 +24,50 @@ interface BaseProps {
 
 type ButtonProps = BaseProps & HTMLAttributes<HTMLButtonElement>;
 
-const Button = ({
-  className,
-  disabled = false,
-  size = "md",
-  rounded = "md",
-  color = "gray",
-  variant = "solid",
-  children,
-  loading = false,
-  loadingText,
-  ...rest
-}: ButtonProps) => {
-  const classNames = joinClassNames([
-    styles["button"],
-    tokens[`button-size-${size}`],
-    tokens[`rounded-${rounded}`],
-    tokens[`${color}-${variant}`],
-    loading || disabled ? tokens[`${color}-disabled`] : "",
-    className,
-  ]);
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      className,
+      disabled = false,
+      size = "md",
+      rounded = "md",
+      color = "gray",
+      variant = "solid",
+      children,
+      loading = false,
+      loadingText,
+      ...rest
+    },
+    ref
+  ) => {
+    const classNames = joinClassNames([
+      styles["button"],
+      tokens[`button-size-${size}`],
+      tokens[`rounded-${rounded}`],
+      tokens[`${color}-${variant}`],
+      loading || disabled ? tokens[`${color}-disabled`] : "",
+      className,
+    ]);
 
-  return (
-    <button
-      className={classNames}
-      disabled={disabled}
-      aria-disabled={disabled}
-      {...rest}
-    >
-      {loading ? (
-        <div className={styles["loading__wrapper"]}>
-          <Spinner loadingText={loadingText} />
-          <span>{loadingText}</span>
-        </div>
-      ) : (
-        children
-      )}
-    </button>
-  );
-};
+    return (
+      <button
+        className={classNames}
+        disabled={disabled}
+        aria-disabled={disabled}
+        ref={ref}
+        {...rest}
+      >
+        {loading ? (
+          <div className={styles["loading__wrapper"]}>
+            <Spinner loadingText={loadingText} />
+            <span>{loadingText}</span>
+          </div>
+        ) : (
+          children
+        )}
+      </button>
+    );
+  }
+);
 
 export default Button;
