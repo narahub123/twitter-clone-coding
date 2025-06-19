@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import styles from "./Heading.module.css";
 import tokens from "@shared/styles/design-system.module.css";
 import {
@@ -19,33 +19,43 @@ interface BaseProps {
 
 type HeadingProps = BaseProps & HTMLAttributes<HTMLHeadingElement>;
 
-const Heading = ({
-  className,
-  children,
-  as = "h1",
-  weight = "bold",
-  color = "gray",
-  truncate = false,
-  ...rest
-}: HeadingProps) => {
-  const classNames = joinClassNames([
-    styles["heading"],
-    tokens[`heading-${as}`],
-    tokens[`font-weight-${weight}`],
-    tokens[`text-${color}`],
-    truncate ? styles["truncate"] : "",
-    className,
-  ]);
+const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
+  (
+    {
+      className,
+      children,
+      as = "h1",
+      weight = "bold",
+      color = "gray",
+      truncate = false,
+      ...rest
+    },
+    ref
+  ) => {
+    const classNames = joinClassNames([
+      styles["heading"],
+      tokens[`heading-${as}`],
+      tokens[`font-weight-${weight}`],
+      tokens[`text-${color}`],
+      truncate ? styles["truncate"] : "",
+      className,
+    ]);
 
-  const Component = as;
+    const Component = as;
 
-  const { style, ...headingRest } = rest;
+    const { style, ...headingRest } = rest;
 
-  return (
-    <Component className={classNames} style={style} {...headingRest}>
-      {children}
-    </Component>
-  );
-};
+    return (
+      <Component
+        ref={ref}
+        className={classNames}
+        style={style}
+        {...headingRest}
+      >
+        {children}
+      </Component>
+    );
+  }
+);
 
 export default Heading;
