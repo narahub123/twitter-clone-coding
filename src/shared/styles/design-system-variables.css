@@ -36,6 +36,13 @@
   --rounded-xl: 0.75rem;
   --rounded-full: 50%;
 
+  /* weight */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
   --white-000: #ffffff;
 
   /* disabled */

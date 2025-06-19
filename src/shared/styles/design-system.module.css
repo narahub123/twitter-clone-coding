@@ -1,3 +1,43 @@
+.text-font-size-xs {
+  font-size: var(--font-xs);
+}
+.text-font-size-sm {
+  font-size: var(--font-sm);
+}
+.text-font-size-md {
+  font-size: var(--font-md);
+}
+.text-font-size-lg {
+  font-size: var(--font-lg);
+}
+.text-font-size-xl {
+  font-size: var(--font-xl);
+}
+
+/* font-weight */
+
+.font-weight-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-weight-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-weight-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-weight-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* icon size */
+
 .icon-size-xs {
   font-size: var(--font-xs);
   width: var(--icon-height-xs);
@@ -86,15 +126,55 @@
   border-radius: var(--rounded-full);
 }
 
+.text-gray {
+  color: var(--gray-500);
+}
+
+.text-red {
+  color: var(--red-500);
+}
+
+.text-green {
+  color: var(--green-500);
+}
+
+.text-blue {
+  color: var(--blue-500);
+}
+
+.text-teal {
+  color: var(--teal-500);
+}
+
+.text-pink {
+  color: var(--pink-500);
+}
+
+.text-purple {
+  color: var(--purple-500);
+}
+
+.text-cyan {
+  color: var(--cyan-500);
+}
+
+.text-orange {
+  color: var(--orange-500);
+}
+
+.text-yellow {
+  color: var(--yellow-500);
+}
+
 .gray-solid {
   color: var(--white-000);
   background-color: var(--gray-500);
 }
 
-  .gray-solid:not(span):not(.gray-disabled):hover,
-  .gray-solid:not(span):not(.gray-pink-disabled):focus-visible {
-    background-color: var(--gray-400);
-  }
+.gray-solid:not(span):not(.gray-disabled):hover,
+.gray-solid:not(span):not(.gray-pink-disabled):focus-visible {
+  background-color: var(--gray-400);
+}
 
 .gray-subtle {
   color: var(--gray-500);

@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector, useLanguageContent } from "./lib";
-import { languages, colors, roundeds, sizes, variants } from "./data";
+import { languages, colors, roundeds, sizes, variants, weights } from "./data";
 import { joinClassNames, convertToPx } from "./utils";
 import { Icon, icons, Button, SVG, Spinner, Text } from "./ui";
 
@@ -8,6 +8,7 @@ import type {
   RoundedType,
   SizeType,
   VariantType,
+  WeightType,
 } from "./types";
 
 export {
@@ -22,6 +23,7 @@ export {
   roundeds,
   sizes,
   variants,
+  weights,
 
   // utils
   joinClassNames,
@@ -36,4 +38,4 @@ export {
   Text,
 };
 
-export type { ColorSchemeType, RoundedType, SizeType, VariantType };
+export type { ColorSchemeType, RoundedType, SizeType, VariantType, WeightType };

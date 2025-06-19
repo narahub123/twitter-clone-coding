@@ -3,6 +3,7 @@ import type {
   RoundedType,
   SizeType,
   VariantType,
+  WeightType,
 } from "@shared/types";
 
 const colors: ColorSchemeType[] = [
@@ -31,4 +32,6 @@ const sizes: SizeType[] = ["xs", "sm", "md", "lg", "xl"];
 
 const roundeds: RoundedType[] = ["none", "xs", "sm", "md", "lg", "xl", "full"];
 
-export { colors, variants, sizes, roundeds };
+const weights: WeightType[] = ["light", "normal", "medium", "semibold", "bold"];
+
+export { colors, variants, sizes, roundeds, weights };

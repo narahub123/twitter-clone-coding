@@ -22,4 +22,6 @@ type ColorSchemeType =
 
 type RoundedType = SizeType | "none" | "full";
 
-export type { SizeType, VariantType, ColorSchemeType, RoundedType };
+type WeightType = "light" | "normal" | "medium" | "semibold" | "bold";
+
+export type { SizeType, VariantType, ColorSchemeType, RoundedType, WeightType };
