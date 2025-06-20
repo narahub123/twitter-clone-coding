@@ -26,6 +26,10 @@ import modalSlice, {
   onParallelOpen,
   onStandAloneClose,
   onStandAloneOpen,
+
+  // selectors
+  selectParallelModalState,
+  selectStandAlonModalState,
 } from "./model";
 
 export default Modal;
@@ -39,6 +43,10 @@ export {
   onParallelOpen,
   onStandAloneClose,
   onStandAloneOpen,
+
+  // selectors
+  selectParallelModalState,
+  selectStandAlonModalState,
 
   // components
 

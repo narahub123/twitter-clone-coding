@@ -7,6 +7,11 @@ import {
   onStandAloneOpen,
 } from "./modalSlice";
 
+import {
+  selectParallelModalState,
+  selectStandAlonModalState,
+} from "./modalSelectors";
+
 export default modalSlice;
 
 export {
@@ -15,4 +20,8 @@ export {
   onParallelOpen,
   onStandAloneClose,
   onStandAloneOpen,
+
+  // selectors
+  selectParallelModalState,
+  selectStandAlonModalState,
 };
