@@ -1,3 +1,5 @@
 interface IModalContext {}
 
-export type { IModalContext };
+interface IModalState {}
+
+export type { IModalContext, IModalState };

@@ -2,9 +2,12 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import { displaySlice as display } from "@entities";
 
+import { modalSlice as modal } from "@shared/ui/Modal";
+
 export const store = configureStore({
   reducer: {
     display,
+    modal,
   },
 });
 

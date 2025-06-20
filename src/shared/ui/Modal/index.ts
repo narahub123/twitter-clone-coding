@@ -11,11 +11,16 @@ import {
   getPlacementOffset,
 } from "./utils";
 
-import type { IModalContext } from "./types";
+import type { IModalContext, IModalState } from "./types";
+
+import modalSlice from "./model";
 
 export default Modal;
 
 export {
+  // model
+  modalSlice,
+
   // components
 
   // context
@@ -32,4 +37,4 @@ export {
   getPlacementOffset,
 };
 
-export type { IModalContext };
+export type { IModalContext, IModalState };
