@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import styles from "./ModalContainer.module.css";
 import { joinClassNames, Portal } from "@shared";
+import { ModalContextProvider, type IModalContext } from "@shared/ui/Modal";
 
 interface ModalContainerProps {
   className?: string;
@@ -11,9 +12,12 @@ interface ModalContainerProps {
 const ModalContainer = ({ className, children, id }: ModalContainerProps) => {
   const classNames = joinClassNames([styles["modal__container"], className]);
 
+  const value: IModalContext = {};
   return (
     <Portal id={`modal-${id}`}>
-      <div className={classNames}>{children}</div>
+      <ModalContextProvider value={value}>
+        <div className={classNames}>{children}</div>
+      </ModalContextProvider>
     </Portal>
   );
 };
