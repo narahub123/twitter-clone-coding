@@ -1,8 +1,8 @@
 import Modal from "./components";
 
-import {} from "./context";
+import { ModalContext, ModalContextProvider } from "./context";
 
-import {} from "./hooks";
+import { useModalContext } from "./hooks";
 
 import {
   clampOpacity,
@@ -11,7 +11,7 @@ import {
   getPlacementOffset,
 } from "./utils";
 
-import type {} from "./types";
+import type { IModalContext } from "./types";
 
 export default Modal;
 
@@ -19,8 +19,11 @@ export {
   // components
 
   // context
+  ModalContext,
+  ModalContextProvider,
 
   // hooks
+  useModalContext,
 
   // utils
   clampOpacity,
@@ -29,4 +32,4 @@ export {
   getPlacementOffset,
 };
 
-export type {};
+export type { IModalContext };
