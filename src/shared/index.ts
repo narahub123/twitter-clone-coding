@@ -34,6 +34,7 @@ import type {
   VariantType,
   WeightType,
   HeadingLevel,
+  PlacementType,
 } from "./types";
 
 export {
@@ -74,10 +75,14 @@ export {
 };
 
 export type {
+  // design-system
   ColorSchemeType,
   RoundedType,
   SizeType,
   VariantType,
   WeightType,
   HeadingLevel,
+
+  // normal
+  PlacementType,
 };

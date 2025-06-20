@@ -4,7 +4,12 @@ import {} from "./context";
 
 import {} from "./hooks";
 
-import { clampOpacity, normalizePercentSize } from "./utils";
+import {
+  clampOpacity,
+  normalizePercentSize,
+  normalizePxSize,
+  getPlacementOffset,
+} from "./utils";
 
 import type {} from "./types";
 
@@ -20,6 +25,8 @@ export {
   // utils
   clampOpacity,
   normalizePercentSize,
+  normalizePxSize,
+  getPlacementOffset,
 };
 
 export type {};

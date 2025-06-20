@@ -1,4 +1,4 @@
-import { MODAL_OVERLAY_OPACITY } from "@shared";
+import { MODAL_OVERLAY_OPACITY, type PlacementType } from "@shared";
 
 const clampOpacity = (opacity: number) => {
   if (typeof opacity !== "number") return MODAL_OVERLAY_OPACITY;
@@ -10,4 +10,26 @@ const normalizePercentSize = (size: number | string) => {
   else return size;
 };
 
-export { clampOpacity, normalizePercentSize };
+const normalizePxSize = (size: number | string) => {
+  return typeof size === "number" ? `${size}px` : size;
+};
+
+const getPlacementOffset = (
+  placement: PlacementType,
+  offsetX: number | string,
+  offsetY: number | string
+) => {
+  const [verti, hori] = placement.split("-");
+
+  return {
+    [verti]: normalizePxSize(offsetY),
+    [hori]: normalizePxSize(offsetX),
+  };
+};
+
+export {
+  clampOpacity,
+  normalizePercentSize,
+  normalizePxSize,
+  getPlacementOffset,
+};

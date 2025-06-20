@@ -7,6 +7,8 @@ import type {
   HeadingLevel,
 } from "./design-system";
 
+type PlacementType = "top-left" | "top-right" | "bottom-left" | "bottom-right";
+
 export type {
   ColorSchemeType,
   SizeType,
@@ -14,4 +16,5 @@ export type {
   RoundedType,
   WeightType,
   HeadingLevel,
+  PlacementType,
 };
