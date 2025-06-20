@@ -7,6 +7,7 @@ import Heading from "./Heading";
 import Description from "./Description";
 import Portal from "./Portal";
 import Modal from "./Modal";
+import FocusTrap from "./FocusTrap";
 
 export {
   Icon,
@@ -19,4 +20,5 @@ export {
   Description,
   Portal,
   Modal,
+  FocusTrap,
 };
