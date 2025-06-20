@@ -1,5 +1,8 @@
 {
   "Icon": {
     "label": "히힣"
+  },
+  "ModalCloseButton": {
+    "title": "닫기"
   }
 }
