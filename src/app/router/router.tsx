@@ -6,7 +6,8 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <Modal>모달</Modal>
+        <p>연습</p>
+        <Modal id="practice">모달</Modal>
       </>
     ),
   },
