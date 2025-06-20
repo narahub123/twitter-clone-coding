@@ -4,7 +4,7 @@ import {} from "./context";
 
 import {} from "./hooks";
 
-import { clampOpacity } from "./utils";
+import { clampOpacity, normalizePercentSize } from "./utils";
 
 import type {} from "./types";
 
@@ -19,6 +19,7 @@ export {
 
   // utils
   clampOpacity,
+  normalizePercentSize,
 };
 
 export type {};

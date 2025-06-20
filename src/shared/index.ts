@@ -1,4 +1,8 @@
-import { MODAL_OVERLAY_OPACITY } from "./constants";
+import {
+  MODAL_OVERLAY_OPACITY,
+  MODAL_CONTENT_HEIGHT,
+  MODAL_CONTENT_WIDTH,
+} from "./constants";
 import { useAppDispatch, useAppSelector, useLanguageContent } from "./lib";
 import {
   headings,
@@ -35,6 +39,8 @@ import type {
 export {
   // constants
   MODAL_OVERLAY_OPACITY,
+  MODAL_CONTENT_HEIGHT,
+  MODAL_CONTENT_WIDTH,
 
   // libs
   useAppDispatch,

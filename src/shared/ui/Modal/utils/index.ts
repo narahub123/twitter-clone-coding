@@ -5,4 +5,9 @@ const clampOpacity = (opacity: number) => {
   return opacity > 1 ? 1 : opacity < 0 ? 0 : opacity;
 };
 
-export { clampOpacity };
+const normalizePercentSize = (size: number | string) => {
+  if (typeof size === "number") return `${size}%`;
+  else return size;
+};
+
+export { clampOpacity, normalizePercentSize };
