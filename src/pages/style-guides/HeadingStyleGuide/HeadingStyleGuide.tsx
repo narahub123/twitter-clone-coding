@@ -1,5 +1,5 @@
 import styles from "./HeadingStyleGuide.module.css";
-import { colors, sizes, Heading, weights, headings } from "@shared";
+import { colors, Heading, weights, headings } from "@shared";
 
 interface HeadingStyleGuideProps {}
 

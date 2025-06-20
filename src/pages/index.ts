@@ -3,6 +3,13 @@ import {
   ButtonStyleGuide,
   TextStyleGuide,
   HeadingStyleGuide,
+  DescriptionStyleGuide,
 } from "./style-guides";
 
-export { IconStyleGuide, ButtonStyleGuide, TextStyleGuide, HeadingStyleGuide };
+export {
+  IconStyleGuide,
+  ButtonStyleGuide,
+  TextStyleGuide,
+  HeadingStyleGuide,
+  DescriptionStyleGuide,
+};
