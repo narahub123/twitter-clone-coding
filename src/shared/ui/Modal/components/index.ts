@@ -4,6 +4,7 @@ import ModalContent from "./ModalContent";
 import ModalCloseButton from "./ModalCloseButton";
 import ModalHeader from "./ModalHeader";
 import ModalBody from "./ModalBody";
+import ModalFooter from "./ModalFooter";
 
 const Modal = Object.assign(ModalContainer, {
   Overlay: ModalOverlay,
@@ -11,6 +12,7 @@ const Modal = Object.assign(ModalContainer, {
   CloseButton: ModalCloseButton,
   Header: ModalHeader,
   Body: ModalBody,
+  Footer: ModalFooter,
 });
 
 export default Modal;
