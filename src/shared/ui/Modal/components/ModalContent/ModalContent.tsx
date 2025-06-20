@@ -1,6 +1,7 @@
 import { useRef, type ReactNode } from "react";
 import styles from "./ModalContent.module.css";
 import {
+  FocusTrap,
   joinClassNames,
   MODAL_CONTENT_HEIGHT,
   MODAL_CONTENT_WIDTH,
@@ -29,16 +30,18 @@ const ModalContent = ({
   useClickOutside(containerRef, onClose);
 
   return (
-    <div
-      className={classNames}
-      style={{
-        width: `${normalizePercentSize(width)}`,
-        height: `${normalizePercentSize(height)}`,
-      }}
-      ref={containerRef}
-    >
-      <div className={styles["modal__content__wrapper"]}>{children}</div>
-    </div>
+    <FocusTrap>
+      <div
+        className={classNames}
+        style={{
+          width: `${normalizePercentSize(width)}`,
+          height: `${normalizePercentSize(height)}`,
+        }}
+        ref={containerRef}
+      >
+        <div className={styles["modal__content__wrapper"]}>{children}</div>
+      </div>
+    </FocusTrap>
   );
 };
 
