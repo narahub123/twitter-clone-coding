@@ -11,15 +11,34 @@ import {
   getPlacementOffset,
 } from "./utils";
 
-import type { IModalContext, IModalState } from "./types";
+import type {
+  IModalContext,
+  IModalState,
+  ParallelModalType,
+  StandAloneType,
+  IParallelState,
+  IStoneAloneState,
+} from "./types";
 
-import modalSlice from "./model";
+import modalSlice, {
+  // reducers
+  onParallelClose,
+  onParallelOpen,
+  onStandAloneClose,
+  onStandAloneOpen,
+} from "./model";
 
 export default Modal;
 
 export {
   // model
   modalSlice,
+
+  // reducers
+  onParallelClose,
+  onParallelOpen,
+  onStandAloneClose,
+  onStandAloneOpen,
 
   // components
 
@@ -37,4 +56,11 @@ export {
   getPlacementOffset,
 };
 
-export type { IModalContext, IModalState };
+export type {
+  IModalContext,
+  IModalState,
+  ParallelModalType,
+  StandAloneType,
+  IParallelState,
+  IStoneAloneState,
+};

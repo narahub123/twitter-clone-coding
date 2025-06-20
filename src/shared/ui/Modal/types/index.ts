@@ -1,5 +1,27 @@
 interface IModalContext {}
 
-interface IModalState {}
+type ParallelModalType = "signup" | "login";
 
-export type { IModalContext, IModalState };
+type StandAloneType = "test" | "logout";
+
+type IParallelState = {
+  [key in ParallelModalType]: boolean;
+};
+
+type IStoneAloneState = {
+  [key in StandAloneType]: boolean;
+};
+
+interface IModalState {
+  parallel: IParallelState;
+  standalone: IStoneAloneState;
+}
+
+export type {
+  IModalContext,
+  IModalState,
+  ParallelModalType,
+  StandAloneType,
+  IParallelState,
+  IStoneAloneState,
+};
