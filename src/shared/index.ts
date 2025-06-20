@@ -18,6 +18,7 @@ import {
   Text,
   Heading,
   Description,
+  Portal,
 } from "./ui";
 
 import type {
@@ -57,6 +58,7 @@ export {
   Text,
   Heading,
   Description,
+  Portal,
 };
 
 export type {
