@@ -1,46 +1,42 @@
-import { Modal } from "@shared";
+import {
+  ButtonStyleGuide,
+  DescriptionStyleGuide,
+  HeadingStyleGuide,
+  IconStyleGuide,
+  TextStyleGuide,
+} from "@pages";
+
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <>
-        <p>연습</p>
-        <Modal id="practice">
-          <Modal.Overlay />
-          <Modal.Content height={50}>
-            <Modal.Header>
-              헤더
-              <Modal.CloseButton placement="top-right" />
-            </Modal.Header>
-            <Modal.Body>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-              <p>내용</p>
-            </Modal.Body>
-            <Modal.Footer>푸터</Modal.Footer>
-          </Modal.Content>
-        </Modal>
-      </>
-    ),
+    element: <></>,
+  },
+  {
+    path: "/styles",
+    children: [
+      {
+        path: "button",
+        element: <ButtonStyleGuide />,
+      },
+      {
+        path: "description",
+        element: <DescriptionStyleGuide />,
+      },
+      {
+        path: "heading",
+        element: <HeadingStyleGuide />,
+      },
+      {
+        path: "icon",
+        element: <IconStyleGuide />,
+      },
+      {
+        path: "text",
+        element: <TextStyleGuide />,
+      },
+    ],
   },
 ]);
 
