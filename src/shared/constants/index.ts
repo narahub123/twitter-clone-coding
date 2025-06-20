@@ -1,0 +1,3 @@
+const MODAL_OVERLAY_OPACITY = 0.7;
+
+export { MODAL_OVERLAY_OPACITY };
