@@ -1,3 +1,8 @@
-import { useAppDispatch, useAppSelector, useLanguageContent } from "./hooks";
+import {
+  useAppDispatch,
+  useAppSelector,
+  useLanguageContent,
+  useClickOutside,
+} from "./hooks";
 
-export { useAppDispatch, useAppSelector, useLanguageContent };
+export { useAppDispatch, useAppSelector, useLanguageContent, useClickOutside };

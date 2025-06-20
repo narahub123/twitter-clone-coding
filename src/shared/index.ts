@@ -3,7 +3,12 @@ import {
   MODAL_CONTENT_HEIGHT,
   MODAL_CONTENT_WIDTH,
 } from "./constants";
-import { useAppDispatch, useAppSelector, useLanguageContent } from "./lib";
+import {
+  useAppDispatch,
+  useAppSelector,
+  useLanguageContent,
+  useClickOutside,
+} from "./lib";
 import {
   headings,
   languages,
@@ -47,6 +52,7 @@ export {
   useAppDispatch,
   useAppSelector,
   useLanguageContent,
+  useClickOutside,
 
   // data
   languages,
