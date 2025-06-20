@@ -5,6 +5,7 @@ import {
   IconStyleGuide,
   TextStyleGuide,
 } from "@pages";
+import ModalTestPage from "@shared/ui/Modal/_test/ModalTestPage";
 
 import { createBrowserRouter } from "react-router-dom";
 
@@ -35,6 +36,15 @@ const router = createBrowserRouter([
       {
         path: "text",
         element: <TextStyleGuide />,
+      },
+    ],
+  },
+  {
+    path: "/test",
+    children: [
+      {
+        path: "modal",
+        element: <ModalTestPage />,
       },
     ],
   },
