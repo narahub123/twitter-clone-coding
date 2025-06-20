@@ -1,4 +1,4 @@
-import { DescriptionStyleGuide } from "@pages";
+import { Modal } from "@shared";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -6,7 +6,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <DescriptionStyleGuide />
+        <Modal>모달</Modal>
       </>
     ),
   },

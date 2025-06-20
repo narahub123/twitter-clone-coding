@@ -6,6 +6,7 @@ import Text from "./Text";
 import Heading from "./Heading";
 import Description from "./Description";
 import Portal from "./Portal";
+import Modal from "./Modal";
 
 export {
   Icon,
@@ -17,4 +18,5 @@ export {
   Heading,
   Description,
   Portal,
+  Modal,
 };
