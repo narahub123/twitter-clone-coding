@@ -1,4 +1,7 @@
-interface IModalContext {}
+interface IModalContext {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
 type ParallelModalType = "signup" | "login";
 

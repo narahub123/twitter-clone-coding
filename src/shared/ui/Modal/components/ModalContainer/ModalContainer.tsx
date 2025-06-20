@@ -7,12 +7,24 @@ interface ModalContainerProps {
   className?: string;
   children: ReactNode;
   id: string;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-const ModalContainer = ({ className, children, id }: ModalContainerProps) => {
+const ModalContainer = ({
+  className,
+  children,
+  id,
+  isOpen,
+  onClose,
+}: ModalContainerProps) => {
   const classNames = joinClassNames([styles["modal__container"], className]);
 
-  const value: IModalContext = {};
+  const value: IModalContext = {
+    isOpen,
+    onClose,
+  };
+  
   return (
     <Portal id={`modal-${id}`}>
       <ModalContextProvider value={value}>
