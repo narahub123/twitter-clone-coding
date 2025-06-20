@@ -1,5 +1,6 @@
 import type {
   ColorSchemeType,
+  HeadingLevel,
   RoundedType,
   SizeType,
   VariantType,
@@ -34,4 +35,6 @@ const roundeds: RoundedType[] = ["none", "xs", "sm", "md", "lg", "xl", "full"];
 
 const weights: WeightType[] = ["light", "normal", "medium", "semibold", "bold"];
 
-export { colors, variants, sizes, roundeds, weights };
+const headings: HeadingLevel[] = ["h1", "h2", "h3", "h4", "h5", "h6"];
+
+export { colors, variants, sizes, roundeds, weights, headings };

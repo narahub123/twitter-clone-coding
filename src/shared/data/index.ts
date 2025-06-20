@@ -1,5 +1,12 @@
 import languages from "./languages";
 
-import { colors, roundeds, sizes, variants, weights } from "./design-system";
+import {
+  colors,
+  roundeds,
+  sizes,
+  variants,
+  weights,
+  headings,
+} from "./design-system";
 
-export { languages, colors, roundeds, sizes, variants, weights };
+export { languages, colors, roundeds, sizes, variants, weights, headings };

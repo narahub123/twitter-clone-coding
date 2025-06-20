@@ -1,4 +1,4 @@
-import { TextStyleGuide } from "@pages";
+import { HeadingStyleGuide } from "@pages";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -6,7 +6,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <TextStyleGuide />
+        <HeadingStyleGuide />
       </>
     ),
   },
