@@ -5,7 +5,7 @@ const useModalContext = () => {
   const context = useContext(ModalContext);
 
   if (!context) {
-    return;
+    throw new Error("에러");
   }
 
   return context;
