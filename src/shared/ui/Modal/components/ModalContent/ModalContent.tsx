@@ -30,7 +30,7 @@ const ModalContent = ({
         height: `${normalizePercentSize(height)}`,
       }}
     >
-      {children}
+      <div className={styles["modal__content__wrapper"]}>{children}</div>
     </div>
   );
 };

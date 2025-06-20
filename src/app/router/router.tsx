@@ -9,7 +9,28 @@ const router = createBrowserRouter([
         <p>연습</p>
         <Modal id="practice">
           <Modal.Overlay />
-          <Modal.Content width={"abc"}>컨텐츠</Modal.Content>
+          <Modal.Content height={50}>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+            <p>내용</p>
+          </Modal.Content>
         </Modal>
       </>
     ),

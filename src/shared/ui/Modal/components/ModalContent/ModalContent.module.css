@@ -4,4 +4,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
+
+  /* border-radius 적용 시 자식 요소가 삐져나오는 현상 방지 */
+  overflow: hidden;
+
+  /* 스크롤 적용을 위함 */
+  display: flex;
+}
+
+.modal__content__wrapper {
+  flex: 1;
+  overflow: auto; /* 스크롤 적용 */
 }
