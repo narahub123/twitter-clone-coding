@@ -1,3 +1,4 @@
 .modal__header {
   width: 100%;
+  flex-shrink: 0;
 }

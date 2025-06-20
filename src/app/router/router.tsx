@@ -10,27 +10,33 @@ const router = createBrowserRouter([
         <Modal id="practice">
           <Modal.Overlay />
           <Modal.Content height={50}>
-            <Modal.CloseButton placement="top-right" />
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
-            <p>내용</p>
+            <Modal.Header>
+              헤더
+              <Modal.CloseButton placement="top-right" />
+            </Modal.Header>
+            <Modal.Body>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+              <p>내용</p>
+            </Modal.Body>
+            <Modal.Footer>푸터</Modal.Footer>
           </Modal.Content>
         </Modal>
       </>
