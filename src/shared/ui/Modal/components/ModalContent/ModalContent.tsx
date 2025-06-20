@@ -1,11 +1,12 @@
-import type { ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 import styles from "./ModalContent.module.css";
 import {
   joinClassNames,
   MODAL_CONTENT_HEIGHT,
   MODAL_CONTENT_WIDTH,
+  useClickOutside,
 } from "@shared";
-import { normalizePercentSize } from "../../utils";
+import { normalizePercentSize, useModalContext } from "@shared/ui/Modal";
 
 interface ModalContentProps {
   className?: string;
@@ -21,6 +22,11 @@ const ModalContent = ({
   height = MODAL_CONTENT_HEIGHT,
 }: ModalContentProps) => {
   const classNames = joinClassNames([styles["modal__content"], className]);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { onClose } = useModalContext();
+
+  useClickOutside(containerRef, onClose);
 
   return (
     <div
@@ -29,6 +35,7 @@ const ModalContent = ({
         width: `${normalizePercentSize(width)}`,
         height: `${normalizePercentSize(height)}`,
       }}
+      ref={containerRef}
     >
       <div className={styles["modal__content__wrapper"]}>{children}</div>
     </div>
