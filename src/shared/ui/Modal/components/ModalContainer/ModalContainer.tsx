@@ -24,7 +24,9 @@ const ModalContainer = ({
     isOpen,
     onClose,
   };
-  
+
+  if (!isOpen) return null;
+
   return (
     <Portal id={`modal-${id}`}>
       <ModalContextProvider value={value}>
