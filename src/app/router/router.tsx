@@ -10,7 +10,7 @@ const router = createBrowserRouter([
         <Modal id="practice">
           <Modal.Overlay />
           <Modal.Content height={50}>
-            <Modal.CloseButton />
+            <Modal.CloseButton placement="top-right" />
             <p>내용</p>
             <p>내용</p>
             <p>내용</p>
