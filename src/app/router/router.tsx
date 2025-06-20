@@ -9,6 +9,7 @@ const router = createBrowserRouter([
         <p>연습</p>
         <Modal id="practice">
           <Modal.Overlay />
+          <Modal.Content>컨텐츠</Modal.Content>
         </Modal>
       </>
     ),
