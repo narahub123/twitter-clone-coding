@@ -1,11 +1,12 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import { focusableSelectors } from "../../data";
+import { focusableSelectors } from "@shared/ui/FocusTrap";
 
 interface FocusTrapProps {
   children: ReactNode;
+  firstFocusIndex?: number; // 첫 포커스 요소 지정
 }
 
-const FocusTrap = ({ children }: FocusTrapProps) => {
+const FocusTrap = ({ children, firstFocusIndex = 0 }: FocusTrapProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -17,7 +18,12 @@ const FocusTrap = ({ children }: FocusTrapProps) => {
       focusableSelectors.join(",")
     );
 
-    console.log(focusableElems);
+    // 처음 포커스할 요소 지정
+    const firstFocusElem = focusableElems[firstFocusIndex];
+
+    firstFocusElem.focus();
+
+    
   }, []);
   return <div ref={containerRef}>{children}</div>;
 };
