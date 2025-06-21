@@ -11,10 +11,12 @@ import {
   onStandAloneOpen,
   selectStandAlonModalState,
 } from "../model";
+import { useRef } from "react";
 
 const ModalTestPage = () => {
   const classNames = joinClassNames([styles["modal__test__page"]]);
   const dispatch = useAppDispatch();
+  const btnRef = useRef<HTMLButtonElement>(null);
 
   const isOpen = useAppSelector(selectStandAlonModalState("test"));
 
@@ -28,7 +30,7 @@ const ModalTestPage = () => {
 
   return (
     <div className={classNames}>
-      <Button onClick={onOpen} title="열기">
+      <Button onClick={onOpen} title="열기" ref={btnRef}>
         열기
       </Button>
       <Modal id="test" isOpen={isOpen} onClose={onClose} firstFocusIndex={0}>

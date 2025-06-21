@@ -30,7 +30,7 @@ const ModalContent = ({
   useClickOutside(containerRef, onClose);
 
   return (
-    <FocusTrap firstFocusIndex={firstFocusIndex}>
+    <FocusTrap firstFocusIndex={firstFocusIndex} onEscapeFocusTrap={onClose}>
       <div
         className={classNames}
         style={{
