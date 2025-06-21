@@ -1,0 +1,31 @@
+/* 기본 상태: 투명, opacity 변화에 트랜지션 적용 */
+.fade--base {
+  opacity: 0;
+  transition: opacity var(--transition-duration-normal) ease-in-out;
+}
+
+/* 페이드 효과 없이 즉시 보이기 */
+.fade--instant {
+  opacity: 1;
+}
+
+/* 페이드 인 애니메이션 적용 (서서히 나타남) */
+.fade--in {
+  opacity: 1;
+  animation: fadeIn var(--transition-duration-normal) ease-in-out;
+}
+
+/* 페이드 아웃 상태 (투명) */
+.fade--out {
+  opacity: 0;
+}
+
+/* 페이드 인 키프레임 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

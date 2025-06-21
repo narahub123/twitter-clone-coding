@@ -4,6 +4,7 @@ import {
   useLanguageContent,
   useClickOutside,
   useBodyScrollLock,
+  useFadeInAndOut,
 } from "./hooks";
 
 export {
@@ -12,4 +13,5 @@ export {
   useLanguageContent,
   useClickOutside,
   useBodyScrollLock,
+  useFadeInAndOut,
 };

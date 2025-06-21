@@ -3,6 +3,7 @@ import useAppSelector from "./useAppSelector";
 import useLanguageContent from "./useLanguageContent";
 import useClickOutside from "./useClickOutside";
 import useBodyScrollLock from "./useBodyScrollLock";
+import useFadeInAndOut from "./useFadeInAndOut";
 
 export {
   useAppDispatch,
@@ -10,4 +11,5 @@ export {
   useLanguageContent,
   useClickOutside,
   useBodyScrollLock,
+  useFadeInAndOut,
 };

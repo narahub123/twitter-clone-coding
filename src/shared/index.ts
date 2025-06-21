@@ -9,6 +9,7 @@ import {
   useLanguageContent,
   useClickOutside,
   useBodyScrollLock,
+  useFadeInAndOut,
 } from "./lib";
 import {
   headings,
@@ -56,6 +57,7 @@ export {
   useLanguageContent,
   useClickOutside,
   useBodyScrollLock,
+  useFadeInAndOut,
 
   // data
   languages,
