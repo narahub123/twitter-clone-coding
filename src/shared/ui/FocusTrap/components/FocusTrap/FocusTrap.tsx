@@ -18,12 +18,14 @@ const FocusTrap = ({ children, firstFocusIndex = 0 }: FocusTrapProps) => {
       focusableSelectors.join(",")
     );
 
+    // focusableElems가 없는 경우 종료
+    if (focusableElems.length === 0) return;
+
     // 처음 포커스할 요소 지정
-    const firstFocusElem = focusableElems[firstFocusIndex];
+    const firstFocusElem = focusableElems[firstFocusIndex] ?? focusableElems[0];
 
+    // 포커스 적용
     firstFocusElem.focus();
-
-    
   }, []);
   return <div ref={containerRef}>{children}</div>;
 };
