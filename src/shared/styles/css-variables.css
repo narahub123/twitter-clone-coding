@@ -1,3 +1,15 @@
 :root {
   --transition-duration-normal: 0.3s;
+
+  --color-light: #000;
+  --bg-light: #fff;
+  --hover-light: #f9f9f9;
+
+  --color-dark: #fff;
+  --bg-dark: #202b38;
+  --hover-dark: rgb(230, 230, 230);
+
+  --color-darkest: #fff;
+  --bg-darkest: #000;
+  --hover-darkest: rgb(230, 230, 230);
 }

@@ -1,0 +1,34 @@
+:root,
+html[data-bgtheme="light"] {
+  --text-color: var(--color-light);
+  --bg-color: var(--bg-light);
+  --hover-color: var(--hover-light);
+}
+
+html[data-bgtheme="dark"] {
+  --text-color: var(--color-dark);
+  --bg-color: var(--bg-dark);
+  --hover-color: var(--hover-dark);
+}
+
+html[data-bgtheme="darkest"] {
+  --text-color: var(--color-darkest);
+  --bg-color: var(--bg-darkest);
+  --hover-color: var(--hover-darkest);
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    --text-color: var(--color-light);
+    --bg-color: var(--bg-light);
+    --hover-color: var(--hover-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --text-color: var(--color-darkest);
+    --bg-color: var(--bg-darkest);
+    --hover-color: var(--hover-darkest);
+  }
+}
