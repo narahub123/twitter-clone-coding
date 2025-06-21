@@ -1,6 +1,7 @@
 interface IModalContext {
   isOpen: boolean;
   onClose: () => void;
+  firstFocusIndex?: number;
 }
 
 type ParallelModalType = "signup" | "login";

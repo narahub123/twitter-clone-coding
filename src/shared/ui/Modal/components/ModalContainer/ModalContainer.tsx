@@ -9,6 +9,7 @@ interface ModalContainerProps {
   id: string;
   isOpen: boolean;
   onClose: () => void;
+  firstFocusIndex?: number;
 }
 
 const ModalContainer = ({
@@ -17,12 +18,14 @@ const ModalContainer = ({
   id,
   isOpen,
   onClose,
+  firstFocusIndex,
 }: ModalContainerProps) => {
   const classNames = joinClassNames([styles["modal__container"], className]);
 
   const value: IModalContext = {
     isOpen,
     onClose,
+    firstFocusIndex,
   };
 
   if (!isOpen) return null;

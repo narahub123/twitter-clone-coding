@@ -25,12 +25,12 @@ const ModalContent = ({
   const classNames = joinClassNames([styles["modal__content"], className]);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { onClose } = useModalContext();
+  const { onClose, firstFocusIndex } = useModalContext();
 
   useClickOutside(containerRef, onClose);
 
   return (
-    <FocusTrap>
+    <FocusTrap firstFocusIndex={firstFocusIndex}>
       <div
         className={classNames}
         style={{

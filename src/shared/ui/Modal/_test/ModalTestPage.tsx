@@ -1,6 +1,5 @@
 import {
   Button,
-  FocusTrap,
   joinClassNames,
   Modal,
   useAppDispatch,
@@ -32,17 +31,14 @@ const ModalTestPage = () => {
       <Button onClick={onOpen} title="열기">
         열기
       </Button>
-      <FocusTrap>
-        <Modal id="test" isOpen={isOpen} onClose={onClose}>
-          <Modal.Overlay />
-          <Modal.Content>
-            <Modal.CloseButton />
-            <Modal.Header>헤더</Modal.Header>
-            <Modal.Body>바디</Modal.Body>
-            <Modal.Footer>푸터</Modal.Footer>
-          </Modal.Content>
-        </Modal>
-      </FocusTrap>
+      <Modal id="test" isOpen={isOpen} onClose={onClose} firstFocusIndex={0}>
+        <Modal.Overlay />
+        <Modal.Content>
+          <Modal.Header>헤더</Modal.Header>
+          <Modal.Body>바디</Modal.Body>
+          <Modal.Footer>푸터</Modal.Footer>
+        </Modal.Content>
+      </Modal>
     </div>
   );
 };
