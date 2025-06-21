@@ -26,6 +26,10 @@ const ModalTestPage = () => {
 
   const onClose = () => {
     dispatch(onStandAloneClose("test"));
+
+    setTimeout(() => {
+      btnRef.current?.focus();
+    }, 100);
   };
 
   return (
