@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 import styles from "./ModalContainer.module.css";
-import { joinClassNames, Portal } from "@shared";
+import { joinClassNames, Portal, useBodyScrollLock } from "@shared";
 import { ModalContextProvider, type IModalContext } from "@shared/ui/Modal";
 
 interface ModalContainerProps {
@@ -23,13 +23,7 @@ const ModalContainer = ({
   const classNames = joinClassNames([styles["modal__container"], className]);
 
   // 배경 스크롤 막기
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [isOpen]);
+  useBodyScrollLock(isOpen);
 
   const value: IModalContext = {
     isOpen,
