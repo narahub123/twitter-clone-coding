@@ -64,7 +64,6 @@ const Icon = forwardRef<HTMLButtonElement | HTMLSpanElement, IconProps>(
     if (typeof onClick === "function") {
       const {
         disabled = false,
-        onClick,
         title,
         ...buttonProps
       } = rest as ButtonHTMLAttributes<HTMLButtonElement>;
