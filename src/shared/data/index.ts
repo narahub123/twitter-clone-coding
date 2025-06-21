@@ -7,6 +7,16 @@ import {
   variants,
   weights,
   headings,
+  colorRGB,
 } from "./design-system";
 
-export { languages, colors, roundeds, sizes, variants, weights, headings };
+export {
+  languages,
+  colors,
+  roundeds,
+  sizes,
+  variants,
+  weights,
+  headings,
+  colorRGB,
+};

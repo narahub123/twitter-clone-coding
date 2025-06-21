@@ -15,6 +15,7 @@ import {
   sizes,
   variants,
   weights,
+  colorRGB,
 } from "./data";
 import { joinClassNames, convertToPx } from "./utils";
 import {
@@ -61,6 +62,7 @@ export {
   variants,
   weights,
   headings,
+  colorRGB,
 
   // utils
   joinClassNames,
