@@ -6,7 +6,7 @@
   transform: translate(-50%, -50%);
 
   /* 스타일  */
-  background-color: #fff;
+  background-color: var(--bg-color);
   border-radius: 1rem;
 
   /* border-radius 적용 시 자식 요소가 삐져나오는 현상 방지 */
