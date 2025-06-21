@@ -26,6 +26,32 @@ const FocusTrap = ({ children, firstFocusIndex = 0 }: FocusTrapProps) => {
 
     // 포커스 적용
     firstFocusElem.focus();
+
+    //
+    const firstFocusableElem = focusableElems[0];
+    const lastFocusableElem = focusableElems[focusableElems.length - 1];
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Tab" && e.key !== "Escape") return;
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusableElem) {
+          e.preventDefault();
+          lastFocusableElem.focus();
+        }
+      } else {
+        if (document.activeElement === lastFocusableElem) {
+          e.preventDefault();
+          firstFocusableElem.focus();
+        }
+      }
+    };
+
+    container.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      container.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
   return <div ref={containerRef}>{children}</div>;
 };

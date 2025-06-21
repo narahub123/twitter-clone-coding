@@ -34,8 +34,12 @@ const ModalTestPage = () => {
       <Modal id="test" isOpen={isOpen} onClose={onClose} firstFocusIndex={0}>
         <Modal.Overlay />
         <Modal.Content>
+          <Modal.CloseButton />
           <Modal.Header>헤더</Modal.Header>
-          <Modal.Body>바디</Modal.Body>
+          <Modal.Body>
+            <input type="text" />
+            <Button title="버튼">버튼</Button>
+          </Modal.Body>
           <Modal.Footer>푸터</Modal.Footer>
         </Modal.Content>
       </Modal>
