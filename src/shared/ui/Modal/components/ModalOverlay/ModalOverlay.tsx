@@ -17,6 +17,8 @@ const ModalOverlay = ({
     <div
       className={classNames}
       style={{ backgroundColor: `rgba(0, 0, 0, ${clampOpacity(opacity)})` }}
+      aria-hidden="true"
+      role="presentation"
     />
   );
 };
