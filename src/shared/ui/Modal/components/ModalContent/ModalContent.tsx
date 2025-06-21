@@ -1,12 +1,6 @@
 import { useRef, type ReactNode } from "react";
 import styles from "./ModalContent.module.css";
-import {
-  FocusTrap,
-  joinClassNames,
-  MODAL_CONTENT_HEIGHT,
-  MODAL_CONTENT_WIDTH,
-  useClickOutside,
-} from "@shared";
+import { Constants, FocusTrap, joinClassNames, useClickOutside } from "@shared";
 import { normalizePercentSize, useModalContext } from "@shared/ui/Modal";
 
 interface ModalContentProps {
@@ -19,8 +13,8 @@ interface ModalContentProps {
 const ModalContent = ({
   className,
   children,
-  width = MODAL_CONTENT_WIDTH,
-  height = MODAL_CONTENT_HEIGHT,
+  width = Constants.MODAL_CONTENT_WIDTH,
+  height = Constants.MODAL_CONTENT_HEIGHT,
 }: ModalContentProps) => {
   const classNames = joinClassNames([styles["modal__content"], className]);
   const containerRef = useRef<HTMLDivElement>(null);

@@ -1,4 +1,9 @@
-import { useLanguageContent, Icon, type PlacementType } from "@shared";
+import {
+  useLanguageContent,
+  Icon,
+  type PlacementType,
+  Constants,
+} from "@shared";
 import { getPlacementOffset, useModalContext } from "@shared/ui/Modal";
 
 interface ModalCloseButtonProps {
@@ -10,9 +15,9 @@ interface ModalCloseButtonProps {
 
 const ModalCloseButton = ({
   className,
-  placement = "top-right",
-  offsetX = "16px",
-  offsetY = "16px",
+  placement = Constants.MODAL_CLOSE_BUTTON_PLACEMENT as PlacementType,
+  offsetX = Constants.MODAL_CLOSE_BUTTON_OFFSET_X,
+  offsetY = Constants.MODAL_CLOSE_BUTTON_OFFSET_Y,
 }: ModalCloseButtonProps) => {
   // 언어 설정
   const { title } = useLanguageContent(["common", "ModalCloseButton"]);

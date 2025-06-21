@@ -1,8 +1,4 @@
-import {
-  MODAL_OVERLAY_OPACITY,
-  MODAL_CONTENT_HEIGHT,
-  MODAL_CONTENT_WIDTH,
-} from "./constants";
+import Constants from "./constants";
 import {
   useAppDispatch,
   useAppSelector,
@@ -46,10 +42,8 @@ import type {
 } from "./types";
 
 export {
-  // constants
-  MODAL_OVERLAY_OPACITY,
-  MODAL_CONTENT_HEIGHT,
-  MODAL_CONTENT_WIDTH,
+  // Constants
+  Constants,
 
   // libs
   useAppDispatch,

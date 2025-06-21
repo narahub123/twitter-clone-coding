@@ -1,5 +1,5 @@
 import styles from "./ModalOverlay.module.css";
-import { joinClassNames, MODAL_OVERLAY_OPACITY } from "@shared";
+import { Constants, joinClassNames } from "@shared";
 import { clampOpacity } from "@shared/ui/Modal";
 
 interface ModalOverlayProps {
@@ -9,7 +9,7 @@ interface ModalOverlayProps {
 
 const ModalOverlay = ({
   className,
-  opacity = MODAL_OVERLAY_OPACITY,
+  opacity = Constants.MODAL_OVERLAY_OPACITY,
 }: ModalOverlayProps) => {
   const classNames = joinClassNames([styles["modal__overlay"], className]);
 
