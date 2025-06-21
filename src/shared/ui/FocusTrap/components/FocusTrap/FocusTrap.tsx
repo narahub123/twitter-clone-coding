@@ -4,9 +4,14 @@ import { focusableSelectors } from "@shared/ui/FocusTrap";
 interface FocusTrapProps {
   children: ReactNode;
   firstFocusIndex?: number; // 첫 포커스 요소 지정
+  onEscapeFocusTrap?: () => void;
 }
 
-const FocusTrap = ({ children, firstFocusIndex = 0 }: FocusTrapProps) => {
+const FocusTrap = ({
+  children,
+  firstFocusIndex = 0,
+  onEscapeFocusTrap,
+}: FocusTrapProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -44,6 +49,11 @@ const FocusTrap = ({ children, firstFocusIndex = 0 }: FocusTrapProps) => {
           e.preventDefault();
           firstFocusableElem.focus();
         }
+      }
+
+      if (e.key === "Escape" && onEscapeFocusTrap) {
+        e.preventDefault();
+        onEscapeFocusTrap();
       }
     };
 
