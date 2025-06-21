@@ -50,7 +50,15 @@ const ModalContainer = ({
   return (
     <Portal id={`modal-${id}`}>
       <ModalContextProvider value={value}>
-        <div className={classNames} ref={modalRef}>
+        <div
+          className={classNames}
+          ref={modalRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+          aria-describedby="modal-description"
+          tabIndex={-1}
+        >
           {children}
         </div>
       </ModalContextProvider>
