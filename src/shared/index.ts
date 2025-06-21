@@ -8,6 +8,7 @@ import {
   useAppSelector,
   useLanguageContent,
   useClickOutside,
+  useBodyScrollLock,
 } from "./lib";
 import {
   headings,
@@ -54,6 +55,7 @@ export {
   useAppSelector,
   useLanguageContent,
   useClickOutside,
+  useBodyScrollLock,
 
   // data
   languages,
