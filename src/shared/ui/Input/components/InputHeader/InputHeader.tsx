@@ -1,13 +1,21 @@
 import styles from "./InputHeader.module.css";
 import { joinClassNames } from "@shared";
-import { InputCounter, InputLabel } from "@shared/ui/Input";
+import { InputCounter, InputLabel, useInputContext } from "@shared/ui/Input";
 
 interface InputHeaderProps {
   className?: string;
 }
 
 const InputHeader = ({ className }: InputHeaderProps) => {
-  const classNames = joinClassNames([styles["input__header"], className]);
+  const { isFocused } = useInputContext();
+
+  const focusCond = isFocused ? styles["focused"] : styles["unfocused"];
+
+  const classNames = joinClassNames([
+    styles["input__header"],
+    focusCond,
+    className,
+  ]);
 
   return (
     <div className={classNames}>

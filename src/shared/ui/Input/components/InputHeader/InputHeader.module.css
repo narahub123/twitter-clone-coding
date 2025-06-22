@@ -1,6 +1,26 @@
 .input__header {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  padding: 0 0.5rem;
+
+  position: absolute;
+  width: 100%;
+
+  transition: height 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+.focused {
+  height: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--blue-500);
+  z-index: 0;
+}
+
+.unfocused {
+  height: 3.75rem;
+  font-size: 1.25rem;
+  color: #666;
+  z-index: 1;
 }
