@@ -9,9 +9,15 @@ interface InputMainProps {
 }
 
 const InputMain = ({ className, children }: InputMainProps) => {
-  const classNames = joinClassNames([styles["input__main"], className]);
+  const { field, isFocused } = useInputContext();
 
-  const { field } = useInputContext();
+  const focusCond = isFocused ? styles["focused"] : styles["unfocused"];
+
+  const classNames = joinClassNames([
+    styles["input__main"],
+    focusCond,
+    className,
+  ]);
 
   return (
     <label className={classNames} htmlFor={`input-field-${field}`}>
