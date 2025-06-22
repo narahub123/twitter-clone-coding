@@ -1,5 +1,6 @@
 import styles from "./InputCounter.module.css";
 import { joinClassNames } from "@shared";
+import { useInputContext } from "@shared/ui/Input";
 
 interface InputCounterProps {
   className?: string;
@@ -8,7 +9,11 @@ interface InputCounterProps {
 const InputCounter = ({ className }: InputCounterProps) => {
   const classNames = joinClassNames([styles["input__counter"], className]);
 
-  return <div className={classNames}>InputCounter</div>;
+  const { value, maxLength, isFocused } = useInputContext();
+
+  if (!maxLength || !isFocused) return null;
+
+  return <div className={classNames}>{`${value.length} / ${maxLength}`}</div>;
 };
 
 export default InputCounter;

@@ -5,6 +5,7 @@ interface IInputContext {
   field: string;
   label: string;
   value: string;
+  maxLength?: number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 

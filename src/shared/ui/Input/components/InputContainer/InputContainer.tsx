@@ -10,6 +10,7 @@ interface InputContainerProps {
   field: string;
   label: string;
   value: string;
+  maxLength?: number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -20,6 +21,7 @@ const InputContainer = ({
   field,
   label,
   value,
+  maxLength,
   onChange,
 }: InputContainerProps) => {
   const classNames = joinClassNames([styles["input__container"], className]);
@@ -33,6 +35,7 @@ const InputContainer = ({
     field,
     label,
     value,
+    maxLength,
     onChange,
   };
 
