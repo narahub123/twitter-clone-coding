@@ -1,5 +1,6 @@
 import styles from "./InputLabel.module.css";
 import { joinClassNames } from "@shared";
+import { useInputContext } from "@shared/ui/Input";
 
 interface InputLabelProps {
   className?: string;
@@ -8,7 +9,9 @@ interface InputLabelProps {
 const InputLabel = ({ className }: InputLabelProps) => {
   const classNames = joinClassNames([styles["input__label"], className]);
 
-  return <div className={classNames}>InputLabel</div>;
+  const { label } = useInputContext();
+
+  return <div className={classNames}>{label}</div>;
 };
 
 export default InputLabel;

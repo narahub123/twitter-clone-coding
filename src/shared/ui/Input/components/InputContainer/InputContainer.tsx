@@ -8,6 +8,7 @@ interface InputContainerProps {
   disabled?: boolean;
   children: ReactNode;
   field: string;
+  label: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -17,6 +18,7 @@ const InputContainer = ({
   disabled = false,
   children,
   field,
+  label,
   value,
   onChange,
 }: InputContainerProps) => {
@@ -29,6 +31,7 @@ const InputContainer = ({
     isFocused,
     setIsFocused,
     field,
+    label,
     value,
     onChange,
   };

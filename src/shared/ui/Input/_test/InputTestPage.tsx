@@ -18,7 +18,7 @@ const InputTestPage = ({}: InputTestPageProps) => {
 
   return (
     <div className={classNames}>
-      <Input field="test" value={value} onChange={handleChange}>
+      <Input field="test" value={value} onChange={handleChange} label="테스트">
         <Input.Main>
           <Input.Header />
           <Input.Field>
