@@ -1,3 +1,5 @@
+import type { ColorSchemeType } from "@shared/types";
+
 interface IInputContext {
   disabled: boolean;
   isFocused: boolean;
@@ -8,6 +10,7 @@ interface IInputContext {
   maxLength?: number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   isValid: boolean;
+  color: ColorSchemeType | "colorTheme";
 }
 
 export type { IInputContext };

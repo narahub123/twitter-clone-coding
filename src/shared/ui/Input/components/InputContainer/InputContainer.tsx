@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
 import styles from "./InputContainer.module.css";
-import { joinClassNames } from "@shared";
+import { joinClassNames, type ColorSchemeType } from "@shared";
 import { InputContextProvider, type IInputContext } from "@shared/ui/Input";
 
 interface InputContainerProps {
@@ -13,6 +13,7 @@ interface InputContainerProps {
   maxLength?: number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   isValid?: boolean;
+  color?: ColorSchemeType | "colorTheme";
 }
 
 const InputContainer = ({
@@ -25,6 +26,7 @@ const InputContainer = ({
   maxLength,
   onChange,
   isValid = false,
+  color = "blue",
 }: InputContainerProps) => {
   const classNames = joinClassNames([styles["input__container"], className]);
 
@@ -40,6 +42,7 @@ const InputContainer = ({
     maxLength,
     onChange,
     isValid,
+    color,
   };
 
   console.log(isFocused);

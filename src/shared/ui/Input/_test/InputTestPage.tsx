@@ -25,6 +25,7 @@ const InputTestPage = ({}: InputTestPageProps) => {
         label="테스트"
         maxLength={250}
         // disabled
+        color="green"
       >
         <Input.Main>
           <Input.Header />

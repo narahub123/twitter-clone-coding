@@ -11,11 +11,6 @@
   transition: border 0.3s ease-in-out;
 }
 
-.focused {
-  border: 1px solid var(--blue-500);
-  outline: 1px solid var(--blue-500);
-}
-
 .unfocused {
   border: 1px solid rgb(207, 217, 222);
 }

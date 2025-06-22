@@ -788,3 +788,53 @@ teal- .teal-outline:not(span):not(.teal-disabled):hover,
   background-color: var(--yellow-150);
   cursor: not-allowed;
 }
+
+.input-focus-gray {
+  border: 1px solid var(--gray-500);
+  outline: 1px solid var(--gray-500);
+}
+
+.input-focus-red {
+  border: 1px solid var(--red-500);
+  outline: 1px solid var(--red-500);
+}
+
+.input-focus-green {
+  border: 1px solid var(--green-500);
+  outline: 1px solid var(--green-500);
+}
+
+.input-focus-blue {
+  border: 1px solid var(--blue-500);
+  outline: 1px solid var(--blue-500);
+}
+
+.input-focus-teal {
+  border: 1px solid var(--teal-500);
+  outline: 1px solid var(--teal-500);
+}
+
+.input-focus-pink {
+  border: 1px solid var(--pink-500);
+  outline: 1px solid var(--pink-500);
+}
+
+.input-focus-purple {
+  border: 1px solid var(--purple-500);
+  outline: 1px solid var(--purple-500);
+}
+
+.input-focus-cyan {
+  border: 1px solid var(--cyan-500);
+  outline: 1px solid var(--cyan-500);
+}
+
+.input-focus-orange {
+  border: 1px solid var(--orange-500);
+  outline: 1px solid var(--orange-500);
+}
+
+.input-focus-yellow {
+  border: 1px solid var(--yellow-500);
+  outline: 1px solid var(--yellow-500);
+}

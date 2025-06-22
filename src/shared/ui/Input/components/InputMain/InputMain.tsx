@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import styles from "./InputMain.module.css";
+import tokens from "@shared/styles/design-system.module.css";
 import { joinClassNames } from "@shared";
 import { useInputContext } from "@shared/ui/Input";
 
@@ -9,9 +10,12 @@ interface InputMainProps {
 }
 
 const InputMain = ({ className, children }: InputMainProps) => {
-  const { field, isFocused, disabled, isValid, value } = useInputContext();
+  const { field, isFocused, disabled, isValid, value, color } =
+    useInputContext();
 
-  const focusCond = isFocused ? styles["focused"] : styles["unfocused"];
+  const focusCond = isFocused
+    ? tokens[`input-focus-${color}`]
+    : styles["unfocused"];
 
   const validCond = isValid || !value ? "" : styles["invalid"];
 
