@@ -1,6 +1,6 @@
 import InputTestPage from "./_test";
-import Input from "./components";
+import Input, { InputLabel } from "./components";
 
 export default Input;
 
-export { InputTestPage };
+export { InputTestPage, InputLabel };

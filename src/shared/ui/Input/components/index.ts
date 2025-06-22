@@ -3,6 +3,7 @@ import InputExtra from "./InputExtra";
 import InputField from "./InputField";
 import InputHeader from "./InputHeader";
 import InputMain from "./InputMain";
+import InputLabel from "./InputLabel";
 
 const Input = Object.assign(InputContainer, {
   Main: InputMain,
@@ -12,3 +13,5 @@ const Input = Object.assign(InputContainer, {
 });
 
 export default Input;
+
+export { InputLabel };

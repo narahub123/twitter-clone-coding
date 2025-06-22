@@ -1,5 +1,6 @@
 import styles from "./InputHeader.module.css";
 import { joinClassNames } from "@shared";
+import { InputLabel } from "@shared/ui/Input";
 
 interface InputHeaderProps {
   className?: string;
@@ -8,7 +9,11 @@ interface InputHeaderProps {
 const InputHeader = ({ className }: InputHeaderProps) => {
   const classNames = joinClassNames([styles["input__header"], className]);
 
-  return <div className={classNames}>InputHeader</div>;
+  return (
+    <div className={classNames}>
+      <InputLabel />
+    </div>
+  );
 };
 
 export default InputHeader;
