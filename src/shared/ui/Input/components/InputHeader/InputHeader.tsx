@@ -7,9 +7,10 @@ interface InputHeaderProps {
 }
 
 const InputHeader = ({ className }: InputHeaderProps) => {
-  const { isFocused } = useInputContext();
+  const { isFocused, value } = useInputContext();
 
-  const focusCond = isFocused ? styles["focused"] : styles["unfocused"];
+  const focusCond =
+    isFocused || value ? styles["focused"] : styles["unfocused"];
 
   const classNames = joinClassNames([
     styles["input__header"],
