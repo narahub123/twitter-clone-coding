@@ -5,6 +5,7 @@ import {
   IconStyleGuide,
   TextStyleGuide,
 } from "@pages";
+import { InputTestPage } from "@shared/ui/Input";
 import ModalTestPage from "@shared/ui/Modal/_test/ModalTestPage";
 
 import { createBrowserRouter } from "react-router-dom";
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "modal",
         element: <ModalTestPage />,
+      },
+      {
+        path: "input",
+        element: <InputTestPage />,
       },
     ],
   },
