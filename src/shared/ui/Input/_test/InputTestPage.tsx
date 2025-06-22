@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Input from "../components";
 import styles from "./InputTestPage.module.css";
 import { joinClassNames } from "@shared/utils";
@@ -7,9 +8,17 @@ interface InputTestPageProps {}
 const InputTestPage = ({}: InputTestPageProps) => {
   const classNames = joinClassNames([styles["input__test__page"]]);
 
+  const [value, setValue] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+
+    setValue(value);
+  };
+
   return (
     <div className={classNames}>
-      <Input field="test">
+      <Input field="test" value={value} onChange={handleChange}>
         <Input.Main>
           <Input.Header />
           <Input.Field>

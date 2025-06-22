@@ -8,6 +8,8 @@ interface InputContainerProps {
   disabled?: boolean;
   children: ReactNode;
   field: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputContainer = ({
@@ -15,22 +17,26 @@ const InputContainer = ({
   disabled = false,
   children,
   field,
+  value,
+  onChange,
 }: InputContainerProps) => {
   const classNames = joinClassNames([styles["input__container"], className]);
 
   const [isFocused, setIsFocused] = useState(false);
 
-  const value: IInputContext = {
+  const context: IInputContext = {
     disabled,
     isFocused,
     setIsFocused,
     field,
+    value,
+    onChange,
   };
 
   console.log(isFocused);
 
   return (
-    <InputContextProvider value={value}>
+    <InputContextProvider value={context}>
       <div className={classNames}>{children}</div>
     </InputContextProvider>
   );
