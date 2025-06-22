@@ -6,4 +6,6 @@
   border-radius: 0.25rem;
 
   position: relative;
+
+  display: inline-block;
 }

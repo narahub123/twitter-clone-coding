@@ -9,7 +9,7 @@ const InputTestPage = ({}: InputTestPageProps) => {
 
   return (
     <div className={classNames}>
-      <Input>
+      <Input field="test">
         <Input.Main>
           <Input.Header />
           <Input.Field>
