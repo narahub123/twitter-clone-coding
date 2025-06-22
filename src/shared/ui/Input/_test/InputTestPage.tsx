@@ -12,7 +12,9 @@ const InputTestPage = ({}: InputTestPageProps) => {
       <Input>
         <Input.Main>
           <Input.Header />
-          <Input.Field>필드</Input.Field>
+          <Input.Field>
+            <Input.Text />
+          </Input.Field>
         </Input.Main>
         <Input.Extra>추가</Input.Extra>
       </Input>
