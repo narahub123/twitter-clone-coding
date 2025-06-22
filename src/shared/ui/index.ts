@@ -8,6 +8,7 @@ import Description from "./Description";
 import Portal from "./Portal";
 import Modal from "./Modal";
 import FocusTrap from "./FocusTrap";
+import Input from "./Input";
 
 export {
   Icon,
@@ -21,4 +22,5 @@ export {
   Portal,
   Modal,
   FocusTrap,
+  Input,
 };

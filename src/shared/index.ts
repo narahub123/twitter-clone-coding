@@ -30,6 +30,7 @@ import {
   Portal,
   Modal,
   FocusTrap,
+  Input,
 } from "./ui";
 
 import type {
@@ -80,6 +81,7 @@ export {
   Portal,
   Modal,
   FocusTrap,
+  Input,
 };
 
 export type {
