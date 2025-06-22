@@ -9,13 +9,14 @@ interface InputMainProps {
 }
 
 const InputMain = ({ className, children }: InputMainProps) => {
-  const { field, isFocused } = useInputContext();
+  const { field, isFocused, disabled } = useInputContext();
 
   const focusCond = isFocused ? styles["focused"] : styles["unfocused"];
 
   const classNames = joinClassNames([
     styles["input__main"],
     focusCond,
+    disabled ? styles["disabled"] : "",
     className,
   ]);
 

@@ -9,7 +9,7 @@ interface InputTextProps {
 const InputText = ({ className }: InputTextProps) => {
   const classNames = joinClassNames([styles["input__text"], className]);
 
-  const { field, setIsFocused, value, onChange } = useInputContext();
+  const { field, setIsFocused, value, onChange, disabled } = useInputContext();
 
   return (
     <input
@@ -20,6 +20,7 @@ const InputText = ({ className }: InputTextProps) => {
       onBlur={() => setIsFocused(false)}
       value={value}
       onChange={onChange}
+      disabled={disabled}
     />
   );
 };

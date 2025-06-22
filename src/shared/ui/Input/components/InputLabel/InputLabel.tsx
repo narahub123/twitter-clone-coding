@@ -7,9 +7,13 @@ interface InputLabelProps {
 }
 
 const InputLabel = ({ className }: InputLabelProps) => {
-  const classNames = joinClassNames([styles["input__label"], className]);
+  const { label, disabled } = useInputContext();
 
-  const { label } = useInputContext();
+  const classNames = joinClassNames([
+    styles["input__label"],
+    disabled ? styles["disabled"] : "",
+    className,
+  ]);
 
   return <div className={classNames}>{label}</div>;
 };
