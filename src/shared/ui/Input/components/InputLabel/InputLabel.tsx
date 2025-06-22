@@ -7,10 +7,13 @@ interface InputLabelProps {
 }
 
 const InputLabel = ({ className }: InputLabelProps) => {
-  const { label, disabled } = useInputContext();
+  const { label, disabled, isValid, value } = useInputContext();
+
+  const validCond = isValid || !value ? "" : styles["invalid"];
 
   const classNames = joinClassNames([
     styles["input__label"],
+    validCond,
     disabled ? styles["disabled"] : "",
     className,
   ]);

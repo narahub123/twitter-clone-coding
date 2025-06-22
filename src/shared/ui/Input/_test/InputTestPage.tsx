@@ -8,7 +8,7 @@ interface InputTestPageProps {}
 const InputTestPage = ({}: InputTestPageProps) => {
   const classNames = joinClassNames([styles["input__test__page"]]);
 
-  const [value, setValue] = useState("테스틋");
+  const [value, setValue] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -24,7 +24,7 @@ const InputTestPage = ({}: InputTestPageProps) => {
         onChange={handleChange}
         label="테스트"
         maxLength={250}
-        disabled
+        // disabled
       >
         <Input.Main>
           <Input.Header />

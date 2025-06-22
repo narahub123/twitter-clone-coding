@@ -7,6 +7,7 @@ interface IInputContext {
   value: string;
   maxLength?: number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isValid: boolean;
 }
 
 export type { IInputContext };

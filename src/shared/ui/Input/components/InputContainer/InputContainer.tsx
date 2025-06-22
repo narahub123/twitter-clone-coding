@@ -12,6 +12,7 @@ interface InputContainerProps {
   value: string;
   maxLength?: number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isValid?: boolean;
 }
 
 const InputContainer = ({
@@ -23,6 +24,7 @@ const InputContainer = ({
   value,
   maxLength,
   onChange,
+  isValid = false,
 }: InputContainerProps) => {
   const classNames = joinClassNames([styles["input__container"], className]);
 
@@ -37,6 +39,7 @@ const InputContainer = ({
     value,
     maxLength,
     onChange,
+    isValid,
   };
 
   console.log(isFocused);

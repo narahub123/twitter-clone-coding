@@ -2,6 +2,10 @@
   flex: 1;
 }
 
+.invalid {
+  color: var(--red-500);
+}
+
 .disabled {
   color: rgba(83, 100, 113, 1);
 }
