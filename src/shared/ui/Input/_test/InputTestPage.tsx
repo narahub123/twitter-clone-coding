@@ -10,7 +10,9 @@ const InputTestPage = ({}: InputTestPageProps) => {
   return (
     <div className={classNames}>
       <Input>
-        <Input.Main>메인</Input.Main>
+        <Input.Main>
+          <Input.Header />
+        </Input.Main>
         <Input.Extra>추가</Input.Extra>
       </Input>
     </div>
