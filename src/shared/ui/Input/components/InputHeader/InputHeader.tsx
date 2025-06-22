@@ -1,6 +1,6 @@
 import styles from "./InputHeader.module.css";
 import { joinClassNames } from "@shared";
-import { InputLabel } from "@shared/ui/Input";
+import { InputCounter, InputLabel } from "@shared/ui/Input";
 
 interface InputHeaderProps {
   className?: string;
@@ -12,6 +12,7 @@ const InputHeader = ({ className }: InputHeaderProps) => {
   return (
     <div className={classNames}>
       <InputLabel />
+      <InputCounter />
     </div>
   );
 };
