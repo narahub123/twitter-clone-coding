@@ -31,6 +31,7 @@ import {
   Modal,
   FocusTrap,
   Input,
+  TextEditor,
 } from "./ui";
 
 import type {
@@ -82,6 +83,7 @@ export {
   Modal,
   FocusTrap,
   Input,
+  TextEditor,
 };
 
 export type {
