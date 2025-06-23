@@ -1,3 +1,5 @@
+import type { ColorSchemeType } from "@shared";
+
 interface IDisplay {
   // 접근성
   isColorContrastEnabled: boolean;
@@ -6,7 +8,7 @@ interface IDisplay {
 
   // 표시
   fontSize: FontSizeType;
-  colorTheme: ColorThemeType;
+  colorTheme: ColorSchemeType;
   bgTheme: BgThemeType;
 
   // 언어
@@ -22,18 +24,5 @@ type LanguageType = "en_US" | "ja_JP" | "ko_KR" | "zh_CN" | "zh_TW";
 type FontSizeType = "xs" | "s" | "b" | "l" | "xl";
 
 type BgThemeType = "light" | "dark" | "darkest";
-type ColorThemeType =
-  | "cornflowerblue"
-  | "red"
-  | "green"
-  | "purple"
-  | "orange"
-  | "yellow";
 
-export type {
-  IDisplay,
-  FontSizeType,
-  BgThemeType,
-  ColorThemeType,
-  LanguageType,
-};
+export type { IDisplay, FontSizeType, BgThemeType, LanguageType };

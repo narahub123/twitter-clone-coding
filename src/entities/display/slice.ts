@@ -1,11 +1,11 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type {
   BgThemeType,
-  ColorThemeType,
   FontSizeType,
   IDisplay,
   LanguageType,
 } from "./types";
+import type { ColorSchemeType } from "@shared";
 
 const initialState: IDisplay = {
   isColorContrastEnabled: false,
@@ -13,7 +13,7 @@ const initialState: IDisplay = {
   isImageDescriptionAdded: false,
 
   fontSize: "b",
-  colorTheme: "cornflowerblue",
+  colorTheme: "blue",
   bgTheme: "light",
 
   language: "ko_KR",
@@ -32,7 +32,7 @@ const displaySlice = createSlice({
     setFontSize: (state, action: PayloadAction<FontSizeType>) => {
       state.fontSize = action.payload;
     },
-    setColorTheme: (state, action: PayloadAction<ColorThemeType>) => {
+    setColorTheme: (state, action: PayloadAction<ColorSchemeType>) => {
       state.colorTheme = action.payload;
     },
     setBgTheme: (state, action: PayloadAction<BgThemeType>) => {

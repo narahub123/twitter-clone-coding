@@ -14,7 +14,6 @@ import {
 
 import type {
   BgThemeType,
-  ColorThemeType,
   FontSizeType,
   IDisplay,
   LanguageType,
@@ -37,10 +36,4 @@ export {
   selectBgTheme,
 };
 
-export type {
-  BgThemeType,
-  ColorThemeType,
-  FontSizeType,
-  IDisplay,
-  LanguageType,
-};
+export type { BgThemeType, FontSizeType, IDisplay, LanguageType };
