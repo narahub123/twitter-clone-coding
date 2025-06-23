@@ -1,0 +1,40 @@
+:root,
+html[data-color-theme="blue"] {
+  --color-theme-text: var(--blue-500);
+}
+
+html[data-color-theme="red"] {
+  --color-theme-text: var(--red-500);
+}
+
+html[data-color-theme="green"] {
+  --color-theme-text: var(--green-500);
+}
+
+html[data-color-theme="gray"] {
+  --color-theme-text: var(--gray-500);
+}
+
+html[data-color-theme="teal"] {
+  --color-theme-text: var(--teal-500);
+}
+
+html[data-color-theme="pink"] {
+  --color-theme-text: var(--pink-500);
+}
+
+html[data-color-theme="purple"] {
+  --color-theme-text: var(--purple-500);
+}
+
+html[data-color-theme="cyan"] {
+  --color-theme-text: var(--cyan-500);
+}
+
+html[data-color-theme="orange"] {
+  --color-theme-text: var(--orange-500);
+}
+
+html[data-color-theme="yellow"] {
+  --color-theme-text: var(--yellow-500);
+}
