@@ -7,6 +7,7 @@ import {
 } from "@pages";
 import { InputTestPage } from "@shared/ui/Input";
 import ModalTestPage from "@shared/ui/Modal/_test/ModalTestPage";
+import { TextEditorTestPage } from "@shared/ui/TextEditor";
 
 import { createBrowserRouter } from "react-router-dom";
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "input",
         element: <InputTestPage />,
+      },
+      {
+        path: "text-editor",
+        element: <TextEditorTestPage />,
       },
     ],
   },
