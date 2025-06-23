@@ -29,6 +29,7 @@ const InputTestPage = ({}: InputTestPageProps) => {
           // disabled
           isValid
           placeholder="숫자를 입력해주세요."
+          color="colorTheme"
         >
           <Input.Main>
             <Input.Header />

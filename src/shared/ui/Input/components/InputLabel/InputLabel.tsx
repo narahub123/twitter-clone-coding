@@ -1,7 +1,8 @@
 import styles from "./InputLabel.module.css";
 import tokens from "@shared/styles/design-system.module.css";
-import { joinClassNames } from "@shared";
+import { joinClassNames, useAppSelector } from "@shared";
 import { useInputContext } from "@shared/ui/Input";
+import { selectColorTheme } from "@entities";
 
 interface InputLabelProps {
   className?: string;
@@ -11,9 +12,13 @@ const InputLabel = ({ className }: InputLabelProps) => {
   const { label, disabled, isValid, value, isFocused, color } =
     useInputContext();
 
+  const colorTheme = useAppSelector(selectColorTheme);
+
   const focusCond =
     isFocused || value
-      ? `${tokens[`text-${color}`]} ${styles["focused"]}`
+      ? color === "colorTheme"
+        ? `${tokens[`text-${colorTheme}`]} ${styles["focused"]}`
+        : `${tokens[`text-${color}`]} ${styles["focused"]}`
       : styles["unfocused"];
 
   const validCond = isValid || !value ? "" : styles["invalid"];
