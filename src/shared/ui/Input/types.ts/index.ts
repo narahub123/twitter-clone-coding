@@ -12,6 +12,8 @@ interface IInputContext {
   isValid: boolean;
   color: ColorSchemeType | "colorTheme";
   placeholder?: string;
+  min?: number;
+  max?: number;
 }
 
 export type { IInputContext };

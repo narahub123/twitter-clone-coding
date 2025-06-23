@@ -15,6 +15,8 @@ interface InputContainerProps {
   isValid?: boolean;
   color?: ColorSchemeType | "colorTheme";
   placeholder?: string;
+  min?: number;
+  max?: number;
 }
 
 const InputContainer = ({
@@ -29,6 +31,8 @@ const InputContainer = ({
   isValid = false,
   color = "blue",
   placeholder,
+  min,
+  max,
 }: InputContainerProps) => {
   const classNames = joinClassNames([styles["input__container"], className]);
 
@@ -45,7 +49,9 @@ const InputContainer = ({
     onChange,
     isValid,
     color,
-    placeholder
+    placeholder,
+    min,
+    max,
   };
 
   console.log(isFocused);

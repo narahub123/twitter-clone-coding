@@ -9,8 +9,16 @@ interface InputNumberProps {
 const InputNumber = ({ className }: InputNumberProps) => {
   const classNames = joinClassNames([styles["input__number"], className]);
 
-  const { setIsFocused, field, value, onChange, disabled, placeholder } =
-    useInputContext();
+  const {
+    setIsFocused,
+    field,
+    value,
+    onChange,
+    disabled,
+    placeholder,
+    min,
+    max,
+  } = useInputContext();
 
   return (
     <input
@@ -23,6 +31,8 @@ const InputNumber = ({ className }: InputNumberProps) => {
       value={value}
       onChange={onChange}
       disabled={disabled}
+      min={min}
+      max={max}
     />
   );
 };
