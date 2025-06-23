@@ -6,6 +6,7 @@ import InputMain from "./InputMain";
 import InputLabel from "./InputLabel";
 import InputCounter from "./InputCounter";
 import InputText from "./InputText";
+import InputNumber from "./InputNumber";
 
 const Input = Object.assign(InputContainer, {
   Main: InputMain,
@@ -13,6 +14,7 @@ const Input = Object.assign(InputContainer, {
   Field: InputField,
   Extra: InputExtra,
   Text: InputText,
+  Number: InputNumber,
 });
 
 export default Input;

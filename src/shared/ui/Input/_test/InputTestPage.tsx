@@ -21,6 +21,22 @@ const InputTestPage = ({}: InputTestPageProps) => {
   return (
     <FocusTrap>
       <div className={classNames}>
+        <Input
+          field="test"
+          value={value}
+          onChange={handleChange}
+          label="테스트"
+          // disabled
+          isValid
+        >
+          <Input.Main>
+            <Input.Header />
+            <Input.Field>
+              <Input.Number />
+            </Input.Field>
+          </Input.Main>
+          <Input.Extra>추가</Input.Extra>
+        </Input>
         {colors.map((color) => {
           ("");
           return (
