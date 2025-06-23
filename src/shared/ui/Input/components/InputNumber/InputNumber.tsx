@@ -9,13 +9,14 @@ interface InputNumberProps {
 const InputNumber = ({ className }: InputNumberProps) => {
   const classNames = joinClassNames([styles["input__number"], className]);
 
-  const { setIsFocused, field, value, onChange, disabled } = useInputContext();
+  const { setIsFocused, field, value, onChange, disabled, placeholder } =
+    useInputContext();
 
   return (
     <input
       className={classNames}
       type="number"
-      placeholder="추가"
+      placeholder={placeholder}
       id={`input-field-${field}`}
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}

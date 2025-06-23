@@ -9,12 +9,13 @@ interface InputTextProps {
 const InputText = ({ className }: InputTextProps) => {
   const classNames = joinClassNames([styles["input__text"], className]);
 
-  const { field, setIsFocused, value, onChange, disabled } = useInputContext();
+  const { field, setIsFocused, value, onChange, disabled, placeholder } =
+    useInputContext();
 
   return (
     <input
       className={classNames}
-      placeholder="입력해주세요"
+      placeholder={placeholder}
       id={`input-field-${field}`}
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}

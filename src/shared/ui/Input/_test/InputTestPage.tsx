@@ -28,6 +28,7 @@ const InputTestPage = ({}: InputTestPageProps) => {
           label="테스트"
           // disabled
           isValid
+          placeholder="숫자를 입력해주세요."
         >
           <Input.Main>
             <Input.Header />
@@ -49,6 +50,7 @@ const InputTestPage = ({}: InputTestPageProps) => {
               // disabled
               color={color}
               isValid
+              placeholder={"입력해주세요."}
             >
               <Input.Main>
                 <Input.Header />

@@ -11,6 +11,7 @@ interface IInputContext {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   isValid: boolean;
   color: ColorSchemeType | "colorTheme";
+  placeholder?: string;
 }
 
 export type { IInputContext };
