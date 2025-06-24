@@ -6,7 +6,7 @@ import {} from "./components";
 
 import {} from "./hooks";
 
-import {} from "./utils";
+import { handleInput } from "./utils";
 
 import type {} from "./types";
 
@@ -20,6 +20,7 @@ export {
   // hooks
 
   // utils
+  handleInput,
 };
 
 export type {};

@@ -1,3 +1,4 @@
+import { handleInput } from "@shared/ui/TextEditor";
 import styles from "./TextEditor.module.css";
 import { joinClassNames } from "@shared";
 
@@ -14,6 +15,7 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
       className={classNames}
       contentEditable={!disabled}
       suppressContentEditableWarning
+      onInput={handleInput}
     >
       <div className={styles["line"]} data-offset="0-0">
         <span className={styles["segment"]} data-offset="0-0">
