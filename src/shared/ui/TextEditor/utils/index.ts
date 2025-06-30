@@ -1,3 +1,5 @@
 import handleInput from "./handleInput";
 
-export { handleInput };
+import { extractLines } from "./extractUtils";
+
+export { handleInput, extractLines };
