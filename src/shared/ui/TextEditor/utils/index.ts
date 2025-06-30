@@ -1,5 +1,5 @@
 import handleInput from "./handleInput";
 
-import { extractLines, extractInlines } from "./extractUtils";
+import { extractLines, extractInlines, extractSegments } from "./extractUtils";
 
-export { handleInput, extractLines, extractInlines };
+export { handleInput, extractLines, extractInlines, extractSegments };

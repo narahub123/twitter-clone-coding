@@ -6,7 +6,12 @@ import {} from "./components";
 
 import {} from "./hooks";
 
-import { handleInput, extractLines, extractInlines } from "./utils";
+import {
+  handleInput,
+  extractLines,
+  extractInlines,
+  extractSegments,
+} from "./utils";
 
 import type { InlineType, IInlineEntity, SegmentType, ISegment } from "./types";
 
@@ -23,6 +28,7 @@ export {
   handleInput,
   extractLines,
   extractInlines,
+  extractSegments,
 };
 
 export type { InlineType, IInlineEntity, SegmentType, ISegment };

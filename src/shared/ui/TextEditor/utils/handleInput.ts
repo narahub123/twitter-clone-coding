@@ -1,4 +1,4 @@
-import { extractLines } from "./extractUtils";
+import { extractLines, extractSegments } from "@shared/ui/TextEditor";
 
 const handleInput = (e: React.FormEvent<HTMLDivElement>) => {
   const textEditor = e.currentTarget;
@@ -11,6 +11,10 @@ const handleInput = (e: React.FormEvent<HTMLDivElement>) => {
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
+
+    const segments = extractSegments(line);
+
+    console.log(segments);
   }
 };
 
