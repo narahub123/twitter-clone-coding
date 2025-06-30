@@ -1,4 +1,4 @@
-import Constants from "./constants";
+import { Constants, REGEXP } from "./constants";
 import {
   useAppDispatch,
   useAppSelector,
@@ -47,6 +47,7 @@ import type {
 export {
   // Constants
   Constants,
+  REGEXP,
 
   // libs
   useAppDispatch,

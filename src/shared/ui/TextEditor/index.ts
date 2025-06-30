@@ -6,9 +6,9 @@ import {} from "./components";
 
 import {} from "./hooks";
 
-import { handleInput } from "./utils";
+import { handleInput, extractLines, extractInlines } from "./utils";
 
-import type {} from "./types";
+import type { InlineType, IInlineEntity, SegmentType, ISegment } from "./types";
 
 export default TextEditor;
 export {
@@ -21,6 +21,8 @@ export {
 
   // utils
   handleInput,
+  extractLines,
+  extractInlines,
 };
 
-export type {};
+export type { InlineType, IInlineEntity, SegmentType, ISegment };

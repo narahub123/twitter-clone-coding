@@ -1,4 +1,5 @@
 import type { ColorSchemeType, PlacementType } from "@shared/types";
+import REGEXP from "./regExp";
 
 const Constants = {
   MODAL_OVERLAY_OPACITY: 0.7,
@@ -10,4 +11,4 @@ const Constants = {
   COLOR_SCHEME_DEFAULT: "gray" as ColorSchemeType,
 };
 
-export default Constants;
+export { Constants, REGEXP };
