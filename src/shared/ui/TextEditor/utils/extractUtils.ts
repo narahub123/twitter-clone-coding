@@ -1,9 +1,5 @@
 import { REGEXP } from "@shared/constants";
-import type {
-  IInlineEntity,
-  InlineType,
-  ISegment,
-} from "@shared/ui/TextEditor";
+import type { IInlineEntity, InlineType } from "@shared/ui/TextEditor";
 
 const extractLines = (target: HTMLDivElement): string[] => {
   const lines = Array.from(target.children).map(
@@ -47,9 +43,7 @@ const extractInlines = (line: string): IInlineEntity[] => {
   }
 
   // 추출한 inline들을 index 순으로 정렬
-  const sortedInlines = inlines
-    .sort((a, b) => a.index - b.index)
-    .map((inline) => ({ type: inline.type, text: inline.text }));
+  const sortedInlines = inlines.sort((a, b) => a.index - b.index);
 
   return sortedInlines;
 };

@@ -5,6 +5,7 @@ type SegmentType = InlineType | "text";
 interface IInlineEntity {
   type: InlineType;
   text: string;
+  index: number;
 }
 
 interface ISegment {
