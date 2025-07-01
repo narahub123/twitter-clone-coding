@@ -5,20 +5,26 @@ import {
   extractLines,
   extractSegments,
   getCaretPosition,
+  type ICaretPosition,
 } from "@shared/ui/TextEditor";
 
 interface HandleInputProps {
   e: React.FormEvent<HTMLDivElement>;
   setInnerHTML: React.Dispatch<React.SetStateAction<string>>;
+  setCaretPosition: React.Dispatch<React.SetStateAction<ICaretPosition>>;
 }
 
 const useTextEditorInput = () => {
   //   const dispatch = useAppDispatch();
 
-  const handleInput = ({ e, setInnerHTML }: HandleInputProps) => {
+  const handleInput = ({
+    e,
+    setInnerHTML,
+    setCaretPosition,
+  }: HandleInputProps) => {
     const textEditor = e.currentTarget;
 
-    const { caretPos, row, col } = getCaretPosition();
+    const { caretPos, row: curRow, col: curCol } = getCaretPosition();
 
     const lines = extractLines(textEditor);
 
@@ -41,6 +47,7 @@ const useTextEditorInput = () => {
     }
 
     setInnerHTML(linesHTML);
+    setCaretPosition({ caretPos, row: curRow, col: curCol });
   };
 
   return handleInput;

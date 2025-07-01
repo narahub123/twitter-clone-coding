@@ -4,6 +4,7 @@ import { joinClassNames } from "@shared";
 import {
   useSetTextEditorHTMLWithCaret,
   useTextEditorInput,
+  type ICaretPosition,
 } from "@shared/ui/TextEditor";
 
 interface TextEditorProps {
@@ -19,6 +20,13 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
   // handleInput에서 생성된 innerHTLM의 상태
   const [innerHTML, setInnerHTML] = useState("");
 
+  // 커서의 위치 상태
+  const [caretPosition, setCaretPosition] = useState<ICaretPosition>({
+    caretPos: 0,
+    row: 0,
+    col: 0,
+  });
+
   const handleInput = useTextEditorInput();
 
   useSetTextEditorHTMLWithCaret({ textEditorRef, innerHTML });
@@ -28,7 +36,7 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
       className={classNames}
       contentEditable={!disabled}
       suppressContentEditableWarning
-      onInput={(e) => handleInput({ e, setInnerHTML })}
+      onInput={(e) => handleInput({ e, setInnerHTML, setCaretPosition })}
       ref={textEditorRef}
     >
       <div className={styles["line"]} data-offset="0-0">
