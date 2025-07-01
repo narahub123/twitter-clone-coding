@@ -6,26 +6,25 @@ import {
   extractSegments,
 } from "@shared/ui/TextEditor";
 
+interface HandleInputProps {
+  e: React.FormEvent<HTMLDivElement>;
+  setInnerHTML: React.Dispatch<React.SetStateAction<string>>;
+}
+
 const useTextEditorInput = () => {
   //   const dispatch = useAppDispatch();
 
-  const handleInput = (e: React.FormEvent<HTMLDivElement>) => {
+  const handleInput = ({ e, setInnerHTML }: HandleInputProps) => {
     const textEditor = e.currentTarget;
-
-    console.log(textEditor);
 
     const lines = extractLines(textEditor);
 
-    console.log(lines);
-
-    let lineHTML: string = "";
+    let linesHTML: string = "";
 
     for (let row = 0; row < lines.length; row++) {
       const line = lines[row];
 
       const segments = extractSegments(line);
-
-      console.log(segments);
 
       let segmentHTML: string = "";
 
@@ -35,11 +34,10 @@ const useTextEditorInput = () => {
         segmentHTML += createSegment(span, row, col);
       }
 
-      console.log(segmentHTML);
-      lineHTML += createLine(segmentHTML, row);
+      linesHTML += createLine(segmentHTML, row);
     }
 
-    console.log(lineHTML);
+    setInnerHTML(linesHTML);
   };
 
   return handleInput;
