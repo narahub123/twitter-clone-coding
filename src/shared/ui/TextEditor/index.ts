@@ -4,14 +4,9 @@ import TextEditor from "./components";
 
 import {} from "./components";
 
-import {} from "./hooks";
+import { useTextEditorInput } from "./hooks";
 
-import {
-  handleInput,
-  extractLines,
-  extractInlines,
-  extractSegments,
-} from "./utils";
+import { extractLines, extractInlines, extractSegments } from "./utils";
 
 import type { InlineType, IInlineEntity, SegmentType, ISegment } from "./types";
 
@@ -23,9 +18,9 @@ export {
   // components
 
   // hooks
+  useTextEditorInput,
 
   // utils
-  handleInput,
   extractLines,
   extractInlines,
   extractSegments,

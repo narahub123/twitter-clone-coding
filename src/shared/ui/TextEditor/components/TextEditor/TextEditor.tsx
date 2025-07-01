@@ -1,4 +1,4 @@
-import { handleInput } from "@shared/ui/TextEditor";
+import { useTextEditorInput } from "@shared/ui/TextEditor";
 import styles from "./TextEditor.module.css";
 import { joinClassNames } from "@shared";
 
@@ -9,6 +9,8 @@ interface TextEditorProps {
 
 const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
   const classNames = joinClassNames([styles["text__editor"], className]);
+
+  const handleInput = useTextEditorInput();
 
   return (
     <div
