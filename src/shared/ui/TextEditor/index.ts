@@ -12,9 +12,16 @@ import {
   extractSegments,
   createSegment,
   createLine,
+  getCaretPosition,
 } from "./utils";
 
-import type { InlineType, IInlineEntity, SegmentType, ISegment } from "./types";
+import type {
+  InlineType,
+  IInlineEntity,
+  SegmentType,
+  ISegment,
+  ICaretPosition,
+} from "./types";
 
 export default TextEditor;
 export {
@@ -33,6 +40,13 @@ export {
   extractSegments,
   createSegment,
   createLine,
+  getCaretPosition,
 };
 
-export type { InlineType, IInlineEntity, SegmentType, ISegment };
+export type {
+  InlineType,
+  IInlineEntity,
+  SegmentType,
+  ISegment,
+  ICaretPosition,
+};

@@ -1,5 +1,6 @@
 import { extractLines, extractInlines, extractSegments } from "./extractUtils";
 import { createSegment, createLine } from "./elementUtils";
+import { getCaretPosition } from "./caretUtils";
 
 export {
   extractLines,
@@ -7,4 +8,5 @@ export {
   extractSegments,
   createSegment,
   createLine,
+  getCaretPosition,
 };

@@ -4,6 +4,7 @@ import {
   createSegment,
   extractLines,
   extractSegments,
+  getCaretPosition,
 } from "@shared/ui/TextEditor";
 
 interface HandleInputProps {
@@ -16,6 +17,8 @@ const useTextEditorInput = () => {
 
   const handleInput = ({ e, setInnerHTML }: HandleInputProps) => {
     const textEditor = e.currentTarget;
+
+    const { caretPos, row, col } = getCaretPosition();
 
     const lines = extractLines(textEditor);
 

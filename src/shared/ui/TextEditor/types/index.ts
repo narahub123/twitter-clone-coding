@@ -13,4 +13,16 @@ interface ISegment {
   text: string;
 }
 
-export type { InlineType, IInlineEntity, SegmentType, ISegment };
+interface ICaretPosition {
+  caretPos: number;
+  row: number;
+  col: number;
+}
+
+export type {
+  InlineType,
+  IInlineEntity,
+  SegmentType,
+  ISegment,
+  ICaretPosition,
+};
