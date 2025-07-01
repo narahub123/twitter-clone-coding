@@ -6,9 +6,10 @@ import type {
 } from "@shared/ui/TextEditor";
 
 const extractLines = (target: HTMLDivElement): string[] => {
-  const lines = Array.from(target.children).map(
-    (child) => child.textContent || ""
-  );
+  const lines =
+    Array.from(target.children).length === 0
+      ? [""]
+      : Array.from(target.children).map((child) => child.textContent || "");
 
   return lines;
 };

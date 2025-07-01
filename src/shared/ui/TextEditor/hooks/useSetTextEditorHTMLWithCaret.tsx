@@ -54,7 +54,7 @@ const useSetTextEditorHTMLWithCaret = ({
 
     selection.removeAllRanges();
     selection.addRange(range);
-  }, [innerHTML]);
+  }, [innerHTML, caretPosition]);
 };
 
 export default useSetTextEditorHTMLWithCaret;
