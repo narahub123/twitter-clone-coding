@@ -14,4 +14,8 @@ const createSegment = (span: ISegment, row: number, col: number): string => {
   return segment;
 };
 
-export { createSegment };
+const createLine = (innerHTML: string, row: number): string => {
+  return `<div class="${styles["line"]}" data-offset="${row}-0">${innerHTML}</div>`;
+};
+
+export { createSegment, createLine };

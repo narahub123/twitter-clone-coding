@@ -1,5 +1,6 @@
 // import { useAppDispatch } from "@shared/lib";
 import {
+  createLine,
   createSegment,
   extractLines,
   extractSegments,
@@ -17,6 +18,8 @@ const useTextEditorInput = () => {
 
     console.log(lines);
 
+    let lineHTML: string = "";
+
     for (let row = 0; row < lines.length; row++) {
       const line = lines[row];
 
@@ -33,7 +36,10 @@ const useTextEditorInput = () => {
       }
 
       console.log(segmentHTML);
+      lineHTML += createLine(segmentHTML, row);
     }
+
+    console.log(lineHTML);
   };
 
   return handleInput;

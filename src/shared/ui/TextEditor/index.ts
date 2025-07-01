@@ -11,6 +11,7 @@ import {
   extractInlines,
   extractSegments,
   createSegment,
+  createLine,
 } from "./utils";
 
 import type { InlineType, IInlineEntity, SegmentType, ISegment } from "./types";
@@ -30,6 +31,7 @@ export {
   extractInlines,
   extractSegments,
   createSegment,
+  createLine,
 };
 
 export type { InlineType, IInlineEntity, SegmentType, ISegment };

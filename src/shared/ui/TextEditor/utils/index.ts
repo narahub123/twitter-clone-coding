@@ -1,4 +1,10 @@
 import { extractLines, extractInlines, extractSegments } from "./extractUtils";
-import { createSegment } from "./elementUtils";
+import { createSegment, createLine } from "./elementUtils";
 
-export { extractLines, extractInlines, extractSegments, createSegment };
+export {
+  extractLines,
+  extractInlines,
+  extractSegments,
+  createSegment,
+  createLine,
+};
