@@ -1,3 +1,4 @@
 import useTextEditorInput from "./useTextEditorInput";
+import useSetTextEditorHTMLWithCaret from "./useSetTextEditorHTMLWithCaret";
 
-export { useTextEditorInput };
+export { useTextEditorInput, useSetTextEditorHTMLWithCaret };

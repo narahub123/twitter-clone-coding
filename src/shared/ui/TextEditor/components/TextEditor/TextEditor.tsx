@@ -1,7 +1,10 @@
-import { useTextEditorInput } from "@shared/ui/TextEditor";
+import { useRef, useState } from "react";
 import styles from "./TextEditor.module.css";
 import { joinClassNames } from "@shared";
-import { useState } from "react";
+import {
+  useSetTextEditorHTMLWithCaret,
+  useTextEditorInput,
+} from "@shared/ui/TextEditor";
 
 interface TextEditorProps {
   className?: string;
@@ -11,12 +14,14 @@ interface TextEditorProps {
 const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
   const classNames = joinClassNames([styles["text__editor"], className]);
 
+  const textEditorRef = useRef<HTMLDivElement>(null);
+
   // handleInput에서 생성된 innerHTLM의 상태
   const [innerHTML, setInnerHTML] = useState("");
 
   const handleInput = useTextEditorInput();
 
-  console.log(innerHTML);
+  useSetTextEditorHTMLWithCaret({ textEditorRef, innerHTML });
 
   return (
     <div
@@ -24,6 +29,7 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
       contentEditable={!disabled}
       suppressContentEditableWarning
       onInput={(e) => handleInput({ e, setInnerHTML })}
+      ref={textEditorRef}
     >
       <div className={styles["line"]} data-offset="0-0">
         <span className={styles["segment"]} data-offset="0-0">
