@@ -1,5 +1,9 @@
 // import { useAppDispatch } from "@shared/lib";
-import { extractLines, extractSegments } from "@shared/ui/TextEditor";
+import {
+  createSegment,
+  extractLines,
+  extractSegments,
+} from "@shared/ui/TextEditor";
 
 const useTextEditorInput = () => {
   //   const dispatch = useAppDispatch();
@@ -13,12 +17,22 @@ const useTextEditorInput = () => {
 
     console.log(lines);
 
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
+    for (let row = 0; row < lines.length; row++) {
+      const line = lines[row];
 
       const segments = extractSegments(line);
 
       console.log(segments);
+
+      let segmentHTML: string = "";
+
+      for (let col = 0; col < segments.length; col++) {
+        const span = segments[col];
+
+        segmentHTML += createSegment(span, row, col);
+      }
+
+      console.log(segmentHTML);
     }
   };
 

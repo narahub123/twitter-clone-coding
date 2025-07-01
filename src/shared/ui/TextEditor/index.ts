@@ -6,7 +6,12 @@ import {} from "./components";
 
 import { useTextEditorInput } from "./hooks";
 
-import { extractLines, extractInlines, extractSegments } from "./utils";
+import {
+  extractLines,
+  extractInlines,
+  extractSegments,
+  createSegment,
+} from "./utils";
 
 import type { InlineType, IInlineEntity, SegmentType, ISegment } from "./types";
 
@@ -24,6 +29,7 @@ export {
   extractLines,
   extractInlines,
   extractSegments,
+  createSegment,
 };
 
 export type { InlineType, IInlineEntity, SegmentType, ISegment };
