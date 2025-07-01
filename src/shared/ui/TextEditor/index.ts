@@ -13,6 +13,8 @@ import {
   createSegment,
   createLine,
   getCaretPosition,
+  handleCompositionStart,
+  handleCompositionEnd,
 } from "./utils";
 
 import type {
@@ -41,6 +43,8 @@ export {
   createSegment,
   createLine,
   getCaretPosition,
+  handleCompositionStart,
+  handleCompositionEnd,
 };
 
 export type {

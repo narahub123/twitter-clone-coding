@@ -1,6 +1,7 @@
 import { extractLines, extractInlines, extractSegments } from "./extractUtils";
 import { createSegment, createLine } from "./elementUtils";
 import { getCaretPosition } from "./caretUtils";
+import { handleCompositionStart, handleCompositionEnd } from "./compositionUtils";
 
 export {
   extractLines,
@@ -9,4 +10,6 @@ export {
   createSegment,
   createLine,
   getCaretPosition,
+  handleCompositionStart,
+  handleCompositionEnd,
 };

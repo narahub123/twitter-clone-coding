@@ -6,12 +6,14 @@ interface useSetTextEditorHTMLandCaretProps {
   textEditorRef: React.RefObject<HTMLDivElement | null>;
   innerHTML: string;
   caretPosition: ICaretPosition;
+  isComposing: boolean;
 }
 
 const useSetTextEditorHTMLWithCaret = ({
   textEditorRef,
   innerHTML,
   caretPosition,
+  isComposing,
 }: useSetTextEditorHTMLandCaretProps) => {
   //   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -20,6 +22,8 @@ const useSetTextEditorHTMLWithCaret = ({
     const selection = window.getSelection();
 
     if (!selection || selection.rangeCount === 0) return;
+
+    if (isComposing) return;
 
     const textEditor = textEditorRef.current;
 

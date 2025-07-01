@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import styles from "./TextEditor.module.css";
 import { joinClassNames } from "@shared";
 import {
+  handleCompositionEnd,
+  handleCompositionStart,
   useSetTextEditorHTMLWithCaret,
   useTextEditorInput,
   type ICaretPosition,
@@ -27,9 +29,17 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
     col: 0,
   });
 
+  // 한글 작성 중 여부 상태
+  const [isComposing, setIsComposing] = useState(false);
+
   const handleInput = useTextEditorInput();
 
-  useSetTextEditorHTMLWithCaret({ textEditorRef, innerHTML, caretPosition });
+  useSetTextEditorHTMLWithCaret({
+    textEditorRef,
+    innerHTML,
+    caretPosition,
+    isComposing,
+  });
 
   return (
     <div
@@ -38,6 +48,8 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
       suppressContentEditableWarning
       onInput={(e) => handleInput({ e, setInnerHTML, setCaretPosition })}
       ref={textEditorRef}
+      onCompositionStart={() => handleCompositionStart(setIsComposing)}
+      onCompositionEnd={() => handleCompositionEnd(setIsComposing)}
     >
       <div className={styles["line"]} data-offset="0-0">
         <span className={styles["segment"]} data-offset="0-0">
