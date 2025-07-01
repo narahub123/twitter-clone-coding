@@ -29,7 +29,7 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
 
   const handleInput = useTextEditorInput();
 
-  useSetTextEditorHTMLWithCaret({ textEditorRef, innerHTML });
+  useSetTextEditorHTMLWithCaret({ textEditorRef, innerHTML, caretPosition });
 
   return (
     <div
