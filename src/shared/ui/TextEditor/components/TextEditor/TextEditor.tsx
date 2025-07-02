@@ -46,7 +46,9 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
       className={classNames}
       contentEditable={!disabled}
       suppressContentEditableWarning
-      onInput={(e) => handleInput({ e, setInnerHTML, setCaretPosition })}
+      onInput={(e) =>
+        handleInput({ e, setInnerHTML, setCaretPosition, isComposing })
+      }
       ref={textEditorRef}
       onCompositionStart={() => handleCompositionStart(setIsComposing)}
       onCompositionEnd={() => handleCompositionEnd(setIsComposing)}
