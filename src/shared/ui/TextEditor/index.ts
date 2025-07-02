@@ -15,6 +15,7 @@ import {
   getCaretPosition,
   handleCompositionStart,
   handleCompositionEnd,
+  isInlineSegment,
 } from "./utils";
 
 import type {
@@ -45,6 +46,7 @@ export {
   getCaretPosition,
   handleCompositionStart,
   handleCompositionEnd,
+  isInlineSegment,
 };
 
 export type {
