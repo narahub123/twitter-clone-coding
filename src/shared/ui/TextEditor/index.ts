@@ -4,7 +4,11 @@ import TextEditor from "./components";
 
 import {} from "./components";
 
-import { useTextEditorInput, useSetTextEditorHTMLWithCaret } from "./hooks";
+import {
+  useTextEditorInput,
+  useSetTextEditorHTMLWithCaret,
+  useTextEditorKeyDown,
+} from "./hooks";
 
 import {
   extractLines,
@@ -36,6 +40,7 @@ export {
   // hooks
   useTextEditorInput,
   useSetTextEditorHTMLWithCaret,
+  useTextEditorKeyDown,
 
   // utils
   extractLines,

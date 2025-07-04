@@ -6,6 +6,7 @@ import {
   handleCompositionStart,
   useSetTextEditorHTMLWithCaret,
   useTextEditorInput,
+  useTextEditorKeyDown,
   type ICaretPosition,
 } from "@shared/ui/TextEditor";
 
@@ -34,6 +35,9 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
 
   const handleInput = useTextEditorInput();
 
+  // keydown handler
+  const handleKeydown = useTextEditorKeyDown();
+
   useSetTextEditorHTMLWithCaret({
     textEditorRef,
     innerHTML,
@@ -52,6 +56,9 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
       ref={textEditorRef}
       onCompositionStart={() => handleCompositionStart(setIsComposing)}
       onCompositionEnd={() => handleCompositionEnd(setIsComposing)}
+      onKeyDown={(e) =>
+        handleKeydown({ e, setInnerHTML, caretPosition, setCaretPosition })
+      }
     >
       <div className={styles["line"]} data-offset="0-0">
         <span className={styles["segment"]} data-offset="0-0">
