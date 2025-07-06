@@ -35,6 +35,19 @@ const getCaretPosition = (): ICaretPosition => {
     }
   }
 
+  console.log("현재 텍스트 노드", node);
+
+  // 현재 노드가 line인 경우
+  if (node instanceof HTMLDivElement && node.dataset.offset) {
+    const [row] = node.dataset.offset.split("-").map(Number);
+
+    return {
+      caretPos: 0,
+      row,
+      col: 0,
+    };
+  }
+
   // 현재 노드가 segment 인 경우
   if (node instanceof HTMLSpanElement && node.dataset.offset) {
     const [row, col] = node.dataset.offset.split("-").map(Number);
