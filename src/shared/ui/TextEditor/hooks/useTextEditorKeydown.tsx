@@ -1,8 +1,7 @@
 import {
-  createLine,
-  createSegment,
+  createEditorHTML,
   extractLines,
-  extractSegments,
+  updateLinesAfterEnter,
   type ICaretPosition,
 } from "@shared/ui/TextEditor";
 
@@ -29,46 +28,26 @@ const useTextEditorKeyDown = () => {
 
       const textEditor = e.currentTarget;
 
-      console.log("텍스트 에디어", textEditor);
-
       const lines = extractLines(textEditor);
-      console.log("줄", lines);
 
-      let { caretPos, row: curRow, col: curCol } = caretPosition;
+      let { caretPos, row, col } = caretPosition;
 
-      // 새 줄을 추가 + 텍스트 변경
-      lines.splice(curRow + 1, 0, "");
+      const updatedLines = updateLinesAfterEnter(lines, { caretPos, row, col });
 
-      console.log(lines);
-      
-      let linesHTML: string = "";
+      const { innerHTML } = createEditorHTML(updatedLines, {
+        caretPos,
+        row,
+        col,
+      });
 
-      for (let row = 0; row < lines.length; row++) {
-        const line = lines[row];
+      console.log(innerHTML);
 
-        const segments = extractSegments(line);
+      console.log("변경된 커서 위치", caretPos, row, col);
 
-        console.log(segments);
-
-        let segmentHTML: string = "";
-
-        for (let col = 0; col < segments.length; col++) {
-          const span = segments[col];
-
-          segmentHTML += createSegment(span, row, col);
-        }
-
-        linesHTML += createLine(segmentHTML, row);
-      }
-
-      console.log(linesHTML);
-
-      console.log("변경된 커서 위치", caretPos, curRow, curCol);
-
-      setInnerHTML(linesHTML);
+      setInnerHTML(innerHTML);
 
       // 커서의 위치 조정
-      setCaretPosition({ caretPos: 0, row: curRow + 1, col: 0 });
+      setCaretPosition({ caretPos: 0, row: row + 1, col: 0 });
     }
   };
 

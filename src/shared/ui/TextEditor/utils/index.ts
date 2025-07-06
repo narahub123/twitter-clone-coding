@@ -1,6 +1,11 @@
 import { extractLines, extractInlines, extractSegments } from "./extractUtils";
-import { createSegment, createLine, createEditorHTML } from "./elementUtils";
-import { getCaretPosition } from "./caretUtils";
+import {
+  createSegment,
+  createLine,
+  createEditorHTML,
+  updateLinesAfterEnter,
+} from "./elementUtils";
+import { getCaretPosition, correctCaretPosition } from "./caretUtils";
 import {
   handleCompositionStart,
   handleCompositionEnd,
@@ -21,4 +26,6 @@ export {
   createEditorHTML,
   handleFocus,
   handleBlur,
+  correctCaretPosition,
+  updateLinesAfterEnter,
 };

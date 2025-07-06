@@ -24,6 +24,8 @@ import {
   createEditorHTML,
   handleFocus,
   handleBlur,
+  correctCaretPosition,
+  updateLinesAfterEnter,
 } from "./utils";
 
 import type {
@@ -60,6 +62,8 @@ export {
   createEditorHTML,
   handleFocus,
   handleBlur,
+  correctCaretPosition,
+  updateLinesAfterEnter,
 };
 
 export type {

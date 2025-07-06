@@ -1,7 +1,7 @@
 import {
-  extractLines,
+  correctCaretPosition,
   extractSegments,
-  getCaretPosition,
+  type ICaretPosition,
   type ISegment,
 } from "@shared/ui/TextEditor";
 import styles from "@shared/ui/TextEditor/components/TextEditor/TextEditor.module.css";
@@ -27,10 +27,8 @@ const createLine = (innerHTML: string, row: number): string => {
   return `<div class="${styles["line"]}" data-offset="${row}-0">${innerHTML}</div>`;
 };
 
-const createEditorHTML = (TextEditor: HTMLDivElement) => {
-  let { caretPos, row: curRow, col: curCol } = getCaretPosition();
-
-  const lines = extractLines(TextEditor);
+const createEditorHTML = (lines: string[], caretPosition: ICaretPosition) => {
+  let { caretPos, row: curRow, col: curCol } = caretPosition;
 
   let linesHTML: string = "";
 
@@ -43,32 +41,12 @@ const createEditorHTML = (TextEditor: HTMLDivElement) => {
 
     // caretPosition 업데이트
     // 현재 줄이 커서가 위치한 줄인 경우
-    if (row === curRow) {
-      // 커서가 위치해야 할 segment가 존재하지 않는 경우 (예: 텍스트 삭제로 인해 사라진 경우)
-      if (!segments[curCol]) {
-        // 이전 segment로 커서를 이동
-        const prevSegment = segments[curCol - 1];
+    if (row === caretPosition.row) {
+      const corrected = correctCaretPosition(caretPosition, segments);
 
-        if (prevSegment) {
-          // 이전 segment가 존재하는 경우 해당 segment의 끝으로 커서 이동
-          caretPos = prevSegment.text.length;
-          curCol -= 1;
-        } else {
-          // 줄에서 segment가 하나도 없는 경우: 커서를 줄의 처음으로 이동
-          caretPos = 0;
-          curCol = 0;
-        }
-      } else {
-        // 커서 위치가 현재 segment의 텍스트 길이보다 큰 경우, 다음 segment로 이동
-        while (
-          curCol < segments.length &&
-          segments[curCol].text.length < caretPos
-        ) {
-          // 현재 segment의 길이만큼 커서 위치를 보정
-          caretPos -= segments[curCol].text.length;
-          curCol += 1;
-        }
-      }
+      caretPos = corrected.caretPos;
+      curRow = corrected.row;
+      curCol = corrected.col;
     }
 
     for (let col = 0; col < segments.length; col++) {
@@ -90,4 +68,52 @@ const createEditorHTML = (TextEditor: HTMLDivElement) => {
   };
 };
 
-export { createSegment, createLine, createEditorHTML };
+const updateLinesAfterEnter = (
+  lines: string[],
+  caretPosition: ICaretPosition
+) => {
+  const { caretPos, row, col: curCol } = caretPosition;
+
+  // 커서가 존재하는 줄
+  const curLine = lines[row];
+
+  // 커서가 존재하는 줄의 segments
+  const curSegments = extractSegments(curLine);
+
+  // 커서가 존재하는 segment
+  const curSegment = curSegments[curCol];
+
+  // 커서가 존재하는 segment 내의 text
+  const curText = curSegment.text;
+
+  // 현재 줄에 남아 있는 텍스트
+  let remainingText = "";
+
+  for (let col = 0; col < curCol; col++) {
+    const segment = curSegments[col];
+
+    remainingText += segment.text;
+  }
+
+  remainingText += curText.slice(0, caretPos);
+
+  lines.splice(row, 1, remainingText);
+
+  // 커서가 존재하는 segment 내에서 커서 뒤의 텍스
+  let afterText = curText.slice(caretPos) || "";
+
+  console.log(afterText);
+
+  // 현재 segment 뒤의 segments
+  const afterSegments = curSegments.slice(curCol + 1);
+
+  // afterSegments의 text
+  afterText += afterSegments.map((s) => s.text).join("");
+
+  // 새 줄을 추가 + 텍스트 변경
+  lines.splice(row + 1, 0, afterText);
+
+  return lines;
+};
+
+export { createSegment, createLine, createEditorHTML, updateLinesAfterEnter };

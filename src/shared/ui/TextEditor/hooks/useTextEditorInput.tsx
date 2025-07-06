@@ -1,5 +1,10 @@
 // import { useAppDispatch } from "@shared/lib";
-import { createEditorHTML, type ICaretPosition } from "@shared/ui/TextEditor";
+import {
+  createEditorHTML,
+  extractLines,
+  getCaretPosition,
+  type ICaretPosition,
+} from "@shared/ui/TextEditor";
 
 interface HandleInputProps {
   e: React.FormEvent<HTMLDivElement>;
@@ -21,7 +26,12 @@ const useTextEditorInput = () => {
 
     if (isComposing) return;
 
-    const { innerHTML, caretPosition } = createEditorHTML(textEditor);
+    const lines = extractLines(textEditor);
+
+    const { innerHTML, caretPosition } = createEditorHTML(
+      lines,
+      getCaretPosition()
+    );
 
     setInnerHTML(innerHTML);
     setCaretPosition(caretPosition);
