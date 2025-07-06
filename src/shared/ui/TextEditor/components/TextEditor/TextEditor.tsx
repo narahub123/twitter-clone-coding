@@ -79,9 +79,7 @@ const TextEditor = ({
       ref={textEditorRef}
       onCompositionStart={() => handleCompositionStart(setIsComposing)}
       onCompositionEnd={() => handleCompositionEnd(setIsComposing)}
-      onKeyDown={(e) =>
-        handleKeydown({ e, setInnerHTML, caretPosition, setCaretPosition })
-      }
+      onKeyDown={(e) => handleKeydown({ e, setInnerHTML, setCaretPosition })}
       onClick={(e) => handleClick(e, setInnerHTML, setCaretPosition)}
       onKeyUp={(e) => handleKeyUp({ e, setCaretPosition, setInnerHTML })}
       onFocus={() => handleFocus(setIsFocused)}

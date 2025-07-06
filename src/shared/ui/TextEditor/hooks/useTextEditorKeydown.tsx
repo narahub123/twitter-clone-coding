@@ -1,6 +1,7 @@
 import {
   createEditorHTML,
   extractLines,
+  getCaretPosition,
   updateLinesAfterEnter,
   type ICaretPosition,
 } from "@shared/ui/TextEditor";
@@ -8,7 +9,6 @@ import {
 interface handleKeyodownProps {
   e: React.KeyboardEvent<HTMLDivElement>;
   setInnerHTML: React.Dispatch<React.SetStateAction<string>>;
-  caretPosition: ICaretPosition;
   setCaretPosition: React.Dispatch<React.SetStateAction<ICaretPosition>>;
 }
 
@@ -16,7 +16,6 @@ const useTextEditorKeyDown = () => {
   const handleKeydown = ({
     e,
     setInnerHTML,
-    caretPosition,
     setCaretPosition,
   }: handleKeyodownProps) => {
     const key = e.key;
@@ -30,7 +29,7 @@ const useTextEditorKeyDown = () => {
 
       const lines = extractLines(textEditor);
 
-      let { caretPos, row, col } = caretPosition;
+      let { caretPos, row, col } = getCaretPosition();
 
       const updatedLines = updateLinesAfterEnter(lines, { caretPos, row, col });
 
