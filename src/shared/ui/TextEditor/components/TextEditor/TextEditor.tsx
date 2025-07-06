@@ -65,7 +65,7 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
       onKeyDown={(e) =>
         handleKeydown({ e, setInnerHTML, caretPosition, setCaretPosition })
       }
-      onKeyUp={(e) => handleKeyUp({ e, setCaretPosition })}
+      onKeyUp={(e) => handleKeyUp({ e, setCaretPosition, setInnerHTML })}
     >
       <div className={styles["line"]} data-offset="0-0">
         <span className={styles["segment"]} data-offset="0-0">

@@ -21,6 +21,7 @@ import {
   handleCompositionStart,
   handleCompositionEnd,
   isInlineSegment,
+  createEditorHTML,
 } from "./utils";
 
 import type {
@@ -54,6 +55,7 @@ export {
   handleCompositionStart,
   handleCompositionEnd,
   isInlineSegment,
+  createEditorHTML,
 };
 
 export type {

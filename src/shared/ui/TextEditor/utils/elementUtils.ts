@@ -1,4 +1,8 @@
-import { type ISegment } from "@shared/ui/TextEditor";
+import {
+  extractLines,
+  extractSegments,
+  type ISegment,
+} from "@shared/ui/TextEditor";
 import styles from "@shared/ui/TextEditor/components/TextEditor/TextEditor.module.css";
 
 const createSegment = (span: ISegment, row: number, col: number): string => {
@@ -22,4 +26,28 @@ const createLine = (innerHTML: string, row: number): string => {
   return `<div class="${styles["line"]}" data-offset="${row}-0">${innerHTML}</div>`;
 };
 
-export { createSegment, createLine };
+const createEditorHTML = (TextEditor: HTMLDivElement) => {
+  const lines = extractLines(TextEditor);
+
+  let linesHTML: string = "";
+
+  for (let row = 0; row < lines.length; row++) {
+    const line = lines[row];
+
+    const segments = extractSegments(line);
+
+    let segmentsHTML: string = "";
+
+    for (let col = 0; col < segments.length; col++) {
+      const span = segments[col];
+
+      segmentsHTML += createSegment(span, row, col);
+    }
+
+    linesHTML += createLine(segmentsHTML, row);
+  }
+
+  return linesHTML;
+};
+
+export { createSegment, createLine, createEditorHTML };

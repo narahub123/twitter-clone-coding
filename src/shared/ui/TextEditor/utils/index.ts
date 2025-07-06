@@ -1,5 +1,5 @@
 import { extractLines, extractInlines, extractSegments } from "./extractUtils";
-import { createSegment, createLine } from "./elementUtils";
+import { createSegment, createLine, createEditorHTML } from "./elementUtils";
 import { getCaretPosition } from "./caretUtils";
 import {
   handleCompositionStart,
@@ -17,4 +17,5 @@ export {
   handleCompositionStart,
   handleCompositionEnd,
   isInlineSegment,
+  createEditorHTML,
 };

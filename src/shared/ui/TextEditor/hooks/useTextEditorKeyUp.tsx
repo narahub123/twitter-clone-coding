@@ -1,34 +1,30 @@
-import { getCaretPosition, type ICaretPosition } from "@shared/ui/TextEditor";
+import {
+  createEditorHTML,
+  getCaretPosition,
+  type ICaretPosition,
+} from "@shared/ui/TextEditor";
 
 interface HandleKeyUpProps {
   e: React.KeyboardEvent<HTMLDivElement>;
   setCaretPosition: React.Dispatch<React.SetStateAction<ICaretPosition>>;
+  setInnerHTML: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const useTextEditorKeyUp = () => {
-  const handleKeyUp = ({ e, setCaretPosition }: HandleKeyUpProps) => {
+  const handleKeyUp = ({
+    e,
+    setCaretPosition,
+    setInnerHTML,
+  }: HandleKeyUpProps) => {
     const key = e.key;
-    // onInput에서 업데이트 후 커서의 위치
     const { caretPos, row: curRow, col: curCol } = getCaretPosition();
-    console.log(caretPos, curRow, curCol);
+    const innerHTML = createEditorHTML(e.currentTarget);
 
-    switch (key) {
-      case "ArrowLeft":
-        console.log("왼쪽");
-        setCaretPosition({ caretPos, row: curRow, col: curCol });
-        break;
-      case "ArrowRight":
-        console.log("오른쪽");
-        setCaretPosition({ caretPos, row: curRow, col: curCol });
-        break;
-      case "ArrowUp":
-        console.log("위쪽");
-        setCaretPosition({ caretPos, row: curRow, col: curCol });
-        break;
-      case "ArrowDown":
-        console.log("아래쪽");
-        setCaretPosition({ caretPos, row: curRow, col: curCol });
-        break;
+    const arrowKeys = ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"];
+
+    if (arrowKeys.includes(key)) {
+      setInnerHTML(innerHTML);
+      setCaretPosition({ caretPos, row: curRow, col: curCol });
     }
   };
 
