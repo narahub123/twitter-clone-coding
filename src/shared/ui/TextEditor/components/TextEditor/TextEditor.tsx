@@ -7,6 +7,7 @@ import {
   useSetTextEditorHTMLWithCaret,
   useTextEditorInput,
   useTextEditorKeyDown,
+  useTextEditorKeyUp,
   type ICaretPosition,
 } from "@shared/ui/TextEditor";
 
@@ -38,12 +39,17 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
   // keydown handler
   const handleKeydown = useTextEditorKeyDown();
 
+  // 방향키 핸들러
+  const handleKeyUp = useTextEditorKeyUp();
+
   useSetTextEditorHTMLWithCaret({
     textEditorRef,
     innerHTML,
     caretPosition,
     isComposing,
   });
+
+  console.log("현재 커서 위치", caretPosition);
 
   return (
     <div
@@ -59,6 +65,7 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
       onKeyDown={(e) =>
         handleKeydown({ e, setInnerHTML, caretPosition, setCaretPosition })
       }
+      onKeyUp={(e) => handleKeyUp({ e, setCaretPosition })}
     >
       <div className={styles["line"]} data-offset="0-0">
         <span className={styles["segment"]} data-offset="0-0">
