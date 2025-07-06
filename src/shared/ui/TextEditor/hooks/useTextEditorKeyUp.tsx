@@ -1,8 +1,4 @@
-import {
-  createEditorHTML,
-  getCaretPosition,
-  type ICaretPosition,
-} from "@shared/ui/TextEditor";
+import { createEditorHTML, type ICaretPosition } from "@shared/ui/TextEditor";
 
 interface HandleKeyUpProps {
   e: React.KeyboardEvent<HTMLDivElement>;
@@ -17,14 +13,13 @@ const useTextEditorKeyUp = () => {
     setInnerHTML,
   }: HandleKeyUpProps) => {
     const key = e.key;
-    const { caretPos, row: curRow, col: curCol } = getCaretPosition();
-    const innerHTML = createEditorHTML(e.currentTarget);
+    const { innerHTML, caretPosition } = createEditorHTML(e.currentTarget);
 
     const arrowKeys = ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"];
 
     if (arrowKeys.includes(key)) {
       setInnerHTML(innerHTML);
-      setCaretPosition({ caretPos, row: curRow, col: curCol });
+      setCaretPosition(caretPosition);
     }
   };
 
