@@ -6,6 +6,7 @@ import {
   handleCompositionEnd,
 } from "./compositionUtils";
 import { isInlineSegment } from "./elementGuards";
+import { handleFocus, handleBlur } from "./focusUtils";
 
 export {
   extractLines,
@@ -18,4 +19,6 @@ export {
   handleCompositionEnd,
   isInlineSegment,
   createEditorHTML,
+  handleFocus,
+  handleBlur,
 };

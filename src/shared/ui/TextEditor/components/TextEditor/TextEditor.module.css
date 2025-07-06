@@ -2,6 +2,19 @@
   width: 100%;
   border: 1px solid #ccc;
   padding: 1rem;
+  font-size: 20px;
+}
+
+.line {
+  padding: 0.125rem 0;
+  position: relative;
+}
+
+.placeholder {
+  position: absolute;
+  color: #777;
+  user-select: none;
+  pointer-events: none;
 }
 
 .segment {
@@ -9,8 +22,4 @@
 
 .inline {
   color: rgb(29, 155, 240);
-}
-
-.line {
-  padding: 0.125rem 0;
 }

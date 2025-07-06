@@ -22,6 +22,8 @@ import {
   handleCompositionEnd,
   isInlineSegment,
   createEditorHTML,
+  handleFocus,
+  handleBlur,
 } from "./utils";
 
 import type {
@@ -56,6 +58,8 @@ export {
   handleCompositionEnd,
   isInlineSegment,
   createEditorHTML,
+  handleFocus,
+  handleBlur,
 };
 
 export type {

@@ -2,8 +2,10 @@ import { useRef, useState } from "react";
 import styles from "./TextEditor.module.css";
 import { joinClassNames } from "@shared";
 import {
+  handleBlur,
   handleCompositionEnd,
   handleCompositionStart,
+  handleFocus,
   useSetTextEditorHTMLWithCaret,
   useTextEditorInput,
   useTextEditorKeyDown,
@@ -14,9 +16,14 @@ import {
 interface TextEditorProps {
   className?: string;
   disabled?: boolean;
+  placeholder?: string;
 }
 
-const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
+const TextEditor = ({
+  className,
+  disabled = false,
+  placeholder,
+}: TextEditorProps) => {
   const classNames = joinClassNames([styles["text__editor"], className]);
 
   const textEditorRef = useRef<HTMLDivElement>(null);
@@ -33,6 +40,12 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
 
   // 한글 작성 중 여부 상태
   const [isComposing, setIsComposing] = useState(false);
+
+  // 포커스 상태
+  const [isFocused, setIsFocused] = useState(false);
+
+  const phCond =
+    placeholder && !isFocused && !textEditorRef.current?.textContent;
 
   const handleInput = useTextEditorInput();
 
@@ -66,8 +79,20 @@ const TextEditor = ({ className, disabled = false }: TextEditorProps) => {
         handleKeydown({ e, setInnerHTML, caretPosition, setCaretPosition })
       }
       onKeyUp={(e) => handleKeyUp({ e, setCaretPosition, setInnerHTML })}
+      onFocus={() => handleFocus(setIsFocused)}
+      onBlur={() => handleBlur(setIsFocused)}
+      aria-describedby={phCond ? "placeholder" : undefined}
     >
       <div className={styles["line"]} data-offset="0-0">
+        {phCond && (
+          <span
+            className={styles["placeholder"]}
+            id="placeholder"
+            role="presentation"
+          >
+            {placeholder}
+          </span>
+        )}
         <span className={styles["segment"]} data-offset="0-0">
           <br data-text="true" />
         </span>

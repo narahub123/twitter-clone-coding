@@ -6,7 +6,7 @@ interface TextEditorTestPageProps {}
 const TextEditorTestPage = ({}: TextEditorTestPageProps) => {
   return (
     <div className={styles["text__editor__test__page"]}>
-      <TextEditor />
+      <TextEditor placeholder="무슨일이 일어나고 있나요?" />
     </div>
   );
 };
