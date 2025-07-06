@@ -9,6 +9,7 @@ import {
   useSetTextEditorHTMLWithCaret,
   useTextEditorKeyDown,
   useTextEditorKeyUp,
+  useTextEditorClick,
 } from "./hooks";
 
 import {
@@ -48,6 +49,7 @@ export {
   useSetTextEditorHTMLWithCaret,
   useTextEditorKeyDown,
   useTextEditorKeyUp,
+  useTextEditorClick,
 
   // utils
   extractLines,

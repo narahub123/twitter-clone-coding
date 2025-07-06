@@ -7,6 +7,7 @@ import {
   handleCompositionStart,
   handleFocus,
   useSetTextEditorHTMLWithCaret,
+  useTextEditorClick,
   useTextEditorInput,
   useTextEditorKeyDown,
   useTextEditorKeyUp,
@@ -55,6 +56,9 @@ const TextEditor = ({
   // 방향키 핸들러
   const handleKeyUp = useTextEditorKeyUp();
 
+  // click 핸들러
+  const handleClick = useTextEditorClick();
+
   useSetTextEditorHTMLWithCaret({
     textEditorRef,
     innerHTML,
@@ -78,6 +82,7 @@ const TextEditor = ({
       onKeyDown={(e) =>
         handleKeydown({ e, setInnerHTML, caretPosition, setCaretPosition })
       }
+      onClick={(e) => handleClick(e, setInnerHTML, setCaretPosition)}
       onKeyUp={(e) => handleKeyUp({ e, setCaretPosition, setInnerHTML })}
       onFocus={() => handleFocus(setIsFocused)}
       onBlur={() => handleBlur(setIsFocused)}

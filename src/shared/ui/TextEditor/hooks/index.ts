@@ -2,10 +2,12 @@ import useTextEditorInput from "./useTextEditorInput";
 import useSetTextEditorHTMLWithCaret from "./useSetTextEditorHTMLWithCaret";
 import useTextEditorKeyDown from "./useTextEditorKeydown";
 import useTextEditorKeyUp from "./useTextEditorKeyUp";
+import useTextEditorClick from "./useTextEditorClick";
 
 export {
   useTextEditorInput,
   useSetTextEditorHTMLWithCaret,
   useTextEditorKeyDown,
   useTextEditorKeyUp,
+  useTextEditorClick,
 };
