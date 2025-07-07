@@ -32,6 +32,7 @@ import {
   FocusTrap,
   Input,
   TextEditor,
+  Dropdown,
 } from "./ui";
 
 import {
@@ -56,6 +57,7 @@ import type {
   HeadingLevel,
   PlacementType,
   ITextEditor,
+  IRect,
 } from "./types";
 
 export {
@@ -111,6 +113,7 @@ export {
   FocusTrap,
   Input,
   TextEditor,
+  Dropdown,
 };
 
 export type {
@@ -124,6 +127,7 @@ export type {
 
   // normal
   PlacementType,
+  IRect,
 
   // slices
   ITextEditor,

@@ -10,6 +10,7 @@ import Modal from "./Modal";
 import FocusTrap from "./FocusTrap";
 import Input from "./Input";
 import TextEditor from "./TextEditor";
+import Dropdown from "./Dropdown";
 
 export {
   Icon,
@@ -25,4 +26,5 @@ export {
   FocusTrap,
   Input,
   TextEditor,
+  Dropdown,
 };

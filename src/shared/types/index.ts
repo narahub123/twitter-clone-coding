@@ -11,6 +11,13 @@ import type { ITextEditor } from "./slices";
 
 type PlacementType = "top-left" | "top-right" | "bottom-left" | "bottom-right";
 
+interface IRect {
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+}
+
 export type {
   ColorSchemeType,
   SizeType,
@@ -20,4 +27,5 @@ export type {
   HeadingLevel,
   PlacementType,
   ITextEditor,
+  IRect,
 };
