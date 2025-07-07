@@ -34,7 +34,11 @@ import {
   TextEditor,
 } from "./ui";
 
-import { textEditorSlice } from "./models";
+import {
+  textEditorSlice,
+  selectTextEditorInnerHTML,
+  selectTextEditorCaretPosition,
+} from "./models";
 
 import type {
   ColorSchemeType,
@@ -77,6 +81,8 @@ export {
   // reducers
 
   // selectors
+  selectTextEditorInnerHTML,
+  selectTextEditorCaretPosition,
 
   // utils
   joinClassNames,
