@@ -55,36 +55,38 @@ const TextEditor = ({
   });
 
   return (
-    <div
-      className={classNames}
-      contentEditable={!disabled}
-      suppressContentEditableWarning
-      onInput={(e) => handleInput({ e, isComposing })}
-      ref={textEditorRef}
-      onCompositionStart={() => handleCompositionStart(setIsComposing)}
-      onCompositionEnd={() => handleCompositionEnd(setIsComposing)}
-      onKeyUp={handleKeyUp}
-      onKeyDown={handleKeydown}
-      onClick={handleClick}
-      onFocus={() => handleFocus(setIsFocused)}
-      onBlur={() => handleBlur(setIsFocused)}
-      aria-describedby={phCond ? "placeholder" : undefined}
-    >
-      <div className={styles["line"]} data-offset="0-0">
-        <InlineSuggestionDropdown />
-        {phCond && (
-          <span
-            className={styles["placeholder"]}
-            id="placeholder"
-            role="presentation"
-          >
-            {placeholder}
+    <div className={styles["wrapper"]}>
+      <div
+        className={classNames}
+        contentEditable={!disabled}
+        suppressContentEditableWarning
+        onInput={(e) => handleInput({ e, isComposing })}
+        ref={textEditorRef}
+        onCompositionStart={() => handleCompositionStart(setIsComposing)}
+        onCompositionEnd={() => handleCompositionEnd(setIsComposing)}
+        onKeyUp={handleKeyUp}
+        onKeyDown={handleKeydown}
+        onClick={handleClick}
+        onFocus={() => handleFocus(setIsFocused)}
+        onBlur={() => handleBlur(setIsFocused)}
+        aria-describedby={phCond ? "placeholder" : undefined}
+      >
+        <div className={styles["line"]} data-offset="0-0">
+          {phCond && (
+            <span
+              className={styles["placeholder"]}
+              id="placeholder"
+              role="presentation"
+            >
+              {placeholder}
+            </span>
+          )}
+          <span className={styles["segment"]} data-offset="0-0">
+            <br data-text="true" />
           </span>
-        )}
-        <span className={styles["segment"]} data-offset="0-0">
-          <br data-text="true" />
-        </span>
+        </div>
       </div>
+      <InlineSuggestionDropdown />
     </div>
   );
 };
