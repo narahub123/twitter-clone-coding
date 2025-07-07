@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
-import styles from "./Dropdown.module.css";
+import styles from "./DropdownContainer.module.css";
 import { joinClassNames, type DropdownRoleType, type IRect } from "@shared";
 
-interface DropdownProps {
+interface DropdownContainerProps {
   className?: string;
   children: ReactNode;
   position: IRect;
@@ -12,7 +12,7 @@ interface DropdownProps {
   ariaDescribedBy?: string;
 }
 
-const Dropdown = ({
+const DropdownContainer = ({
   className,
   children,
   position,
@@ -20,7 +20,7 @@ const Dropdown = ({
   ariaLabel,
   ariaLabelledBy,
   ariaDescribedBy,
-}: DropdownProps) => {
+}: DropdownContainerProps) => {
   const { top, bottom, left, right } = position;
 
   const classNames = joinClassNames([styles["dropdown"], className]);
@@ -40,4 +40,4 @@ const Dropdown = ({
   );
 };
 
-export default Dropdown;
+export default DropdownContainer;
