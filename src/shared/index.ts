@@ -34,6 +34,8 @@ import {
   TextEditor,
 } from "./ui";
 
+import { textEditorSlice } from "./models";
+
 import type {
   ColorSchemeType,
   RoundedType,
@@ -67,6 +69,14 @@ export {
   weights,
   headings,
   colorRGB,
+
+  // models
+  // slices
+  textEditorSlice,
+
+  // reducers
+
+  // selectors
 
   // utils
   joinClassNames,
