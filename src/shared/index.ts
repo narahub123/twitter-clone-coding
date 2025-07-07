@@ -58,6 +58,7 @@ import type {
   PlacementType,
   ITextEditor,
   IRect,
+  DropdownRoleType,
 } from "./types";
 
 export {
@@ -128,6 +129,7 @@ export type {
   // normal
   PlacementType,
   IRect,
+  DropdownRoleType,
 
   // slices
   ITextEditor,

@@ -18,6 +18,8 @@ interface IRect {
   right?: number;
 }
 
+type DropdownRoleType = "listbox" | "menu" | "dialog";
+
 export type {
   ColorSchemeType,
   SizeType,
@@ -28,4 +30,5 @@ export type {
   PlacementType,
   ITextEditor,
   IRect,
+  DropdownRoleType,
 };
