@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { ITextEditor } from "@shared/types";
+import type { ICaretPosition } from "@shared/ui/TextEditor";
 
 const initialState: ITextEditor = {
   innerHTML: "",
@@ -13,9 +14,20 @@ const initialState: ITextEditor = {
 const textEditorSlice = createSlice({
   name: "textEditor",
   initialState,
-  reducers: {},
+  reducers: {
+    setTextEditorInnerHTML: (state, action: PayloadAction<string>) => {
+      state.innerHTML = action.payload;
+    },
+    setTextEditorCaretPosition: (
+      state,
+      action: PayloadAction<ICaretPosition>
+    ) => {
+      state.caretPosition = action.payload;
+    },
+  },
 });
 
 export default textEditorSlice.reducer;
 
-export const {} = textEditorSlice.actions;
+export const { setTextEditorInnerHTML, setTextEditorCaretPosition } =
+  textEditorSlice.actions;

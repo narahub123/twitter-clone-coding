@@ -1,4 +1,11 @@
-import { textEditorSlice } from "./slices";
+import {
+  // slices
+  textEditorSlice,
+
+  // reducers
+  setTextEditorInnerHTML,
+  setTextEditorCaretPosition,
+} from "./slices";
 
 import {
   selectTextEditorInnerHTML,
@@ -10,6 +17,8 @@ export {
   textEditorSlice,
 
   // slices
+  setTextEditorInnerHTML,
+  setTextEditorCaretPosition,
 
   // selectors
   selectTextEditorInnerHTML,

@@ -35,7 +35,14 @@ import {
 } from "./ui";
 
 import {
+  // slices
   textEditorSlice,
+
+  // reducers
+  setTextEditorInnerHTML,
+  setTextEditorCaretPosition,
+
+  // selectors
   selectTextEditorInnerHTML,
   selectTextEditorCaretPosition,
 } from "./models";
@@ -79,6 +86,8 @@ export {
   textEditorSlice,
 
   // reducers
+  setTextEditorInnerHTML,
+  setTextEditorCaretPosition,
 
   // selectors
   selectTextEditorInnerHTML,

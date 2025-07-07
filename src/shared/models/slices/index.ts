@@ -1,3 +1,15 @@
 import textEditorSlice from "./textEditorSlice";
 
-export { textEditorSlice };
+import {
+  setTextEditorInnerHTML,
+  setTextEditorCaretPosition,
+} from "./textEditorSlice";
+
+export {
+  // slice
+  textEditorSlice,
+
+  // reducers
+  setTextEditorInnerHTML,
+  setTextEditorCaretPosition,
+};
