@@ -6,6 +6,7 @@ import {
   handleCompositionEnd,
   handleCompositionStart,
   handleFocus,
+  InlineSuggestionDropdown,
   useSetTextEditorHTMLWithCaret,
   useTextEditorClick,
   useTextEditorInput,
@@ -70,6 +71,7 @@ const TextEditor = ({
       aria-describedby={phCond ? "placeholder" : undefined}
     >
       <div className={styles["line"]} data-offset="0-0">
+        <InlineSuggestionDropdown />
         {phCond && (
           <span
             className={styles["placeholder"]}

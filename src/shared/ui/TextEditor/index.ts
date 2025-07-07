@@ -2,7 +2,7 @@ import TextEditorTestPage from "./_test";
 
 import TextEditor from "./components";
 
-import {} from "./components";
+import { InlineSuggestionDropdown } from "./components";
 
 import {
   useTextEditorInput,
@@ -43,6 +43,7 @@ export {
   TextEditorTestPage,
 
   // components
+  InlineSuggestionDropdown,
 
   // hooks
   useTextEditorInput,
