@@ -10,6 +10,7 @@ import {
   useTextEditorKeyDown,
   useTextEditorKeyUp,
   useTextEditorClick,
+  useInlineSuggestionDropdown,
 } from "./hooks";
 
 import {
@@ -35,6 +36,7 @@ import type {
   SegmentType,
   ISegment,
   ICaretPosition,
+  IInlineRect,
 } from "./types";
 
 export default TextEditor;
@@ -51,6 +53,7 @@ export {
   useTextEditorKeyDown,
   useTextEditorKeyUp,
   useTextEditorClick,
+  useInlineSuggestionDropdown,
 
   // utils
   extractLines,
@@ -75,4 +78,5 @@ export type {
   SegmentType,
   ISegment,
   ICaretPosition,
+  IInlineRect,
 };

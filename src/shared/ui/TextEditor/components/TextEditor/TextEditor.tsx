@@ -7,11 +7,13 @@ import {
   handleCompositionStart,
   handleFocus,
   InlineSuggestionDropdown,
+  useInlineSuggestionDropdown,
   useSetTextEditorHTMLWithCaret,
   useTextEditorClick,
   useTextEditorInput,
   useTextEditorKeyDown,
   useTextEditorKeyUp,
+  type IInlineRect,
 } from "@shared/ui/TextEditor";
 
 interface TextEditorProps {
@@ -35,6 +37,12 @@ const TextEditor = ({
   // 포커스 상태
   const [isFocused, setIsFocused] = useState(false);
 
+  // InlineSuggestionDropdwon 여닫기 상태
+  const [isOpen, setIsOpen] = useState(false);
+
+  // inline의 위치
+  const [rect, setRect] = useState<IInlineRect>();
+
   const phCond =
     placeholder && !isFocused && !textEditorRef.current?.textContent;
 
@@ -53,6 +61,10 @@ const TextEditor = ({
     textEditorRef,
     isComposing,
   });
+
+  useInlineSuggestionDropdown({ textEditorRef, setIsOpen, setRect });
+
+  console.log(isOpen);
 
   return (
     <div className={styles["wrapper"]}>
@@ -86,7 +98,7 @@ const TextEditor = ({
           </span>
         </div>
       </div>
-      <InlineSuggestionDropdown />
+      {isOpen && <InlineSuggestionDropdown rect={rect} />}
     </div>
   );
 };

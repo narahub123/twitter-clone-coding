@@ -19,10 +19,17 @@ interface ICaretPosition {
   col: number;
 }
 
+interface IInlineRect {
+  top?: number;
+  left?: number;
+  height?: number;
+}
+
 export type {
   InlineType,
   IInlineEntity,
   SegmentType,
   ISegment,
   ICaretPosition,
+  IInlineRect,
 };

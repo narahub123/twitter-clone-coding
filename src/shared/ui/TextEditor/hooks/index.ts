@@ -3,6 +3,7 @@ import useSetTextEditorHTMLWithCaret from "./useSetTextEditorHTMLWithCaret";
 import useTextEditorKeyDown from "./useTextEditorKeydown";
 import useTextEditorKeyUp from "./useTextEditorKeyUp";
 import useTextEditorClick from "./useTextEditorClick";
+import useInlineSuggestionDropdown from "./useInlineSuggestionDropdown";
 
 export {
   useTextEditorInput,
@@ -10,4 +11,5 @@ export {
   useTextEditorKeyDown,
   useTextEditorKeyUp,
   useTextEditorClick,
+  useInlineSuggestionDropdown,
 };
