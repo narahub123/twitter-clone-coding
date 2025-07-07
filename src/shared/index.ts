@@ -42,6 +42,7 @@ import type {
   WeightType,
   HeadingLevel,
   PlacementType,
+  ITextEditor,
 } from "./types";
 
 export {
@@ -98,4 +99,7 @@ export type {
 
   // normal
   PlacementType,
+
+  // slices
+  ITextEditor,
 };
