@@ -1,21 +1,24 @@
 import { useEffect } from "react";
-import { isInlineSegment, type ICaretPosition } from "@shared/ui/TextEditor";
+import { isInlineSegment } from "@shared/ui/TextEditor";
+import { useAppSelector } from "@shared/lib";
+import {
+  selectTextEditorCaretPosition,
+  selectTextEditorInnerHTML,
+} from "@shared/models";
 // import { useAppDispatch } from "@shared/lib";
 
 interface useSetTextEditorHTMLandCaretProps {
   textEditorRef: React.RefObject<HTMLDivElement | null>;
-  innerHTML: string;
-  caretPosition: ICaretPosition;
   isComposing: boolean;
 }
 
 const useSetTextEditorHTMLWithCaret = ({
   textEditorRef,
-  innerHTML,
-  caretPosition,
   isComposing,
 }: useSetTextEditorHTMLandCaretProps) => {
-  //   const dispatch = useAppDispatch();
+  const innerHTML = useAppSelector(selectTextEditorInnerHTML);
+  const caretPosition = useAppSelector(selectTextEditorCaretPosition);
+
   useEffect(() => {
     if (!textEditorRef.current) return;
 

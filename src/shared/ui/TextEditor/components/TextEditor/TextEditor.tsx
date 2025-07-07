@@ -11,7 +11,6 @@ import {
   useTextEditorInput,
   useTextEditorKeyDown,
   useTextEditorKeyUp,
-  type ICaretPosition,
 } from "@shared/ui/TextEditor";
 
 interface TextEditorProps {
@@ -28,16 +27,6 @@ const TextEditor = ({
   const classNames = joinClassNames([styles["text__editor"], className]);
 
   const textEditorRef = useRef<HTMLDivElement>(null);
-
-  // handleInput에서 생성된 innerHTLM의 상태
-  const [innerHTML, setInnerHTML] = useState("");
-
-  // 커서의 위치 상태
-  const [caretPosition, setCaretPosition] = useState<ICaretPosition>({
-    caretPos: 0,
-    row: 0,
-    col: 0,
-  });
 
   // 한글 작성 중 여부 상태
   const [isComposing, setIsComposing] = useState(false);
@@ -61,27 +50,21 @@ const TextEditor = ({
 
   useSetTextEditorHTMLWithCaret({
     textEditorRef,
-    innerHTML,
-    caretPosition,
     isComposing,
   });
-
-  console.log("현재 커서 위치", caretPosition);
 
   return (
     <div
       className={classNames}
       contentEditable={!disabled}
       suppressContentEditableWarning
-      onInput={(e) =>
-        handleInput({ e, setInnerHTML, setCaretPosition, isComposing })
-      }
+      onInput={(e) => handleInput({ e, isComposing })}
       ref={textEditorRef}
       onCompositionStart={() => handleCompositionStart(setIsComposing)}
       onCompositionEnd={() => handleCompositionEnd(setIsComposing)}
-      onKeyDown={(e) => handleKeydown({ e, setInnerHTML, setCaretPosition })}
-      onClick={(e) => handleClick(e, setInnerHTML, setCaretPosition)}
-      onKeyUp={(e) => handleKeyUp({ e, setCaretPosition, setInnerHTML })}
+      onKeyUp={handleKeyUp}
+      onKeyDown={handleKeydown}
+      onClick={handleClick}
       onFocus={() => handleFocus(setIsFocused)}
       onBlur={() => handleBlur(setIsFocused)}
       aria-describedby={phCond ? "placeholder" : undefined}

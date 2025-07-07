@@ -1,27 +1,24 @@
 // import { useAppDispatch } from "@shared/lib";
+import { useAppDispatch } from "@shared/lib";
+import {
+  setTextEditorCaretPosition,
+  setTextEditorInnerHTML,
+} from "@shared/models";
 import {
   createEditorHTML,
   extractLines,
   getCaretPosition,
-  type ICaretPosition,
 } from "@shared/ui/TextEditor";
 
 interface HandleInputProps {
   e: React.FormEvent<HTMLDivElement>;
-  setInnerHTML: React.Dispatch<React.SetStateAction<string>>;
-  setCaretPosition: React.Dispatch<React.SetStateAction<ICaretPosition>>;
   isComposing: boolean;
 }
 
 const useTextEditorInput = () => {
-  //   const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-  const handleInput = ({
-    e,
-    setInnerHTML,
-    setCaretPosition,
-    isComposing,
-  }: HandleInputProps) => {
+  const handleInput = ({ e, isComposing }: HandleInputProps) => {
     const textEditor = e.currentTarget;
 
     if (isComposing) return;
@@ -33,8 +30,8 @@ const useTextEditorInput = () => {
       getCaretPosition()
     );
 
-    setInnerHTML(innerHTML);
-    setCaretPosition(caretPosition);
+    dispatch(setTextEditorInnerHTML(innerHTML));
+    dispatch(setTextEditorCaretPosition(caretPosition));
   };
 
   return handleInput;

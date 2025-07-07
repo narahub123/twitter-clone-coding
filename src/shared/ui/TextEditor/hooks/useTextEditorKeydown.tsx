@@ -1,23 +1,19 @@
+import { useAppDispatch } from "@shared/lib";
+import {
+  setTextEditorCaretPosition,
+  setTextEditorInnerHTML,
+} from "@shared/models";
 import {
   createEditorHTML,
   extractLines,
   getCaretPosition,
   updateLinesAfterEnter,
-  type ICaretPosition,
 } from "@shared/ui/TextEditor";
 
-interface handleKeyodownProps {
-  e: React.KeyboardEvent<HTMLDivElement>;
-  setInnerHTML: React.Dispatch<React.SetStateAction<string>>;
-  setCaretPosition: React.Dispatch<React.SetStateAction<ICaretPosition>>;
-}
-
 const useTextEditorKeyDown = () => {
-  const handleKeydown = ({
-    e,
-    setInnerHTML,
-    setCaretPosition,
-  }: handleKeyodownProps) => {
+  const dispatch = useAppDispatch();
+
+  const handleKeydown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     const key = e.key;
 
     if (key === "Enter") {
@@ -43,10 +39,10 @@ const useTextEditorKeyDown = () => {
 
       console.log("변경된 커서 위치", caretPos, row, col);
 
-      setInnerHTML(innerHTML);
-
-      // 커서의 위치 조정
-      setCaretPosition({ caretPos: 0, row: row + 1, col: 0 });
+      dispatch(setTextEditorInnerHTML(innerHTML));
+      dispatch(
+        setTextEditorCaretPosition({ caretPos: 0, row: row + 1, col: 0 })
+      );
     }
   };
 
