@@ -4,6 +4,7 @@ import useTextEditorKeyDown from "./useTextEditorKeydown";
 import useTextEditorKeyUp from "./useTextEditorKeyUp";
 import useTextEditorClick from "./useTextEditorClick";
 import useInlineSuggestionDropdown from "./useInlineSuggestionDropdown";
+import useReplaceTextInTextEditor from "./useReplaceTextInTextEditor";
 
 export {
   useTextEditorInput,
@@ -12,4 +13,5 @@ export {
   useTextEditorKeyUp,
   useTextEditorClick,
   useInlineSuggestionDropdown,
+  useReplaceTextInTextEditor,
 };

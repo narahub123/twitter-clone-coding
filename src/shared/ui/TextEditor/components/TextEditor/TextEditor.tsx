@@ -7,6 +7,7 @@ import {
   handleCompositionStart,
   handleFocus,
   useInlineSuggestionDropdown,
+  useReplaceTextInTextEditor,
   useSetTextEditorHTMLWithCaret,
   useTextEditorClick,
   useTextEditorInput,
@@ -14,7 +15,10 @@ import {
   useTextEditorKeyUp,
   type IInlineRect,
 } from "@shared/ui/TextEditor";
-import { selectIsTextEditorDropdownOpen } from "@shared/models/selectors/textEditorSelectors";
+import {
+  selectIsTextEditorDropdownOpen,
+  selectTextEditorSelectedIndex,
+} from "@shared/models/selectors/textEditorSelectors";
 
 interface TextEditorProps {
   className?: string;
@@ -39,29 +43,10 @@ const TextEditor = ({
 
   const isOpen = useAppSelector(selectIsTextEditorDropdownOpen);
 
+  const selectedIndex = useAppSelector(selectTextEditorSelectedIndex);
+
   // inline의 위치
   const [rect, setRect] = useState<IInlineRect>();
-
-  const phCond =
-    placeholder && !isFocused && !textEditorRef.current?.textContent;
-
-  const handleInput = useTextEditorInput();
-
-  // keydown handler
-  const handleKeydown = useTextEditorKeyDown();
-
-  // 방향키 핸들러
-  const handleKeyUp = useTextEditorKeyUp();
-
-  // click 핸들러
-  const handleClick = useTextEditorClick();
-
-  useSetTextEditorHTMLWithCaret({
-    textEditorRef,
-    isComposing,
-  });
-
-  useInlineSuggestionDropdown({ textEditorRef, setRect });
 
   const list = [
     {
@@ -86,6 +71,31 @@ const TextEditor = ({
       selected: false,
     },
   ];
+
+  const phCond =
+    placeholder && !isFocused && !textEditorRef.current?.textContent;
+
+  const handleInput = useTextEditorInput();
+
+  // keydown handler
+  const handleKeydown = useTextEditorKeyDown({ list, textEditorRef });
+
+  // 방향키 핸들러
+  const handleKeyUp = useTextEditorKeyUp();
+
+  // click 핸들러
+  const handleClick = useTextEditorClick();
+
+  useSetTextEditorHTMLWithCaret({
+    textEditorRef,
+    isComposing,
+  });
+
+  useInlineSuggestionDropdown({ textEditorRef, setRect });
+
+  const replaceTextInTextEditor = useReplaceTextInTextEditor({
+    textEditorRef,
+  });
 
   return (
     <div className={styles["wrapper"]}>
@@ -123,11 +133,11 @@ const TextEditor = ({
         <Dropdown
           position={{ top: rect.top + rect.height, left: rect.left - 20 }}
         >
-          {list.map((item) => (
+          {list.map((item, idx) => (
             <Dropdown.Option
               key={item.text}
-              onClick={item.onClick}
-              selected={item.selected}
+              onClick={() => replaceTextInTextEditor(list[idx].text)}
+              selected={idx === selectedIndex}
             >
               {item.text}
             </Dropdown.Option>

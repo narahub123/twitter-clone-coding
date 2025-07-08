@@ -11,6 +11,7 @@ import {
   useTextEditorKeyUp,
   useTextEditorClick,
   useInlineSuggestionDropdown,
+  useReplaceTextInTextEditor,
 } from "./hooks";
 
 import {
@@ -54,6 +55,7 @@ export {
   useTextEditorKeyUp,
   useTextEditorClick,
   useInlineSuggestionDropdown,
+  useReplaceTextInTextEditor,
 
   // utils
   extractLines,
