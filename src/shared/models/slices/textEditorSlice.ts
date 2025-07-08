@@ -9,6 +9,8 @@ const initialState: ITextEditor = {
     row: 0,
     col: 0,
   },
+  isOpen: false,
+  selectedIndex: 0,
 };
 
 const textEditorSlice = createSlice({
@@ -24,10 +26,20 @@ const textEditorSlice = createSlice({
     ) => {
       state.caretPosition = action.payload;
     },
+    setIsTextEditorDropdownOpen: (state, action: PayloadAction<boolean>) => {
+      state.isOpen = action.payload;
+    },
+    setTextEditorSelectedIndex: (state, action: PayloadAction<number>) => {
+      state.selectedIndex = action.payload;
+    },
   },
 });
 
 export default textEditorSlice.reducer;
 
-export const { setTextEditorInnerHTML, setTextEditorCaretPosition } =
-  textEditorSlice.actions;
+export const {
+  setTextEditorInnerHTML,
+  setTextEditorCaretPosition,
+  setIsTextEditorDropdownOpen,
+  setTextEditorSelectedIndex,
+} = textEditorSlice.actions;

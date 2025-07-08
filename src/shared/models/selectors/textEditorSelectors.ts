@@ -6,4 +6,15 @@ const selectTextEditorInnerHTML = (state: RootState) =>
 const selectTextEditorCaretPosition = (state: RootState) =>
   state.textEditor.caretPosition;
 
-export { selectTextEditorInnerHTML, selectTextEditorCaretPosition };
+const selectIsTextEditorDropdownOpen = (state: RootState) =>
+  state.textEditor.isOpen;
+
+const selectTextEditorSelectedIndex = (state: RootState) =>
+  state.textEditor.selectedIndex;
+
+export {
+  selectTextEditorInnerHTML,
+  selectTextEditorCaretPosition,
+  selectIsTextEditorDropdownOpen,
+  selectTextEditorSelectedIndex,
+};
