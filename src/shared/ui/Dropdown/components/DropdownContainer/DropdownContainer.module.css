@@ -1,4 +1,10 @@
 .dropdown {
-  width: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 0.5rem;
+  border: 1px solid var(--text-color);
+  overflow: hidden;
 }

@@ -1,12 +1,11 @@
 import { useRef, useState } from "react";
 import styles from "./TextEditor.module.css";
-import { joinClassNames } from "@shared";
+import { Dropdown, joinClassNames } from "@shared";
 import {
   handleBlur,
   handleCompositionEnd,
   handleCompositionStart,
   handleFocus,
-  InlineSuggestionDropdown,
   useInlineSuggestionDropdown,
   useSetTextEditorHTMLWithCaret,
   useTextEditorClick,
@@ -66,6 +65,8 @@ const TextEditor = ({
 
   console.log(isOpen);
 
+  
+
   return (
     <div className={styles["wrapper"]}>
       <div
@@ -98,7 +99,13 @@ const TextEditor = ({
           </span>
         </div>
       </div>
-      {isOpen && <InlineSuggestionDropdown rect={rect} />}
+      {isOpen && rect && rect.top && rect.height && rect.left && (
+        <Dropdown
+          position={{ top: rect.top + rect.height, left: rect.left - 20 }}
+        >
+          안녕
+        </Dropdown>
+      )}
     </div>
   );
 };
