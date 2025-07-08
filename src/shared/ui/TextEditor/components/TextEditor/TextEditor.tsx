@@ -63,9 +63,29 @@ const TextEditor = ({
 
   useInlineSuggestionDropdown({ textEditorRef, setIsOpen, setRect });
 
-  console.log(isOpen);
-
-  
+  const list = [
+    {
+      text: "2 dfkjkdjf",
+      onClick: () => {
+        console.log("이건 뭐야 1");
+      },
+      selected: false,
+    },
+    {
+      text: "1 dfkjkdjf",
+      onClick: () => {
+        console.log("이건 뭐야 2");
+      },
+      selected: true,
+    },
+    {
+      text: "3 dfkjkdjf",
+      onClick: () => {
+        console.log("이건 뭐야 3");
+      },
+      selected: false,
+    },
+  ];
 
   return (
     <div className={styles["wrapper"]}>
@@ -103,7 +123,15 @@ const TextEditor = ({
         <Dropdown
           position={{ top: rect.top + rect.height, left: rect.left - 20 }}
         >
-          안녕
+          {list.map((item) => (
+            <Dropdown.Option
+              key={item.text}
+              onClick={item.onClick}
+              selected={item.selected}
+            >
+              {item.text}
+            </Dropdown.Option>
+          ))}
         </Dropdown>
       )}
     </div>

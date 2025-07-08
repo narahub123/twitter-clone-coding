@@ -1,0 +1,12 @@
+.dropdown__option {
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.selected,
+.dropdown__option:hover,
+.dropdown__option:focus-visible {
+  /* background-color: rgba(247, 249, 249, 1); */
+  background-color: var(--hover-color);
+  color: #000;
+}

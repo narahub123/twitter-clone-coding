@@ -1,14 +1,31 @@
+import type { ReactNode } from "react";
 import styles from "./DropdownOption.module.css";
 import { joinClassNames } from "@shared";
 
 interface DropdownOptionProps {
   className?: string;
+  children: ReactNode;
+  onClick: () => void;
+  selected?: boolean;
 }
 
-const DropdownOption = ({ className }: DropdownOptionProps) => {
-  const classNames = joinClassNames([styles["dropdown__option"], className]);
+const DropdownOption = ({
+  className,
+  children,
+  onClick,
+  selected = false,
+}: DropdownOptionProps) => {
+  const classNames = joinClassNames([
+    styles["dropdown__option"],
+    selected ? styles["selected"] : "",
+    className,
+  ]);
 
-  return <div className={classNames}>DropdownOption</div>;
+  return (
+    <button className={classNames} role="option" onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default DropdownOption;
