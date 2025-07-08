@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import styles from "./TextEditor.module.css";
-import { Dropdown, joinClassNames } from "@shared";
+import { Dropdown, joinClassNames, useAppSelector } from "@shared";
 import {
   handleBlur,
   handleCompositionEnd,
@@ -14,6 +14,7 @@ import {
   useTextEditorKeyUp,
   type IInlineRect,
 } from "@shared/ui/TextEditor";
+import { selectIsTextEditorDropdownOpen } from "@shared/models/selectors/textEditorSelectors";
 
 interface TextEditorProps {
   className?: string;
@@ -36,8 +37,7 @@ const TextEditor = ({
   // 포커스 상태
   const [isFocused, setIsFocused] = useState(false);
 
-  // InlineSuggestionDropdwon 여닫기 상태
-  const [isOpen, setIsOpen] = useState(false);
+  const isOpen = useAppSelector(selectIsTextEditorDropdownOpen);
 
   // inline의 위치
   const [rect, setRect] = useState<IInlineRect>();
@@ -61,7 +61,7 @@ const TextEditor = ({
     isComposing,
   });
 
-  useInlineSuggestionDropdown({ textEditorRef, setIsOpen, setRect });
+  useInlineSuggestionDropdown({ textEditorRef, setRect });
 
   const list = [
     {
