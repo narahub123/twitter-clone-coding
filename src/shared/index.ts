@@ -33,6 +33,7 @@ import {
   Input,
   TextEditor,
   Dropdown,
+  Progressbar,
 } from "./ui";
 
 import {
@@ -115,6 +116,7 @@ export {
   Input,
   TextEditor,
   Dropdown,
+  Progressbar,
 };
 
 export type {

@@ -11,6 +11,7 @@ import FocusTrap from "./FocusTrap";
 import Input from "./Input";
 import TextEditor from "./TextEditor";
 import Dropdown from "./Dropdown";
+import Progressbar from "./Progressbar";
 
 export {
   Icon,
@@ -27,4 +28,5 @@ export {
   Input,
   TextEditor,
   Dropdown,
+  Progressbar,
 };
