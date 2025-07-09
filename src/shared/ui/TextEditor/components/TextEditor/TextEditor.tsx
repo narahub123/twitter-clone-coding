@@ -48,6 +48,8 @@ const TextEditor = ({
   // inline의 위치
   const [rect, setRect] = useState<IInlineRect>();
 
+  const [isLoading, setIsLoading] = useState(true);
+
   const list = [
     {
       text: "2 dfkjkdjf",
@@ -133,6 +135,12 @@ const TextEditor = ({
         <Dropdown
           position={{ top: rect.top + rect.height, left: rect.left - 20 }}
         >
+          {isOpen && (
+            <Dropdown.Progressbar
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+            />
+          )}
           {list.map((item, idx) => (
             <Dropdown.MenuItem
               key={item.text}
