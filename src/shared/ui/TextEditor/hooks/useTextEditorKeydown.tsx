@@ -5,6 +5,7 @@ import {
 } from "@shared/models";
 import {
   selectIsTextEditorDropdownOpen,
+  selectTextEditorList,
   selectTextEditorSelectedIndex,
 } from "@shared/models/selectors/textEditorSelectors";
 import {
@@ -20,10 +21,8 @@ import {
 } from "@shared/ui/TextEditor";
 
 const useTextEditorKeyDown = ({
-  list,
   textEditorRef,
 }: {
-  list: any[];
   textEditorRef: React.RefObject<HTMLDivElement | null>;
 }) => {
   const dispatch = useAppDispatch();
@@ -32,6 +31,9 @@ const useTextEditorKeyDown = ({
 
   // 드롭다운 여닫힘 여부
   const isOpen = useAppSelector(selectIsTextEditorDropdownOpen);
+
+  // list
+  const list = useAppSelector(selectTextEditorList);
 
   // 선택된 아이템의 index
   const curIndex = useAppSelector(selectTextEditorSelectedIndex);

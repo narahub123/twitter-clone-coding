@@ -1,30 +1,64 @@
 import styles from "./InlineSuggestionDropdown.module.css";
-import { joinClassNames } from "@shared";
-import type { IInlineRect } from "@shared/ui/TextEditor";
+import {
+  Dropdown,
+  joinClassNames,
+  selectIsLoading,
+  selectTextEditorList,
+  selectTextEditorSelectedIndex,
+  useAppSelector,
+} from "@shared";
+import {
+  useReplaceTextInTextEditor,
+  type IInlineRect,
+} from "@shared/ui/TextEditor";
 
 interface InlineSuggestionDropdownProps {
   className?: string;
+  textEditorRef: React.RefObject<HTMLDivElement | null>;
   rect: IInlineRect | undefined;
 }
 
 const InlineSuggestionDropdown = ({
   className,
   rect,
+  textEditorRef,
 }: InlineSuggestionDropdownProps) => {
   const classNames = joinClassNames([
     styles["inline__suggestion__dropdown"],
     className,
   ]);
 
-  if (!rect || !rect.top || !rect.height || !rect.left) return;
+  const isLoading = useAppSelector(selectIsLoading);
+  const selectedIndex = useAppSelector(selectTextEditorSelectedIndex);
+  const list = useAppSelector(selectTextEditorList);
+
+  const replaceTextInTextEditor = useReplaceTextInTextEditor({ textEditorRef });
+
+  if (
+    !rect ||
+    !rect.top ||
+    !rect.height ||
+    !rect.left ||
+    !textEditorRef.current
+  )
+    return;
 
   return (
-    <div
+    <Dropdown
       className={classNames}
-      style={{ top: rect.top + rect.height, left: rect.left - 36 }}
+      position={{ top: rect.top + rect.height, left: rect.left - 36 }}
     >
-      InlineSuggestionDropdown
-    </div>
+      <Dropdown.Progressbar isLoading={isLoading} />
+      {list.map((item, idx) => (
+        <Dropdown.Option
+          key={idx}
+          onClick={() => replaceTextInTextEditor(list[idx].text)}
+          selected={idx === selectedIndex}
+        >
+          {item.text}
+        </Dropdown.Option>
+      ))}
+    </Dropdown>
   );
 };
 

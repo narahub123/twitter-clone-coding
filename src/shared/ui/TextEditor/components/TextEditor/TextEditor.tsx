@@ -1,13 +1,13 @@
 import { useRef, useState } from "react";
 import styles from "./TextEditor.module.css";
-import { Dropdown, joinClassNames, useAppSelector } from "@shared";
+import { joinClassNames } from "@shared";
 import {
   handleBlur,
   handleCompositionEnd,
   handleCompositionStart,
   handleFocus,
+  InlineSuggestionDropdown,
   useInlineSuggestionDropdown,
-  useReplaceTextInTextEditor,
   useSetTextEditorHTMLWithCaret,
   useTextEditorClick,
   useTextEditorInput,
@@ -15,10 +15,6 @@ import {
   useTextEditorKeyUp,
   type IInlineRect,
 } from "@shared/ui/TextEditor";
-import {
-  selectIsTextEditorDropdownOpen,
-  selectTextEditorSelectedIndex,
-} from "@shared/models/selectors/textEditorSelectors";
 
 interface TextEditorProps {
   className?: string;
@@ -41,38 +37,8 @@ const TextEditor = ({
   // 포커스 상태
   const [isFocused, setIsFocused] = useState(false);
 
-  const isOpen = useAppSelector(selectIsTextEditorDropdownOpen);
-
-  const selectedIndex = useAppSelector(selectTextEditorSelectedIndex);
-
   // inline의 위치
   const [rect, setRect] = useState<IInlineRect>();
-
-  const [isLoading, setIsLoading] = useState(true);
-
-  const list = [
-    {
-      text: "2 dfkjkdjf",
-      onClick: () => {
-        console.log("이건 뭐야 1");
-      },
-      selected: false,
-    },
-    {
-      text: "1 dfkjkdjf",
-      onClick: () => {
-        console.log("이건 뭐야 2");
-      },
-      selected: true,
-    },
-    {
-      text: "3 dfkjkdjf",
-      onClick: () => {
-        console.log("이건 뭐야 3");
-      },
-      selected: false,
-    },
-  ];
 
   const phCond =
     placeholder && !isFocused && !textEditorRef.current?.textContent;
@@ -80,7 +46,7 @@ const TextEditor = ({
   const handleInput = useTextEditorInput();
 
   // keydown handler
-  const handleKeydown = useTextEditorKeyDown({ list, textEditorRef });
+  const handleKeydown = useTextEditorKeyDown({ textEditorRef });
 
   // 방향키 핸들러
   const handleKeyUp = useTextEditorKeyUp();
@@ -94,10 +60,6 @@ const TextEditor = ({
   });
 
   useInlineSuggestionDropdown({ textEditorRef, setRect });
-
-  const replaceTextInTextEditor = useReplaceTextInTextEditor({
-    textEditorRef,
-  });
 
   return (
     <div className={styles["wrapper"]}>
@@ -131,26 +93,7 @@ const TextEditor = ({
           </span>
         </div>
       </div>
-      {isOpen && rect && rect.top && rect.height && rect.left && (
-        <Dropdown
-          position={{ top: rect.top + rect.height, left: rect.left - 20 }}
-        >
-          {isOpen && (
-            <Dropdown.Progressbar
-              isLoading={isLoading}
-            />
-          )}
-          {list.map((item, idx) => (
-            <Dropdown.MenuItem
-              key={item.text}
-              onClick={() => replaceTextInTextEditor(list[idx].text)}
-              selected={idx === selectedIndex}
-            >
-              {item.text}
-            </Dropdown.MenuItem>
-          ))}
-        </Dropdown>
-      )}
+      <InlineSuggestionDropdown rect={rect} textEditorRef={textEditorRef} />
     </div>
   );
 };
