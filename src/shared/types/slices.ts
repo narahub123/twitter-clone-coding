@@ -5,6 +5,11 @@ interface ITextEditor {
   caretPosition: ICaretPosition;
   isOpen: boolean;
   selectedIndex: number;
+  list: any[];
 }
 
-export type { ITextEditor };
+interface ILoadingState {
+  isLoading: boolean;
+}
+
+export type { ITextEditor, ILoadingState };

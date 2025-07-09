@@ -12,9 +12,12 @@ const selectIsTextEditorDropdownOpen = (state: RootState) =>
 const selectTextEditorSelectedIndex = (state: RootState) =>
   state.textEditor.selectedIndex;
 
+const selectTextEditorList = (state: RootState) => state.textEditor.list;
+
 export {
   selectTextEditorInnerHTML,
   selectTextEditorCaretPosition,
   selectIsTextEditorDropdownOpen,
   selectTextEditorSelectedIndex,
+  selectTextEditorList,
 };

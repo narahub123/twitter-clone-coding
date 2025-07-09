@@ -39,14 +39,21 @@ import {
 import {
   // slices
   textEditorSlice,
+  loadingSlice,
 
   // reducers
   setTextEditorInnerHTML,
   setTextEditorCaretPosition,
+  loadingStart,
+  loadingEnd,
 
   // selectors
   selectTextEditorInnerHTML,
   selectTextEditorCaretPosition,
+  selectIsLoading,
+  selectTextEditorSelectedIndex,
+  selectIsTextEditorDropdownOpen,
+  selectTextEditorList,
 } from "./models";
 
 import type {
@@ -60,6 +67,7 @@ import type {
   ITextEditor,
   IRect,
   DropdownRoleType,
+  ILoadingState,
 } from "./types";
 
 export {
@@ -88,14 +96,21 @@ export {
   // models
   // slices
   textEditorSlice,
+  loadingSlice,
 
   // reducers
   setTextEditorInnerHTML,
   setTextEditorCaretPosition,
+  loadingStart,
+  loadingEnd,
 
   // selectors
   selectTextEditorInnerHTML,
   selectTextEditorCaretPosition,
+  selectIsLoading,
+  selectTextEditorSelectedIndex,
+  selectIsTextEditorDropdownOpen,
+  selectTextEditorList,
 
   // utils
   joinClassNames,
@@ -135,4 +150,5 @@ export type {
 
   // slices
   ITextEditor,
+  ILoadingState,
 };

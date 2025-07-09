@@ -7,7 +7,7 @@ import type {
   HeadingLevel,
 } from "./design-system";
 
-import type { ITextEditor } from "./slices";
+import type { ITextEditor, ILoadingState } from "./slices";
 
 type PlacementType = "top-left" | "top-right" | "bottom-left" | "bottom-right";
 
@@ -31,4 +31,5 @@ export type {
   ITextEditor,
   IRect,
   DropdownRoleType,
+  ILoadingState,
 };

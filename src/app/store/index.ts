@@ -4,13 +4,17 @@ import { displaySlice as display } from "@entities";
 
 import { modalSlice as modal } from "@shared/ui/Modal";
 
-import { textEditorSlice as textEditor } from "@shared";
+import {
+  textEditorSlice as textEditor,
+  loadingSlice as loading,
+} from "@shared";
 
 export const store = configureStore({
   reducer: {
     display,
     modal,
     textEditor,
+    loading,
   },
 });
 

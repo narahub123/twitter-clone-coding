@@ -11,6 +11,7 @@ const initialState: ITextEditor = {
   },
   isOpen: false,
   selectedIndex: 0,
+  list: [],
 };
 
 const textEditorSlice = createSlice({
@@ -32,6 +33,9 @@ const textEditorSlice = createSlice({
     setTextEditorSelectedIndex: (state, action: PayloadAction<number>) => {
       state.selectedIndex = action.payload;
     },
+    setTextEditorList: (state, action: PayloadAction<any[]>) => {
+      state.list = action.payload;
+    },
   },
 });
 
@@ -42,4 +46,5 @@ export const {
   setTextEditorCaretPosition,
   setIsTextEditorDropdownOpen,
   setTextEditorSelectedIndex,
+  setTextEditorList,
 } = textEditorSlice.actions;

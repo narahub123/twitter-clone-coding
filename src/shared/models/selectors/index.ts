@@ -1,6 +1,18 @@
 import {
   selectTextEditorInnerHTML,
   selectTextEditorCaretPosition,
+  selectTextEditorSelectedIndex,
+  selectIsTextEditorDropdownOpen,
+  selectTextEditorList,
 } from "./textEditorSelectors";
 
-export { selectTextEditorCaretPosition, selectTextEditorInnerHTML };
+import { selectIsLoading } from "./loadingSelectors";
+
+export {
+  selectTextEditorCaretPosition,
+  selectTextEditorInnerHTML,
+  selectIsLoading,
+  selectTextEditorSelectedIndex,
+  selectIsTextEditorDropdownOpen,
+  selectTextEditorList,
+};
