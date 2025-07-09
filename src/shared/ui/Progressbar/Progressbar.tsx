@@ -4,19 +4,28 @@ import { joinClassNames } from "@shared";
 
 interface ProgressbarProps {
   className?: string;
+  step?: number;
+  duration?: number;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Progressbar = ({ className }: ProgressbarProps) => {
+const Progressbar = ({
+  className,
+  step = 20,
+  duration = 300,
+  isLoading,
+  setIsLoading,
+}: ProgressbarProps) => {
   const classNames = joinClassNames([styles["progressbar"], className]);
 
   const [progress, setProgress] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!isLoading) return;
     const timer = setInterval(() => {
-      // 100 진행되면 interval 중지
-      if (progress === 100) {
+      // progress가 100 이상이면 interval 중지
+      if (progress >= 100) {
         clearInterval(timer);
         setProgress(0);
         setIsLoading(false);
@@ -24,10 +33,10 @@ const Progressbar = ({ className }: ProgressbarProps) => {
       }
 
       setProgress((prev) => {
-        if (prev !== 100) return prev + 10;
+        if (prev < 100) return prev + step >= 100 ? 100 : prev + step;
         else return prev;
       });
-    }, 500);
+    }, duration);
 
     return () => {
       clearInterval(timer);
