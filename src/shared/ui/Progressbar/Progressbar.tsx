@@ -10,6 +10,7 @@ interface ProgressbarProps {
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   color?: ColorSchemeType;
+  ariaLabel: string;
 }
 
 const Progressbar = ({
@@ -19,6 +20,7 @@ const Progressbar = ({
   isLoading,
   setIsLoading,
   color = "blue",
+  ariaLabel = "로딩중",
 }: ProgressbarProps) => {
   const classNames = joinClassNames([styles["progressbar"], className]);
 
@@ -47,8 +49,17 @@ const Progressbar = ({
   }, [progress]);
 
   return (
-    <div className={classNames}>
+    <div
+      className={classNames}
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={progress}
+      aria-busy={isLoading}
+      aria-label={ariaLabel}
+    >
       <div
+        aria-hidden={true}
         className={joinClassNames([styles["progress"], tokens[`bg-${color}`]])}
         style={{ width: `${progress}%` }}
       />
