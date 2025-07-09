@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Progressbar.module.css";
-import { joinClassNames } from "@shared";
+import tokens from "@shared/styles/design-system.module.css";
+import { joinClassNames, type ColorSchemeType } from "@shared";
 
 interface ProgressbarProps {
   className?: string;
@@ -8,6 +9,7 @@ interface ProgressbarProps {
   duration?: number;
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  color?: ColorSchemeType;
 }
 
 const Progressbar = ({
@@ -16,6 +18,7 @@ const Progressbar = ({
   duration = 300,
   isLoading,
   setIsLoading,
+  color = "blue",
 }: ProgressbarProps) => {
   const classNames = joinClassNames([styles["progressbar"], className]);
 
@@ -45,7 +48,10 @@ const Progressbar = ({
 
   return (
     <div className={classNames}>
-      <div className={styles["progress"]} style={{ width: `${progress}%` }} />
+      <div
+        className={joinClassNames([styles["progress"], tokens[`bg-${color}`]])}
+        style={{ width: `${progress}%` }}
+      />
     </div>
   );
 };
