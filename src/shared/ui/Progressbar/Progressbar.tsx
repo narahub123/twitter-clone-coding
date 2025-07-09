@@ -8,9 +8,8 @@ interface ProgressbarProps {
   step?: number;
   duration?: number;
   isLoading: boolean;
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   color?: ColorSchemeType;
-  ariaLabel: string;
+  ariaLabel?: string;
 }
 
 const Progressbar = ({
@@ -18,7 +17,6 @@ const Progressbar = ({
   step = 20,
   duration = 300,
   isLoading,
-  setIsLoading,
   color = "blue",
   ariaLabel = "로딩중",
 }: ProgressbarProps) => {
@@ -27,13 +25,15 @@ const Progressbar = ({
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    if (!isLoading) return;
+    if (!isLoading) {
+      setProgress(0);
+      return;
+    }
     const timer = setInterval(() => {
       // progress가 100 이상이면 interval 중지
       if (progress >= 100) {
         clearInterval(timer);
         setProgress(0);
-        setIsLoading(false);
         return;
       }
 
@@ -46,7 +46,7 @@ const Progressbar = ({
     return () => {
       clearInterval(timer);
     };
-  }, [progress]);
+  }, [isLoading]);
 
   return (
     <div

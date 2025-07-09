@@ -9,7 +9,7 @@ const TextEditorTestPage = ({}: TextEditorTestPageProps) => {
   return (
     <div className={styles["text__editor__test__page"]}>
       <TextEditor placeholder="무슨일이 일어나고 있나요?" />
-      <Progressbar isLoading={isLoading} setIsLoading={setIsLoading} />
+      <Progressbar isLoading={isLoading} />
     </div>
   );
 };

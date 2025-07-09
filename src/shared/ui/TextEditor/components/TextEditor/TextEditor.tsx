@@ -138,7 +138,6 @@ const TextEditor = ({
           {isOpen && (
             <Dropdown.Progressbar
               isLoading={isLoading}
-              setIsLoading={setIsLoading}
             />
           )}
           {list.map((item, idx) => (
