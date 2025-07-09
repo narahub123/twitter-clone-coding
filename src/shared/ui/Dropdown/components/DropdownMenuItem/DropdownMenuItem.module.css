@@ -1,0 +1,12 @@
+.dropdown__menu__item {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.selected,
+.dropdown__menu__item:hover,
+.dropdown__menu__item:focus-visible {
+  background-color: var(--hover-color);
+  color: #000;
+  /* 각 모드에서 selected 혹은 hover된 요소의 color에 대해서 필요한 듯 */
+}

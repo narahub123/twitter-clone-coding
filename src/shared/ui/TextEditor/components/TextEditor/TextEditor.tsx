@@ -134,13 +134,13 @@ const TextEditor = ({
           position={{ top: rect.top + rect.height, left: rect.left - 20 }}
         >
           {list.map((item, idx) => (
-            <Dropdown.Option
+            <Dropdown.MenuItem
               key={item.text}
               onClick={() => replaceTextInTextEditor(list[idx].text)}
               selected={idx === selectedIndex}
             >
               {item.text}
-            </Dropdown.Option>
+            </Dropdown.MenuItem>
           ))}
         </Dropdown>
       )}
